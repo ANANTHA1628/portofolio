@@ -1,0 +1,9 @@
+{
+  "name": "portofolio-aryaputra",
+  "version": "1.0.0",
+  "description": "Aryaputra Ferdiananta - Web Designer Portfolio",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}
