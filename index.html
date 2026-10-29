@@ -18,11 +18,11 @@
         content="Fullstack Web Developer (Frontend & Backend) & UI/UX Designer. Mahasiswa Teknik Informatika POLINEMA & alumni MAN 2 Kota Malang.">
     <meta property="og:image" content="assets/images/sertifikat-mahative.png">
 
-    <!-- Google Fonts: Spline Sans & Spline Sans Mono -->
+    <!-- Google Fonts: Space Grotesk (Futuristic AI Display & Body) + JetBrains Mono (AI Code & Terminal Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Spline+Sans:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Stylesheet -->
@@ -51,12 +51,12 @@
             <div class="header-right">
                 <div class="availability-badge" id="availability-pill">
                     <span class="status-dot"></span>
-                    <span class="status-text">Menerima proyek baru mulai November</span>
+                    <span class="status-text">Menerima proyek baru</span>
                 </div>
 
                 <button class="im-btn btn-sm btn-subtle nav-cv-btn open-cv-btn" id="header-cv-btn" type="button">📄
                     CV</button>
-                <a href="mailto:aryaputra.ferdiananta@gmail.com" class="im-btn btn-sm btn-dark nav-cta">Hubungi Saya</a>
+                <a href="mailto:aryaputraferdiananta@gmail.com" class="im-btn btn-sm btn-dark nav-cta open-contact-btn" id="nav-contact-btn">Hubungi Saya</a>
 
                 <!-- Mobile Menu Button -->
                 <button class="im-mobile-toggle" id="mobile-toggle" aria-label="Buka menu navigasi"
@@ -76,13 +76,13 @@
                     <li><a href="#about" class="mobile-link" id="m-nav-about">Tentang</a></li>
                     <li><button class="mobile-link mobile-cv-link open-cv-btn" id="m-nav-cv" type="button">📄 Lihat
                             &amp; Cetak CV</button></li>
-                    <li><a href="mailto:aryaputra.ferdiananta@gmail.com" class="mobile-link" id="m-nav-contact">Hubungi
+                    <li><a href="mailto:aryaputraferdiananta@gmail.com" class="mobile-link open-contact-btn" id="m-nav-contact">Hubungi
                             Saya ↗</a></li>
                 </ul>
                 <div class="mobile-drawer-footer">
-                    <span class="mobile-avail">● Menerima proyek baru mulai November</span>
+                    <span class="mobile-avail">● Menerima proyek baru</span>
                     <a href="mailto:aryaputraferdiananta@gmail.com"
-                        class="mobile-email">aryaputraferdiananta@gmail.com</a>
+                        class="mobile-email open-contact-btn">aryaputraferdiananta@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -387,11 +387,6 @@
                     <span class="strip-label">Perusahaan &amp; Studio yang pernah berkolaborasi dengan saya</span>
                     <div class="logos-row">
                         <span class="logo-item highlight-logo">MAHATIVE STUDIO</span>
-                        <span class="logo-item">ACTIVESAAS</span>
-                        <span class="logo-item">NONLINEAR</span>
-                        <span class="logo-item">FIRSTCHECK</span>
-                        <span class="logo-item">WAYMARK</span>
-                        <span class="logo-item">CALLWAVE</span>
                     </div>
                 </div>
             </div>
@@ -508,7 +503,7 @@
                         <div class="cert-flow-actions">
                             <button class="cert-nav-arrow" id="cert-flow-prev"
                                 aria-label="Sertifikat Sebelumnya">←</button>
-                            <span class="cert-flow-counter" id="cert-flow-counter">1 / 7</span>
+                            <span class="cert-flow-counter" id="cert-flow-counter">1 / 8</span>
                             <button class="cert-nav-arrow" id="cert-flow-next"
                                 aria-label="Sertifikat Berikutnya">→</button>
                         </div>
@@ -679,6 +674,26 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Card 8: Mentoring Keagamaan MENYALA (Polinema) -->
+                            <div class="cert-flow-slide" data-index="7" data-id="mentoring-polinema">
+                                <div class="cert-flow-card">
+                                    <div class="cert-card-media">
+                                        <img src="assets/images/certs/sertifikat-mentoring-aryaputra.jpg"
+                                            alt="Mentoring Keagamaan MENYALA Polinema" class="cert-card-img"
+                                            draggable="false" loading="lazy">
+                                        <div class="cert-card-badge-tag badge-tag-blue">🏛️ POLINEMA</div>
+                                        <div class="cert-hover-pill"><span>🔍 Klik untuk Perbesar</span></div>
+                                    </div>
+                                    <div class="cert-flow-card-info">
+                                        <span class="cert-flow-card-num">08</span>
+                                        <div class="cert-flow-card-text">
+                                            <h4 class="cert-flow-card-name">Mentoring Keagamaan: MENYALA Jilid-1</h4>
+                                            <p class="cert-flow-card-sub">UKM RISPOL · Politeknik Negeri Malang</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -793,8 +808,8 @@
                             <div class="timeline-entry">
                                 <span class="t-year">Sep 2026 – Sekarang</span>
                                 <div class="t-info">
-                                    <h4 class="t-role">Barista &amp; Operations · STAYCY_2026</h4>
-                                    <p class="t-text">Manual brew dengan kalibrasi ekstraksi presisi,kualitas rasa yang
+                                    <h4 class="t-role">Barista &amp; Operations · STOSE_2026</h4>
+                                    <p class="t-text">Manual brew dengan kalibrasi ekstraksi presisi, kualitas rasa yang
                                         tinggi, menghadirkan pelayanan ramah, manajemen stok bahan baku harian, dan
                                         membangun ritme kerja tim yang tangkas di kedai kopi.</p>
                                 </div>
@@ -852,7 +867,7 @@
                                 </p>
                             </div>
                             <div class="hobby-card">
-                                <span class="h-day">Barista di STAYCY_2026</span>
+                                <span class="h-day">Barista di STOSE_2026</span>
                                 <p class="h-text">Manual brew, mendalami seni kopi spesialti serta
                                     berinteraksi hangat dengan komunitas pengunjung.
                                 </p>
@@ -888,7 +903,7 @@
                         <li><a href="#work">Portofolio</a></li>
                         <li><a href="#certificate">Sertifikat</a></li>
                         <li><a href="#about">Tentang</a></li>
-                        <li><a href="mailto:aryaputra.ferdiananta@gmail.com">Hubungi Saya ↗</a></li>
+                        <li><a href="mailto:aryaputraferdiananta@gmail.com" class="open-contact-btn" id="footer-contact-link">Hubungi Saya ↗</a></li>
                     </ul>
                 </div>
 
@@ -897,8 +912,10 @@
                     <ul class="f-links">
                         <li><a href="https://bright-operations-110011.framer.app/" target="_blank"
                                 rel="noopener noreferrer">Active SaaS (Live Framer) ↗</a></li>
-                        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
-                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+                        <li><a href="https://www.linkedin.com/in/aryaputra-f-a75771322/" target="_blank"
+                                rel="noopener noreferrer">LinkedIn ↗</a></li>
+                        <li><a href="https://www.instagram.com/_ferdianantaa/?utm_source=ig_web_button_share_sheet"
+                                target="_blank" rel="noopener noreferrer">Instagram ↗</a>
                         </li>
                         <li><a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble ↗</a></li>
                     </ul>
@@ -1045,7 +1062,7 @@
                                 </div>
                                 <div class="cv-contact-item">
                                     <span class="c-icon">✉️</span>
-                                    <a href="mailto:aryaputra.ferdiananta@gmail.com">aryaputra.ferdiananta@gmail.com</a>
+                                    <a href="mailto:aryaputraferdiananta@gmail.com">aryaputraferdiananta@gmail.com</a>
                                 </div>
                                 <div class="cv-contact-item">
                                     <span class="c-icon">🎓</span>
@@ -1073,7 +1090,7 @@
                                     <div class="cv-card-top">
                                         <div class="cv-card-head">
                                             <h3 class="cv-card-role">Barista &amp; Customer Experience</h3>
-                                            <span class="cv-card-company">STAYCY_2026 · Specialty Coffee &amp;
+                                            <span class="cv-card-company">STOSE_2026 · Specialty Coffee &amp;
                                                 Space</span>
                                         </div>
                                         <span class="cv-card-period">September 2026 – Sekarang</span>
@@ -1277,6 +1294,14 @@
                                     </div>
                                     <span class="cv-cert-inst">FeST Management × BEM FEB UMM · 2025</span>
                                 </div>
+
+                                <div class="cv-cert-item">
+                                    <div class="cv-cert-head">
+                                        <strong>Mentoring Keagamaan MENYALA</strong>
+                                        <span class="cv-cert-badge-sm">Polinema</span>
+                                    </div>
+                                    <span class="cv-cert-inst">UKM RISPOL · Politeknik Negeri Malang · 2024</span>
+                                </div>
                             </section>
 
                             <!-- Section: Soft Skills & Bahasa -->
@@ -1302,6 +1327,109 @@
                         </div>
                     </div>
                 </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT / HUBUNGI SAYA MODAL -->
+    <div class="im-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop" id="contact-backdrop"></div>
+        <div class="modal-window contact-window">
+            <div class="modal-top">
+                <span class="modal-label">HUBUNGI SAYA · GET IN TOUCH</span>
+                <button class="modal-close-btn" id="contact-close-btn" aria-label="Tutup dialog">✕</button>
+            </div>
+
+            <div class="contact-modal-body">
+                <div class="contact-profile-header">
+                    <img src="assets/images/me.jpeg" alt="Aryaputra Ferdiananta" class="contact-avatar">
+                    <div class="contact-profile-info">
+                        <h3 class="contact-name">Aryaputra Ferdiananta</h3>
+                        <p class="contact-role">Fullstack Web Developer &amp; UI/UX Designer</p>
+                        <div class="contact-status-tag">
+                            <span class="status-dot"></span>
+                            <span>Menerima proyek baru &amp; kolaborasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-email-box">
+                    <div class="contact-email-label">ALAMAT EMAIL RESMI</div>
+                    <div class="contact-email-row">
+                        <span class="contact-email-text" id="contact-email-val">aryaputraferdiananta@gmail.com</span>
+                        <button class="contact-copy-btn" id="btn-copy-email" type="button" title="Salin Email">
+                            <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-btn-text">Salin</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="contact-actions-grid">
+                    <!-- Action 1: Open Direct Gmail Web -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aryaputraferdiananta@gmail.com&su=Halo%20Aryaputra%20-%20Tawaran%20Proyek%20/%20Kolaborasi" 
+                       target="_blank" rel="noopener noreferrer" class="contact-action-card contact-action-gmail">
+                        <div class="action-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="action-details">
+                            <span class="action-title">Buka di Gmail Web ↗</span>
+                            <span class="action-desc">Tulis email langsung di tab browser (tanpa aplikasi)</span>
+                        </div>
+                    </a>
+
+                    <!-- Action 2: Default Mail App (mailto) -->
+                    <a href="mailto:aryaputraferdiananta@gmail.com?subject=Halo%20Aryaputra%20-%20Diskusi%20Proyek" 
+                       class="contact-action-card">
+                        <div class="action-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+                                <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                            </svg>
+                        </div>
+                        <div class="action-details">
+                            <span class="action-title">Aplikasi Mail Default ↗</span>
+                            <span class="action-desc">Buka aplikasi Outlook, Apple Mail, atau Windows Mail</span>
+                        </div>
+                    </a>
+
+                    <!-- Action 3: LinkedIn -->
+                    <a href="https://www.linkedin.com/in/aryaputra-f-a75771322/" 
+                       target="_blank" rel="noopener noreferrer" class="contact-action-card">
+                        <div class="action-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div class="action-details">
+                            <span class="action-title">Kirim Pesan di LinkedIn ↗</span>
+                            <span class="action-desc">Aryaputra Ferdiananta</span>
+                        </div>
+                    </a>
+
+                    <!-- Action 4: Instagram -->
+                    <a href="https://www.instagram.com/_ferdianantaa/?utm_source=ig_web_button_share_sheet" 
+                       target="_blank" rel="noopener noreferrer" class="contact-action-card">
+                        <div class="action-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <div class="action-details">
+                            <span class="action-title">Direct Message Instagram ↗</span>
+                            <span class="action-desc">@_ferdianantaa</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

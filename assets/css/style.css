@@ -1,6 +1,6 @@
 /* ==========================================================================
-   ARYAPUTRA FERDIANANTA — WEB DESIGNER (MAHATIVE STUDIO)
-   Design System: Clean, minimal, off-white canvas, Spline Sans typography
+   ARYAPUTRA FERDIANANTA — WEB DESIGNER & FULLSTACK DEVELOPER
+   Design System: Clean, minimal, AI & Futuristic Tech Canvas (Space Grotesk & JetBrains Mono)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -26,9 +26,10 @@
     --accent-dark: #2a2a2a;
     --accent-green: #2ecc71;
 
-    /* Typography */
-    --font-sans: 'Spline Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-mono: 'Spline Sans Mono', monospace;
+    /* Typography: Futuristic AI Aesthetic */
+    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Space Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Space Mono', 'SFMono-Regular', Consolas, monospace;
 
     /* Shadows & Radii */
     --radius-sm: 8px;
@@ -68,11 +69,14 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "zero";
 }
 
 ::selection {
     background-color: var(--accent-purple);
     color: #ffffff;
+    text-shadow: 0 0 10px rgba(140, 120, 255, 0.7);
 }
 
 /* Scrollbar */
@@ -105,10 +109,20 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: var(--font-sans);
+    font-family: var(--font-display);
     color: var(--text-primary);
-    font-weight: 600;
-    line-height: 1.25;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    font-feature-settings: "cv02", "cv03", "zero";
+}
+
+code,
+kbd,
+samp,
+pre {
+    font-family: var(--font-mono);
+    font-feature-settings: "zero", "ss01", "ss02";
 }
 
 p {
@@ -3125,32 +3139,32 @@ img {
     }
 }
 
-/* Flow Track */
+/* Flow Track: Centered Anchor for Circular Infinite Coverflow */
 .cert-flow-track {
-    display: flex;
-    align-items: center;
-    gap: 32px;
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
-    will-change: transform;
+    width: 0;
+    height: 0;
     pointer-events: auto;
     user-select: none;
     -webkit-user-select: none;
 }
 
-/* Flow Slide */
+/* Flow Slide: Positioned at Center, Dynamically Translated in 3D */
 .cert-flow-slide {
-    flex: 0 0 320px;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transform-origin: center center;
+    transform: translate(-50%, -50%);
     will-change: transform, filter, opacity;
-    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.15s ease-out;
+    transition: filter 0.25s ease, opacity 0.25s ease;
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
@@ -3820,5 +3834,204 @@ img {
     }
     .cert-lightbox-content {
         padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT / HUBUNGI SAYA MODAL STYLES
+   -------------------------------------------------------------------------- */
+.contact-window {
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+}
+
+.contact-modal-body {
+    padding: 1.8rem 2rem 2.2rem 2rem;
+}
+
+.contact-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.3rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-avatar {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-purple);
+    box-shadow: 0 4px 14px rgba(91, 61, 245, 0.2);
+    flex-shrink: 0;
+}
+
+.contact-name {
+    font-family: var(--font-display);
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+}
+
+.contact-role {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.45rem;
+}
+
+.contact-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #15803d;
+    background: #dcfce7;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-pill);
+}
+
+.contact-email-box {
+    background: var(--bg-card-subtle);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.4rem;
+}
+
+.contact-email-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.contact-email-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+
+.contact-email-text {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    word-break: break-all;
+}
+
+.contact-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    background: #ffffff;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.contact-copy-btn:hover {
+    background: var(--text-primary);
+    color: #ffffff;
+    border-color: var(--text-primary);
+}
+
+.contact-actions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-action-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.1rem;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-action-card:hover {
+    border-color: var(--text-primary);
+    background: #fafaf9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.contact-action-gmail {
+    border-color: rgba(91, 61, 245, 0.28);
+    background: rgba(91, 61, 245, 0.03);
+}
+
+.contact-action-gmail:hover {
+    border-color: var(--accent-purple);
+    background: rgba(91, 61, 245, 0.07);
+}
+
+.contact-action-card .action-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--bg-card-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    flex-shrink: 0;
+}
+
+.contact-action-gmail .action-icon {
+    background: var(--accent-purple);
+    color: #ffffff;
+}
+
+.contact-action-card .action-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.contact-action-card .action-title {
+    font-family: var(--font-display);
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.contact-action-card .action-desc {
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+    .contact-modal-body {
+        padding: 1.4rem 1.2rem 1.8rem 1.2rem;
+    }
+    .contact-email-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
 }

@@ -931,6 +931,37 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             verifyUrl: "assets/images/certs/sertifikat-webinar-softskill.jpg",
             downloadName: "Sertifikat-Webinar-Softskill-Wardah-Aryaputra.jpg"
+        },
+        {
+            id: "mentoring-polinema",
+            number: "08",
+            title: "Mentoring Keagamaan: MENYALA Jilid-1",
+            issuer: "UKM Kerohanian Islam (RISPOL) · Politeknik Negeri Malang",
+            category: "Pembinaan Karakter & Keagamaan",
+            badge: "🏛️ POLINEMA",
+            image: "assets/images/certs/sertifikat-mentoring-aryaputra.jpg",
+            credId: "6812/PL2.3/KM/2025",
+            date: "21 – 22 September 2024",
+            recipient: "Aryaputra Ferdiananta (NIM: 244107020127)",
+            desc: "Sertifikat resmi keikutsertaan sebagai Peserta dalam kegiatan Mentoring Keagamaan bertema 'MENYALA (Mentoring Punya Lentera) Jilid-1: Rukun Iman di Era Modern' yang diselenggarakan oleh UKM Kerohanian Islam Politeknik (RISPOL) Politeknik Negeri Malang di Graha Polinema.",
+            skills: [
+                "Leadership & Character Building",
+                "Etika Moral & Integritas Profesional",
+                "Internalisasi Nilai Spiritual Era Modern",
+                "Kolaborasi & Solidaritas Mahasiswa",
+                "Public Discussion & Critical Thinking"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "6812/PL2.3/KM/2025" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta" },
+                { label: "NIM / Institusi", val: "244107020127 · Politeknik Negeri Malang" },
+                { label: "Penyelenggara", val: "UKM Kerohanian Islam Politeknik (RISPOL)" },
+                { label: "Tema Kegiatan", val: "MENYALA Jilid-1: Rukun Iman di Era Modern" },
+                { label: "Waktu & Tempat", val: "21–22 September 2024 · Graha Polinema" },
+                { label: "Status Partisipasi", val: "Peserta Resmi Terverifikasi", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-mentoring-aryaputra.jpg",
+            downloadName: "Sertifikat-Mentoring-MENYALA-Aryaputra-Ferdiananta.jpg"
         }
     ];
 
@@ -1075,7 +1106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* --- COVERFLOW SHOWCASE ENGINE (IMAGE 1 REFERENCE) --- */
+    /* --- COVERFLOW SHOWCASE ENGINE: INFINITE 3D CIRCULAR LOOP --- */
     function initCertificateCoverflow() {
         const viewport = document.getElementById('cert-flow-viewport');
         const track = document.getElementById('cert-flow-track');
@@ -1090,16 +1121,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!viewport || !track) return;
 
         const slides = Array.from(track.querySelectorAll('.cert-flow-slide'));
-        if (slides.length === 0) return;
+        const N = slides.length;
+        if (N === 0) return;
 
         let activeIndex = 0;
+        let currentP = 0; // Continuous virtual index float
+        let targetP = 0;  // Target index float
         let isPointerDown = false;
         let isDragging = false;
         let startX = 0;
         let startY = 0;
-        let startTranslateX = 0;
-        let currentTranslateX = 0;
-        let targetTranslateX = 0;
+        let startP = 0;
         let totalDeltaX = 0;
         let startTime = 0;
         let animationFrameId = null;
@@ -1123,25 +1155,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Get card metrics
+        // Metrics: slide width & step
         function getSlideWidth() {
             const firstSlide = slides[0];
             return firstSlide ? firstSlide.offsetWidth : 320;
         }
 
         function getGap() {
-            const style = window.getComputedStyle(track);
-            const gap = parseFloat(style.gap) || 32;
-            return gap;
+            return window.innerWidth <= 640 ? 24 : 32;
         }
 
-        // Calculate translation needed to center slide at index
-        function getCenterTranslate(index) {
-            const slide = slides[index];
-            if (!slide) return 0;
-            const viewportCenter = viewport.offsetWidth / 2;
-            const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-            return viewportCenter - slideCenter;
+        function getStep() {
+            return getSlideWidth() + getGap();
+        }
+
+        // Circular shortest distance math on wheel of N items
+        function getCircularDiff(targetIndex, fromIndex) {
+            let diff = ((targetIndex - fromIndex) % N + N) % N;
+            if (diff > N / 2) {
+                diff -= N;
+            }
+            return diff;
         }
 
         // Update active metadata badge and counter
@@ -1153,7 +1187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             if (counterEl) {
-                counterEl.textContent = `${index + 1} / ${slides.length}`;
+                counterEl.textContent = `${index + 1} / ${N}`;
             }
 
             if (activeBadge) {
@@ -1172,59 +1206,68 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Apply continuous transforms based on distance from center (Image 1 Focal Perspective)
+        // Apply 3D transforms based on circular distance from current position
         function renderTransforms() {
-            const viewportCenter = viewport.offsetWidth / 2;
-            const step = getSlideWidth() + getGap();
-
+            const step = getStep();
             let closestIndex = 0;
-            let minDistance = Infinity;
+            let minAbsDiff = Infinity;
 
             slides.forEach((slide, idx) => {
-                const slideCenter = currentTranslateX + slide.offsetLeft + slide.offsetWidth / 2;
-                const distance = slideCenter - viewportCenter;
-                const absDist = Math.abs(distance);
-                const normDist = absDist / (step || 350);
+                const diff = getCircularDiff(idx, currentP);
+                const absDiff = Math.abs(diff);
 
-                if (absDist < minDistance) {
-                    minDistance = absDist;
+                if (absDiff < minAbsDiff) {
+                    minAbsDiff = absDiff;
                     closestIndex = idx;
                 }
 
-                // Dynamic scaling: Center is largest (1.18x), adjacent drops smoothly
-                const scale = Math.max(0.48, 1.18 - (normDist * 0.28));
-                // Center is full color (0% grayscale), sides become monochrome grayscale (Image 1)
-                const grayscale = Math.min(100, normDist * 85);
-                // Opacity falls off gracefully
-                const opacity = Math.max(0.32, 1 - (normDist * 0.25));
-                // Center gets highest z-index
-                const zIndex = Math.round(25 - Math.min(22, normDist * 6));
+                // Cards at the far back (> 2.7 cards away) are hidden to prevent visual wrap
+                if (absDiff > 2.7) {
+                    slide.style.visibility = 'hidden';
+                    slide.style.pointerEvents = 'none';
+                    return;
+                } else {
+                    slide.style.visibility = 'visible';
+                    slide.style.pointerEvents = 'auto';
+                }
 
-                slide.style.transform = `scale(${scale.toFixed(3)})`;
-                slide.style.filter = `grayscale(${grayscale.toFixed(1)}%) contrast(${(100 - normDist * 10).toFixed(1)}%)`;
+                const xPos = diff * step;
+                // Dynamic scaling: Center is largest (1.18x), adjacent drops smoothly
+                const scale = Math.max(0.48, 1.18 - (absDiff * 0.28));
+                // Center is full color (0% grayscale), sides become monochrome grayscale (Image 1)
+                const grayscale = Math.min(100, absDiff * 85);
+                // Opacity falls off gracefully
+                const opacity = Math.max(0.3, 1 - (absDiff * 0.25));
+                // Center gets highest z-index
+                const zIndex = Math.round(25 - Math.min(22, absDiff * 6));
+
+                slide.style.transform = `translate(-50%, -50%) translate3d(${xPos.toFixed(2)}px, 0, 0) scale(${scale.toFixed(3)})`;
+                slide.style.filter = `grayscale(${grayscale.toFixed(1)}%) contrast(${(100 - absDiff * 10).toFixed(1)}%)`;
                 slide.style.opacity = opacity.toFixed(3);
                 slide.style.zIndex = zIndex;
 
-                slide.classList.toggle('is-active', normDist < 0.35);
+                slide.classList.toggle('is-active', absDiff < 0.35);
             });
-
-            track.style.transform = `translate3d(${currentTranslateX.toFixed(2)}px, -50%, 0)`;
 
             return closestIndex;
         }
 
-        // Animation loop with smooth damping
+        // Animation loop with smooth spring damping
         function animate() {
-            const diff = targetTranslateX - currentTranslateX;
-            if (Math.abs(diff) > 0.3) {
-                currentTranslateX += diff * 0.16;
+            const diff = targetP - currentP;
+            if (Math.abs(diff) > 0.002) {
+                currentP += diff * 0.16;
                 const closest = renderTransforms();
                 if (closest !== activeIndex && !isPointerDown) {
                     updateMetadata(closest);
                 }
                 animationFrameId = requestAnimationFrame(animate);
             } else {
-                currentTranslateX = targetTranslateX;
+                currentP = targetP;
+                // Normalize targetP and currentP to [0, N) to prevent numerical drift
+                const normalized = ((Math.round(currentP) % N) + N) % N;
+                currentP = normalized;
+                targetP = normalized;
                 const closest = renderTransforms();
                 updateMetadata(closest);
                 animationFrameId = null;
@@ -1237,38 +1280,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        function goToIndex(index) {
-            index = Math.max(0, Math.min(slides.length - 1, index));
-            targetTranslateX = getCenterTranslate(index);
+        function nextSlide() {
+            targetP = Math.round(targetP) + 1;
             triggerAnimation();
         }
 
-        // Initial setup
-        setTimeout(() => {
-            targetTranslateX = getCenterTranslate(0);
-            currentTranslateX = targetTranslateX;
-            renderTransforms();
-            updateMetadata(0);
-        }, 80);
+        function prevSlide() {
+            targetP = Math.round(targetP) - 1;
+            triggerAnimation();
+        }
+
+        function goToIndex(targetIndex) {
+            const currentNorm = ((Math.round(targetP) % N) + N) % N;
+            const stepDiff = getCircularDiff(targetIndex, currentNorm);
+            targetP = Math.round(targetP) + stepDiff;
+            triggerAnimation();
+        }
+
+        // Immediate Initial Render
+        renderTransforms();
+        updateMetadata(0);
 
         // Resize handler
         window.addEventListener('resize', () => {
-            targetTranslateX = getCenterTranslate(activeIndex);
-            currentTranslateX = targetTranslateX;
             renderTransforms();
         });
 
-        // Top Navigation buttons
+        // Top Navigation buttons (Infinite next & prev)
         if (prevBtn) {
             prevBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                goToIndex(activeIndex - 1);
+                prevSlide();
             });
         }
         if (nextBtn) {
             nextBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                goToIndex(activeIndex + 1);
+                nextSlide();
             });
         }
 
@@ -1276,13 +1324,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (floatPrevBtn) {
             floatPrevBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                goToIndex(activeIndex - 1);
+                prevSlide();
             });
         }
         if (floatNextBtn) {
             floatNextBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                goToIndex(activeIndex + 1);
+                nextSlide();
             });
         }
 
@@ -1290,10 +1338,10 @@ document.addEventListener('DOMContentLoaded', () => {
         viewport.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
-                goToIndex(activeIndex - 1);
+                prevSlide();
             } else if (e.key === 'ArrowRight') {
                 e.preventDefault();
-                goToIndex(activeIndex + 1);
+                nextSlide();
             }
         });
 
@@ -1303,14 +1351,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) {
                 e.preventDefault();
                 const delta = e.deltaX || e.deltaY;
-                targetTranslateX -= delta * 0.9;
-                triggerAnimation();
+                targetP += (delta * 0.0025);
+                currentP = targetP;
+                renderTransforms();
 
                 clearTimeout(wheelTimeout);
                 wheelTimeout = setTimeout(() => {
-                    const closest = renderTransforms();
-                    goToIndex(closest);
-                }, 140);
+                    targetP = Math.round(targetP);
+                    triggerAnimation();
+                }, 120);
             }
         }, { passive: false });
 
@@ -1322,7 +1371,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isDragging = false;
             startX = e.clientX;
             startY = e.clientY;
-            startTranslateX = currentTranslateX;
+            startP = currentP;
             totalDeltaX = 0;
             startTime = Date.now();
 
@@ -1348,20 +1397,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isDragging) {
                 e.preventDefault();
-                let nextTranslate = startTranslateX + totalDeltaX;
-
-                // Soft elastic boundary resistance
-                const minTranslate = getCenterTranslate(slides.length - 1);
-                const maxTranslate = getCenterTranslate(0);
-
-                if (nextTranslate > maxTranslate) {
-                    nextTranslate = maxTranslate + (nextTranslate - maxTranslate) * 0.25;
-                } else if (nextTranslate < minTranslate) {
-                    nextTranslate = minTranslate + (nextTranslate - minTranslate) * 0.25;
-                }
-
-                currentTranslateX = nextTranslate;
-                targetTranslateX = currentTranslateX;
+                const step = getStep();
+                currentP = startP - (totalDeltaX / step);
+                targetP = currentP;
                 renderTransforms();
             }
         });
@@ -1377,19 +1415,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isDragging) {
                 const elapsed = Math.max(1, Date.now() - startTime);
                 const velocity = totalDeltaX / elapsed; // px per millisecond
-                let estimatedIndex = activeIndex;
 
                 if (totalDeltaX < -45 || velocity < -0.35) {
                     // Dragged or flicked LEFT -> go to NEXT card
-                    estimatedIndex = Math.min(slides.length - 1, activeIndex + 1);
+                    targetP = Math.floor(currentP) + 1;
                 } else if (totalDeltaX > 45 || velocity > 0.35) {
                     // Dragged or flicked RIGHT -> go to PREVIOUS card
-                    estimatedIndex = Math.max(0, activeIndex - 1);
+                    targetP = Math.ceil(currentP) - 1;
                 } else {
-                    estimatedIndex = renderTransforms();
+                    targetP = Math.round(currentP);
                 }
 
-                goToIndex(estimatedIndex);
+                triggerAnimation();
             }
         }
 
@@ -1400,24 +1437,26 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 viewport.releasePointerCapture(e.pointerId);
             } catch (err) {}
-            goToIndex(activeIndex);
+            targetP = Math.round(currentP);
+            triggerAnimation();
         });
 
-        // Click / Enlarge on individual slide:
+        // Click on individual slide: Active opens modal, side cards rotate into center
         slides.forEach((slide, idx) => {
             slide.addEventListener('click', (e) => {
                 if (isDragging || Math.abs(totalDeltaX) > 8) {
-                    return; // Ignore clicks if user was actively dragging
+                    return; // Ignore clicks if user was dragging
                 }
                 e.preventDefault();
                 e.stopPropagation();
 
-                if (idx === activeIndex) {
+                const currentNorm = ((Math.round(currentP) % N) + N) % N;
+                if (idx === currentNorm) {
                     // Open Image 2 modal with enriched explanation
                     const certData = CERTIFICATES_DATA[idx];
                     openCert(certData);
                 } else {
-                    // Bring clicked card to center
+                    // Bring clicked card to center via shortest circular path
                     goToIndex(idx);
                 }
             });
@@ -1497,86 +1536,66 @@ document.addEventListener('DOMContentLoaded', () => {
             closeCaseStudy();
             closeCert();
             closeCv();
+            closeContactModal();
         }
     });
 
     /* --------------------------------------------------------------------------
-       05. COPY EMAIL TO CLIPBOARD
+       06. CONTACT / HUBUNGI SAYA MODAL ENGINE
        -------------------------------------------------------------------------- */
+    const contactModal = document.getElementById('contact-modal');
+    const contactCloseBtn = document.getElementById('contact-close-btn');
+    const contactBackdrop = document.getElementById('contact-backdrop');
+    const openContactBtns = document.querySelectorAll('.open-contact-btn, a[href^="mailto:"]');
     const btnCopyEmail = document.getElementById('btn-copy-email');
-    const emailText = document.getElementById('email-text');
 
-    if (btnCopyEmail && emailText) {
-        btnCopyEmail.addEventListener('click', () => {
-            const email = emailText.textContent.trim();
+    function openContactModal() {
+        if (!contactModal) return;
+        contactModal.classList.add('open');
+        contactModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeContactModal() {
+        if (!contactModal) return;
+        contactModal.classList.remove('open');
+        contactModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (openContactBtns) {
+        openContactBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openContactModal();
+            });
+        });
+    }
+
+    if (contactCloseBtn) contactCloseBtn.addEventListener('click', closeContactModal);
+    if (contactBackdrop) contactBackdrop.addEventListener('click', closeContactModal);
+
+    if (btnCopyEmail) {
+        btnCopyEmail.addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = 'aryaputraferdiananta@gmail.com';
             navigator.clipboard.writeText(email).then(() => {
                 showToast('Alamat email berhasil disalin!');
+                const btnText = btnCopyEmail.querySelector('.copy-btn-text');
+                if (btnText) {
+                    btnText.textContent = 'Tersalin! ✓';
+                    setTimeout(() => {
+                        btnText.textContent = 'Salin';
+                    }, 2500);
+                }
             }).catch(() => {
                 showToast(`Email: ${email}`);
             });
         });
     }
 
-    /* --------------------------------------------------------------------------
-       06. CONTACT FORM SUBMISSION
-       -------------------------------------------------------------------------- */
-    const contactForm = document.getElementById('im-contact-form');
-    const formStatus = document.getElementById('form-status');
-    const btnSend = document.getElementById('btn-send-message');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const nameInput = document.getElementById('form-name');
-            const emailInput = document.getElementById('form-email');
-            const messageInput = document.getElementById('form-message');
-
-            let isValid = true;
-
-            if (!nameInput.value.trim()) {
-                nameInput.parentElement.classList.add('has-error');
-                isValid = false;
-            } else {
-                nameInput.parentElement.classList.remove('has-error');
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailInput.value.trim())) {
-                emailInput.parentElement.classList.add('has-error');
-                isValid = false;
-            } else {
-                emailInput.parentElement.classList.remove('has-error');
-            }
-
-            if (!messageInput.value.trim()) {
-                messageInput.parentElement.classList.add('has-error');
-                isValid = false;
-            } else {
-                messageInput.parentElement.classList.remove('has-error');
-            }
-
-            if (!isValid) return;
-
-            btnSend.disabled = true;
-            btnSend.textContent = 'Mengirim pesan...';
-
-            setTimeout(() => {
-                btnSend.disabled = false;
-                btnSend.textContent = 'Kirim pesan';
-
-                formStatus.className = 'form-status-msg success';
-                formStatus.textContent = `Terima kasih, ${nameInput.value.trim()}! Pesan Anda telah diterima. Saya akan membalas dalam waktu maksimal dua hari kerja.`;
-
-                showToast('Pesan berhasil terkirim!');
-                contactForm.reset();
-
-                setTimeout(() => {
-                    formStatus.style.display = 'none';
-                }, 7000);
-            }, 1000);
-        });
-    }
+    window.openContactModal = openContactModal;
+    window.closeContactModal = closeContactModal;
 
     /* --------------------------------------------------------------------------
        07. HEADER SCROLL & MOBILE DRAWER
