@@ -43,6 +43,7 @@
                     <li><a href="#work" class="im-nav-link" id="nav-work">Portofolio</a></li>
                     <li><a href="#certificate" class="im-nav-link" id="nav-certificate">Sertifikat</a></li>
                     <li><a href="#about" class="im-nav-link" id="nav-about">Tentang</a></li>
+                    <li><button class="im-nav-link nav-cv-link open-cv-btn" id="nav-btn-cv" type="button">📄 CV / Resume</button></li>
                 </ul>
             </nav>
 
@@ -52,6 +53,7 @@
                     <span class="status-text">Menerima proyek baru mulai November</span>
                 </div>
 
+                <button class="im-btn btn-sm btn-subtle nav-cv-btn open-cv-btn" id="header-cv-btn" type="button">📄 CV</button>
                 <a href="mailto:aryaputra.ferdiananta@gmail.com" class="im-btn btn-sm btn-dark nav-cta">Hubungi Saya</a>
 
                 <!-- Mobile Menu Button -->
@@ -70,6 +72,7 @@
                     <li><a href="#work" class="mobile-link" id="m-nav-work">Portofolio</a></li>
                     <li><a href="#certificate" class="mobile-link" id="m-nav-certificate">Sertifikat</a></li>
                     <li><a href="#about" class="mobile-link" id="m-nav-about">Tentang</a></li>
+                    <li><button class="mobile-link mobile-cv-link open-cv-btn" id="m-nav-cv" type="button">📄 Lihat &amp; Cetak CV</button></li>
                     <li><a href="mailto:aryaputra.ferdiananta@gmail.com" class="mobile-link" id="m-nav-contact">Hubungi
                             Saya ↗</a></li>
                 </ul>
@@ -116,6 +119,9 @@
                             <a href="#certificate" class="im-btn btn-subtle" id="btn-cert-link">
                                 Lihat Sertifikat ↗
                             </a>
+                            <button class="im-btn btn-subtle hero-cv-btn open-cv-btn" id="btn-hero-cv" type="button">
+                                📄 Cetak CV
+                            </button>
                         </div>
                     </div>
 
@@ -388,7 +394,7 @@
             </div>
         </section>
 
-        <!-- OFFICIAL CERTIFICATION SECTION (MAHATIVE STUDIO) -->
+        <!-- OFFICIAL CERTIFICATION SECTION (INTERACTIVE SHOWCASE & LIGHTBOX) -->
         <section class="section certificate-section" id="certificate">
             <div class="container">
                 <div class="section-top-block">
@@ -396,407 +402,255 @@
                     <h2 class="section-title">Sertifikasi &amp; Kredensial Resmi</h2>
                     <p class="section-subtext">
                         Dokumentasi resmi sertifikasi keahlian, program internasional, kompetisi bisnis, dan pengalaman
-                        industri Praktik Kerja Lapangan (PKL) terverifikasi.
+                        industri Praktik Kerja Lapangan (PKL) terverifikasi. Geser dan klik sertifikat untuk memperbesar tampilan.
                     </p>
                 </div>
 
-                <!-- Featured Certificate: Mahative Studio PKL -->
-                <div class="certificate-feature-card">
-                    <div class="corner-cross top-left">+</div>
-                    <div class="corner-cross top-right">+</div>
-                    <div class="corner-cross bottom-left">+</div>
-                    <div class="corner-cross bottom-right">+</div>
-
-                    <div class="certificate-grid">
-                        <!-- Certificate Visual Preview -->
-                        <div class="cert-image-frame cert-modal-trigger" id="cert-click-trigger"
-                            data-cert-img="assets/images/sertifikat-mahative.png"
-                            data-cert-label="SERTIFIKAT RESMI · PRAKTIK KERJA LAPANGAN"
-                            data-cert-title="Praktik Kerja Lapangan · Mahative Studio"
-                            data-cert-desc="Diberikan kepada Aryaputra Ferdiananta (NIM: 244107020127) atas pelaksanaan Praktik Kerja Lapangan di Mahative Studio dengan hasil evaluasi 'Sangat Baik'."
-                            data-cert-download="Sertifikat-PKL-Mahative-Aryaputra-Ferdiananta.png"
-                            title="Klik untuk memperbesar sertifikat">
-                            <img src="assets/images/sertifikat-mahative.png"
-                                alt="Sertifikat PKL Mahative Studio - Aryaputra Ferdiananta" class="cert-img"
-                                id="cert-img-thumb" loading="lazy">
-                            <div class="cert-zoom-overlay">
-                                <span class="zoom-text">🔍 Klik untuk melihat resolusi penuh</span>
+                <!-- 1. Rincian Resmi Praktik Kerja Lapangan (PKL) / Praktik Pelajar Mahative Studio -->
+                <div class="cert-details-container cert-details-top">
+                    <details class="cert-details-accordion" open>
+                        <summary class="cert-accordion-summary">
+                            <div class="summary-left">
+                                <span class="summary-badge">PKL TERVERIFIKASI</span>
+                                <span class="summary-title">Rincian Resmi Praktik Kerja Lapangan (PKL) · Mahative Studio</span>
+                            </div>
+                            <span class="summary-toggle-icon">▼</span>
+                        </summary>
+                        <div class="cert-accordion-body">
+                            <div class="certificate-grid">
+                                <div class="cert-image-frame cert-modal-trigger"
+                                    data-cert-id="pkl-mahative"
+                                    data-cert-img="assets/images/sertifikat-mahative.png"
+                                    data-cert-title="Praktik Kerja Lapangan · Mahative Studio"
+                                    data-cert-issuer="Mahative Studio · Industri Terverifikasi"
+                                    data-cert-category="Praktik Kerja Lapangan (PKL)"
+                                    data-cert-badge="HASIL: SANGAT BAIK"
+                                    data-cert-desc="Diberikan kepada Aryaputra Ferdiananta (NIM: 244107020127) atas pelaksanaan Praktik Kerja Lapangan di Mahative Studio dengan hasil evaluasi 'Sangat Baik'."
+                                    data-cert-download="Sertifikat-PKL-Mahative-Aryaputra-Ferdiananta.png"
+                                    title="Klik untuk memperbesar sertifikat">
+                                    <img src="assets/images/sertifikat-mahative.png" alt="Sertifikat PKL Mahative Studio" class="cert-img" loading="lazy">
+                                    <div class="cert-zoom-overlay">
+                                        <span class="zoom-text">🔍 Klik untuk resolusi penuh</span>
+                                    </div>
+                                </div>
+                                <div class="cert-meta-content">
+                                    <div class="cert-badge-row">
+                                        <span class="cert-pill-green">HASIL: SANGAT BAIK</span>
+                                        <span class="cert-company-tag">Mahative Studio · Industri Terverifikasi</span>
+                                    </div>
+                                    <h3 class="cert-name-heading">Aryaputra Ferdiananta</h3>
+                                    <span class="cert-nim">Teknik Informatika · Politeknik Negeri Malang (NIM: 244107020127)</span>
+                                    <p class="cert-desc-text">
+                                        Mahasiswa <strong>Teknik Informatika Politeknik Negeri Malang</strong> dan alumni
+                                        <strong>MAN 2 Kota Malang</strong> yang telah menyelesaikan Praktik Kerja Lapangan (PKL)
+                                        di <strong>Mahative Studio</strong> pada periode <strong>07 Januari 2026 s.d 21 Februari 2026</strong>.
+                                    </p>
+                                    <div class="cert-data-table">
+                                        <div class="c-row">
+                                            <span class="c-k">Nama Mahasiswa</span>
+                                            <span class="c-v">Aryaputra Ferdiananta</span>
+                                        </div>
+                                        <div class="c-row">
+                                            <span class="c-k">Perguruan Tinggi</span>
+                                            <span class="c-v">Politeknik Negeri Malang (POLINEMA)</span>
+                                        </div>
+                                        <div class="c-row">
+                                            <span class="c-k">Jurusan &amp; NIM</span>
+                                            <span class="c-v">Teknik Informatika (NIM: 244107020127)</span>
+                                        </div>
+                                        <div class="c-row">
+                                            <span class="c-k">Asal Sekolah</span>
+                                            <span class="c-v">MAN 2 Kota Malang</span>
+                                        </div>
+                                        <div class="c-row">
+                                            <span class="c-k">Instansi PKL</span>
+                                            <span class="c-v">Mahative Studio, Kota Malang</span>
+                                        </div>
+                                        <div class="c-row">
+                                            <span class="c-k">Evaluasi Akhir</span>
+                                            <span class="c-v font-bold text-green">"Sangat Baik"</span>
+                                        </div>
+                                    </div>
+                                    <button class="im-btn btn-dark cert-modal-trigger"
+                                        data-cert-id="pkl-mahative"
+                                        data-cert-img="assets/images/sertifikat-mahative.png"
+                                        data-cert-title="Praktik Kerja Lapangan · Mahative Studio"
+                                        data-cert-issuer="Mahative Studio · Industri Terverifikasi"
+                                        data-cert-category="Praktik Kerja Lapangan (PKL)"
+                                        data-cert-badge="HASIL: SANGAT BAIK"
+                                        data-cert-desc="Diberikan kepada Aryaputra Ferdiananta (NIM: 244107020127) atas pelaksanaan Praktik Kerja Lapangan di Mahative Studio dengan hasil evaluasi 'Sangat Baik'."
+                                        data-cert-download="Sertifikat-PKL-Mahative-Aryaputra-Ferdiananta.png">
+                                        Perbesar Sertifikat ↗
+                                    </button>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Certificate Metadata Details -->
-                        <div class="cert-meta-content">
-                            <div class="cert-badge-row">
-                                <span class="cert-pill-green">HASIL: SANGAT BAIK</span>
-                                <span class="cert-company-tag">Mahative Studio · Industri Terverifikasi</span>
-                            </div>
-
-                            <h3 class="cert-name-heading">Aryaputra Ferdiananta</h3>
-                            <span class="cert-nim">Teknik Informatika · Politeknik Negeri Malang (NIM:
-                                244107020127)</span>
-
-                            <p class="cert-desc-text">
-                                Mahasiswa <strong>Teknik Informatika Politeknik Negeri Malang</strong> dan alumni
-                                <strong>MAN 2 Kota Malang</strong> yang telah menyelesaikan Praktik Kerja Lapangan (PKL)
-                                di <strong>Mahative Studio</strong> pada periode <strong>07 Januari 2026 s.d 21 Februari
-                                    2026</strong>.
-                            </p>
-
-                            <div class="cert-data-table">
-                                <div class="c-row">
-                                    <span class="c-k">Nama Mahasiswa</span>
-                                    <span class="c-v">Aryaputra Ferdiananta</span>
-                                </div>
-                                <div class="c-row">
-                                    <span class="c-k">Perguruan Tinggi</span>
-                                    <span class="c-v">Politeknik Negeri Malang (POLINEMA)</span>
-                                </div>
-                                <div class="c-row">
-                                    <span class="c-k">Jurusan &amp; NIM</span>
-                                    <span class="c-v">Teknik Informatika (NIM: 244107020127)</span>
-                                </div>
-                                <div class="c-row">
-                                    <span class="c-k">Asal Sekolah</span>
-                                    <span class="c-v">MAN 2 Kota Malang</span>
-                                </div>
-                                <div class="c-row">
-                                    <span class="c-k">Keahlian Utama</span>
-                                    <span class="c-v">Frontend &amp; Backend, UI/UX, Framer</span>
-                                </div>
-                                <div class="c-row">
-                                    <span class="c-k">Instansi PKL</span>
-                                    <span class="c-v">Mahative Studio, Kota Malang</span>
-                                </div>
-                                <div class="c-row">
-                                    <span class="c-k">Evaluasi Akhir</span>
-                                    <span class="c-v font-bold text-green">"Sangat Baik"</span>
-                                </div>
-                            </div>
-
-                            <button class="im-btn btn-dark cert-modal-trigger" id="btn-open-cert-modal"
-                                data-cert-img="assets/images/sertifikat-mahative.png"
-                                data-cert-label="SERTIFIKAT RESMI · PRAKTIK KERJA LAPANGAN"
-                                data-cert-title="Praktik Kerja Lapangan · Mahative Studio"
-                                data-cert-desc="Diberikan kepada Aryaputra Ferdiananta (NIM: 244107020127) atas pelaksanaan Praktik Kerja Lapangan di Mahative Studio dengan hasil evaluasi 'Sangat Baik'."
-                                data-cert-download="Sertifikat-PKL-Mahative-Aryaputra-Ferdiananta.png">
-                                Perbesar Sertifikat ↗
-                            </button>
-                        </div>
-                    </div>
+                    </details>
                 </div>
 
-                <!-- Additional Certifications Grid -->
-                <div class="cert-section-divider">
-                    <div class="cert-collection-header">
-                        <div>
-                            <span class="section-mono-label">Prestasi Nasional &amp; Internasional</span>
-                            <h3 class="cert-collection-title">Sertifikat Prestasi, Program &amp; Kompetisi</h3>
+                <!-- 2. Interactive Coverflow Showcase (Koleksi Seluruh Sertifikat) -->
+                <div class="cert-showcase-wrapper" id="cert-showcase">
+                    <!-- Top Subtitle & Active Indicator -->
+                    <div class="cert-flow-header">
+                        <div class="cert-flow-quote">Curated credentials &amp; verified achievements.</div>
+                        <div class="cert-flow-active-badge" id="cert-flow-active-badge">
+                            <span class="badge-index">01</span> / <span class="badge-title">Praktik Kerja Lapangan · Mahative Studio</span>
                         </div>
-                        <div class="cert-count-badge">6 Sertifikat Terverifikasi</div>
+                        <div class="cert-flow-actions">
+                            <button class="cert-nav-arrow" id="cert-flow-prev" aria-label="Sertifikat Sebelumnya">←</button>
+                            <span class="cert-flow-counter" id="cert-flow-counter">1 / 7</span>
+                            <button class="cert-nav-arrow" id="cert-flow-next" aria-label="Sertifikat Berikutnya">→</button>
+                        </div>
                     </div>
 
-                    <div class="cert-cards-grid">
-                        <!-- Card 1: FEST GOWORLD ASIA FUTUREPRENEUR (INTERNATIONAL) -->
-                        <div class="cert-card-item">
-                            <div class="corner-cross top-left">+</div>
-                            <div class="corner-cross top-right">+</div>
-                            <div class="cert-card-top">
-                                <span class="cert-pill-badge badge-intl">🌍 INTERNASIONAL</span>
-                                <span class="cert-card-no">TPSPOVIEBA/XXIII/II/2025</span>
-                            </div>
-                            <div class="cert-card-thumb-wrap cert-modal-trigger"
-                                data-cert-img="assets/images/certs/sertifikat-fest-goworld.jpg"
-                                data-cert-label="INTERNATIONAL CERTIFICATE · FEST GOWORLD"
-                                data-cert-title="FEST GoWorld Asia Futurepreneur Selection Program 2025"
-                                data-cert-desc="Diberikan kepada Aryaputra Ferdiananta atas partisipasinya dalam FEST GOWORLD ASIA FUTUREPRENEUR SELECTION PROGRAM 2025 (FEST Goworld kolaborasi dengan BEM FEB Universitas Muhammadiyah Malang di DOME UMM, 23 Februari 2025)."
-                                data-cert-download="Sertifikat-FEST-GoWorld-Asia-Futurepreneur-Aryaputra.jpg"
-                                title="Perbesar Sertifikat">
-                                <img src="assets/images/certs/sertifikat-fest-goworld.jpg"
-                                    alt="FEST GoWorld Asia Futurepreneur Selection Program 2025 - Aryaputra Ferdiananta"
-                                    class="cert-card-thumb" loading="lazy">
-                                <div class="cert-zoom-overlay">
-                                    <span class="zoom-text">🔍 Perbesar Resolusi Penuh</span>
-                                </div>
-                            </div>
-                            <div class="cert-card-body">
-                                <h4 class="cert-card-title">FEST GoWorld Asia Futurepreneur Selection Program 2025</h4>
-                                <p class="cert-card-issuer">FEST GoWorld &times; BEM FEB Universitas Muhammadiyah Malang
-                                </p>
-                                <div class="cert-card-meta-list">
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Kategori</span>
-                                        <span class="tag-v">Program Internasional</span>
-                                    </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Lokasi</span>
-                                        <span class="tag-v">DOME UMM, Jawa Timur</span>
-                                    </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Tanggal</span>
-                                        <span class="tag-v">23 Februari 2025</span>
-                                    </div>
-                                </div>
-                                <button class="im-btn btn-sm btn-subtle cert-modal-trigger"
-                                    data-cert-img="assets/images/certs/sertifikat-fest-goworld.jpg"
-                                    data-cert-label="INTERNATIONAL CERTIFICATE · FEST GOWORLD"
-                                    data-cert-title="FEST GoWorld Asia Futurepreneur Selection Program 2025"
-                                    data-cert-desc="Diberikan kepada Aryaputra Ferdiananta atas partisipasinya dalam FEST GOWORLD ASIA FUTUREPRENEUR SELECTION PROGRAM 2025 (FEST Goworld kolaborasi dengan BEM FEB Universitas Muhammadiyah Malang di DOME UMM, 23 Februari 2025)."
-                                    data-cert-download="Sertifikat-FEST-GoWorld-Asia-Futurepreneur-Aryaputra.jpg">
-                                    Lihat Sertifikat ↗
-                                </button>
-                            </div>
-                        </div>
+                    <!-- Draggable Carousel Viewport -->
+                    <div class="cert-flow-viewport" id="cert-flow-viewport" tabindex="0" role="region" aria-label="Karusel Sertifikat Interaktif">
+                        <!-- Floating Navigation Arrows -->
+                        <button class="cert-float-nav cert-float-prev" id="cert-flow-floating-prev" aria-label="Sertifikat Sebelumnya" type="button">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="cert-float-nav cert-float-next" id="cert-flow-floating-next" aria-label="Sertifikat Berikutnya" type="button">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
 
-                        <!-- Card 2: STARTUP FOUNDER CLASH (KOMPETISI IDE BISNIS) -->
-                        <div class="cert-card-item">
-                            <div class="corner-cross top-left">+</div>
-                            <div class="corner-cross top-right">+</div>
-                            <div class="cert-card-top">
-                                <span class="cert-pill-badge badge-competition">🏆 KOMPETISI TINGKAT NASIONAL</span>
-                                <span class="cert-card-no">ZKVZ95XI1D/XXIII/II/2025</span>
-                            </div>
-                            <div class="cert-card-thumb-wrap cert-modal-trigger"
-                                data-cert-img="assets/images/certs/sertifikat-startup-founder-clash.jpg"
-                                data-cert-label="SERTIFIKAT KOMPETISI IDE BISNIS TINGKAT NASIONAL"
-                                data-cert-title="Startup Founder Clash — Kompetisi Ide Bisnis Tingkat Nasional"
-                                data-cert-desc="Partisipasi sebagai Peserta dalam Kompetisi Ide Bisnis Tingkat Nasional Startup Founder Clash oleh Future Entrepreneur Summit (1 Oktober – 20 Desember 2024)."
-                                data-cert-download="Sertifikat-Startup-Founder-Clash-Aryaputra.jpg"
-                                title="Perbesar Sertifikat">
-                                <img src="assets/images/certs/sertifikat-startup-founder-clash.jpg"
-                                    alt="Startup Founder Clash - Aryaputra Ferdiananta" class="cert-card-thumb"
-                                    loading="lazy">
-                                <div class="cert-zoom-overlay">
-                                    <span class="zoom-text">🔍 Perbesar Resolusi Penuh</span>
-                                </div>
-                            </div>
-                            <div class="cert-card-body">
-                                <h4 class="cert-card-title">Startup Founder Clash — Kompetisi Ide Bisnis</h4>
-                                <p class="cert-card-issuer">Future Entrepreneur Summit Indonesia</p>
-                                <div class="cert-card-meta-list">
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Kategori</span>
-                                        <span class="tag-v">Kompetisi Ide Bisnis</span>
+                        <!-- Dynamic Flow Track -->
+                        <div class="cert-flow-track" id="cert-flow-track">
+                            <!-- Card 1: PKL Mahative Studio -->
+                            <div class="cert-flow-slide" data-index="0" data-id="pkl-mahative">
+                                <div class="cert-flow-card">
+                                    <div class="cert-card-media">
+                                        <img src="assets/images/sertifikat-mahative.png" alt="Sertifikat PKL Mahative Studio" class="cert-card-img" draggable="false" loading="eager">
+                                        <div class="cert-card-badge-tag badge-tag-green">HASIL: SANGAT BAIK</div>
+                                        <div class="cert-hover-pill"><span>🔍 Klik untuk Perbesar</span></div>
                                     </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Format</span>
-                                        <span class="tag-v">Kompetisi Daring (Online)</span>
-                                    </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Periode</span>
-                                        <span class="tag-v">Okt – Des 2024</span>
+                                    <div class="cert-flow-card-info">
+                                        <span class="cert-flow-card-num">01</span>
+                                        <div class="cert-flow-card-text">
+                                            <h4 class="cert-flow-card-name">Praktik Kerja Lapangan · Mahative Studio</h4>
+                                            <p class="cert-flow-card-sub">Mahative Studio · Industri Terverifikasi</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <button class="im-btn btn-sm btn-subtle cert-modal-trigger"
-                                    data-cert-img="assets/images/certs/sertifikat-startup-founder-clash.jpg"
-                                    data-cert-label="SERTIFIKAT KOMPETISI IDE BISNIS TINGKAT NASIONAL"
-                                    data-cert-title="Startup Founder Clash — Kompetisi Ide Bisnis Tingkat Nasional"
-                                    data-cert-desc="Partisipasi sebagai Peserta dalam Kompetisi Ide Bisnis Tingkat Nasional Startup Founder Clash oleh Future Entrepreneur Summit (1 Oktober – 20 Desember 2024)."
-                                    data-cert-download="Sertifikat-Startup-Founder-Clash-Aryaputra.jpg">
-                                    Lihat Sertifikat ↗
-                                </button>
                             </div>
-                        </div>
 
-                        <!-- Card 3: TRAINING PUBLIC SPEAKING (GROW PROJECT) -->
-                        <div class="cert-card-item">
-                            <div class="corner-cross top-left">+</div>
-                            <div class="corner-cross top-right">+</div>
-                            <div class="cert-card-top">
-                                <span class="cert-pill-badge badge-nasional">⭐ TINGKAT NASIONAL</span>
-                                <span class="cert-card-no">GNE4ISCCZG/XXIII/II/2025</span>
-                            </div>
-                            <div class="cert-card-thumb-wrap cert-modal-trigger"
-                                data-cert-img="assets/images/certs/sertifikat-public-speaking.jpg"
-                                data-cert-label="SERTIFIKAT TINGKAT NASIONAL · GROW PROJECT"
-                                data-cert-title="Training Public Speaking — GROW Project"
-                                data-cert-desc="Peserta Training Public Speaking oleh GROW Project berkolaborasi dengan BEM Fakultas Ekonomi dan Bisnis Universitas Muhammadiyah Malang di DOME UMM, 23 Februari 2025."
-                                data-cert-download="Sertifikat-Training-Public-Speaking-Aryaputra.jpg"
-                                title="Perbesar Sertifikat">
-                                <img src="assets/images/certs/sertifikat-public-speaking.jpg"
-                                    alt="Training Public Speaking - Aryaputra Ferdiananta" class="cert-card-thumb"
-                                    loading="lazy">
-                                <div class="cert-zoom-overlay">
-                                    <span class="zoom-text">🔍 Perbesar Resolusi Penuh</span>
-                                </div>
-                            </div>
-                            <div class="cert-card-body">
-                                <h4 class="cert-card-title">Training Public Speaking — GROW Project</h4>
-                                <p class="cert-card-issuer">GROW Project &times; BEM FEB Universitas Muhammadiyah Malang
-                                </p>
-                                <div class="cert-card-meta-list">
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Kategori</span>
-                                        <span class="tag-v">Komunikasi Publik &amp; Pitching</span>
+                            <!-- Card 2: FEST GoWorld Asia Futurepreneur -->
+                            <div class="cert-flow-slide" data-index="1" data-id="fest-goworld">
+                                <div class="cert-flow-card">
+                                    <div class="cert-card-media">
+                                        <img src="assets/images/certs/sertifikat-fest-goworld.jpg" alt="FEST GoWorld Asia Futurepreneur 2025" class="cert-card-img" draggable="false" loading="lazy">
+                                        <div class="cert-card-badge-tag badge-tag-blue">🌍 INTERNASIONAL</div>
+                                        <div class="cert-hover-pill"><span>🔍 Klik untuk Perbesar</span></div>
                                     </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Lokasi</span>
-                                        <span class="tag-v">DOME UMM, Malang</span>
-                                    </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Tanggal</span>
-                                        <span class="tag-v">23 Februari 2025</span>
+                                    <div class="cert-flow-card-info">
+                                        <span class="cert-flow-card-num">02</span>
+                                        <div class="cert-flow-card-text">
+                                            <h4 class="cert-flow-card-name">FEST GoWorld Asia Futurepreneur 2025</h4>
+                                            <p class="cert-flow-card-sub">FEST GoWorld × BEM FEB UMM</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <button class="im-btn btn-sm btn-subtle cert-modal-trigger"
-                                    data-cert-img="assets/images/certs/sertifikat-public-speaking.jpg"
-                                    data-cert-label="SERTIFIKAT TINGKAT NASIONAL · GROW PROJECT"
-                                    data-cert-title="Training Public Speaking — GROW Project"
-                                    data-cert-desc="Peserta Training Public Speaking oleh GROW Project berkolaborasi dengan BEM Fakultas Ekonomi dan Bisnis Universitas Muhammadiyah Malang di DOME UMM, 23 Februari 2025."
-                                    data-cert-download="Sertifikat-Training-Public-Speaking-Aryaputra.jpg">
-                                    Lihat Sertifikat ↗
-                                </button>
                             </div>
-                        </div>
 
-                        <!-- Card 4: PELATIHAN ENTREPRENEURSHIP (GROW X FEST) -->
-                        <div class="cert-card-item">
-                            <div class="corner-cross top-left">+</div>
-                            <div class="corner-cross top-right">+</div>
-                            <div class="cert-card-top">
-                                <span class="cert-pill-badge badge-nasional">⭐ TINGKAT NASIONAL</span>
-                                <span class="cert-card-no">KRFTPEF7IA/XXIII/II/2025</span>
-                            </div>
-                            <div class="cert-card-thumb-wrap cert-modal-trigger"
-                                data-cert-img="assets/images/certs/sertifikat-pelatihan-entrepreneurship.jpg"
-                                data-cert-label="SERTIFIKAT TINGKAT NASIONAL · GROW X FEST"
-                                data-cert-title="Pelatihan Entrepreneurship — GROW &times; FeST"
-                                data-cert-desc="Peserta Pelatihan Entrepreneurship oleh FeST Management berkolaborasi dengan BEM Fakultas Ekonomi dan Bisnis UMM di DOME UMM, 23 Februari 2025."
-                                data-cert-download="Sertifikat-Pelatihan-Entrepreneurship-Aryaputra.jpg"
-                                title="Perbesar Sertifikat">
-                                <img src="assets/images/certs/sertifikat-pelatihan-entrepreneurship.jpg"
-                                    alt="Pelatihan Entrepreneurship - Aryaputra Ferdiananta" class="cert-card-thumb"
-                                    loading="lazy">
-                                <div class="cert-zoom-overlay">
-                                    <span class="zoom-text">🔍 Perbesar Resolusi Penuh</span>
-                                </div>
-                            </div>
-                            <div class="cert-card-body">
-                                <h4 class="cert-card-title">Pelatihan Entrepreneurship — GROW &times; FeST</h4>
-                                <p class="cert-card-issuer">GROW Project &times; FeST Management &times; BEM FEB UMM</p>
-                                <div class="cert-card-meta-list">
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Kategori</span>
-                                        <span class="tag-v">Kewirausahaan Bisnis</span>
+                            <!-- Card 3: Startup Founder Clash -->
+                            <div class="cert-flow-slide" data-index="2" data-id="startup-founder-clash">
+                                <div class="cert-flow-card">
+                                    <div class="cert-card-media">
+                                        <img src="assets/images/certs/sertifikat-startup-founder-clash.jpg" alt="Startup Founder Clash" class="cert-card-img" draggable="false" loading="lazy">
+                                        <div class="cert-card-badge-tag badge-tag-yellow">🏆 KOMPETISI TINGKAT NASIONAL</div>
+                                        <div class="cert-hover-pill"><span>🔍 Klik untuk Perbesar</span></div>
                                     </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Lokasi</span>
-                                        <span class="tag-v">DOME UMM, Malang</span>
-                                    </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Tanggal</span>
-                                        <span class="tag-v">23 Februari 2025</span>
+                                    <div class="cert-flow-card-info">
+                                        <span class="cert-flow-card-num">03</span>
+                                        <div class="cert-flow-card-text">
+                                            <h4 class="cert-flow-card-name">Startup Founder Clash — Kompetisi Ide Bisnis</h4>
+                                            <p class="cert-flow-card-sub">Future Entrepreneur Summit</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <button class="im-btn btn-sm btn-subtle cert-modal-trigger"
-                                    data-cert-img="assets/images/certs/sertifikat-pelatihan-entrepreneurship.jpg"
-                                    data-cert-label="SERTIFIKAT TINGKAT NASIONAL · GROW X FEST"
-                                    data-cert-title="Pelatihan Entrepreneurship — GROW &times; FeST"
-                                    data-cert-desc="Peserta Pelatihan Entrepreneurship oleh FeST Management berkolaborasi dengan BEM Fakultas Ekonomi dan Bisnis UMM di DOME UMM, 23 Februari 2025."
-                                    data-cert-download="Sertifikat-Pelatihan-Entrepreneurship-Aryaputra.jpg">
-                                    Lihat Sertifikat ↗
-                                </button>
                             </div>
-                        </div>
 
-                        <!-- Card 5: FUTURE ENTREPRENEUR SUMMIT 2025 (SEMINAR NASIONAL) -->
-                        <div class="cert-card-item">
-                            <div class="corner-cross top-left">+</div>
-                            <div class="corner-cross top-right">+</div>
-                            <div class="cert-card-top">
-                                <span class="cert-pill-badge badge-seminar">🎙️ SEMINAR NASIONAL</span>
-                                <span class="cert-card-no">30IAUTLYOR/XXIII/II/2025</span>
-                            </div>
-                            <div class="cert-card-thumb-wrap cert-modal-trigger"
-                                data-cert-img="assets/images/certs/sertifikat-future-entrepreneur-summit.jpg"
-                                data-cert-label="SEMINAR NASIONAL · FUTURE ENTREPRENEUR SUMMIT 2025"
-                                data-cert-title="Future Entrepreneur Summit 2025"
-                                data-cert-desc="Peserta dalam Acara Future Entrepreneur Summit 2025 oleh FeST Management berkolaborasi dengan BEM Fakultas Ekonomi dan Bisnis Universitas Muhammadiyah Malang di DOME UMM, 23 Februari 2025."
-                                data-cert-download="Sertifikat-Future-Entrepreneur-Summit-Aryaputra.jpg"
-                                title="Perbesar Sertifikat">
-                                <img src="assets/images/certs/sertifikat-future-entrepreneur-summit.jpg"
-                                    alt="Future Entrepreneur Summit 2025 - Aryaputra Ferdiananta"
-                                    class="cert-card-thumb" loading="lazy">
-                                <div class="cert-zoom-overlay">
-                                    <span class="zoom-text">🔍 Perbesar Resolusi Penuh</span>
-                                </div>
-                            </div>
-                            <div class="cert-card-body">
-                                <h4 class="cert-card-title">Future Entrepreneur Summit 2025</h4>
-                                <p class="cert-card-issuer">FeST Management &times; BEM FEB UMM</p>
-                                <div class="cert-card-meta-list">
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Kategori</span>
-                                        <span class="tag-v">Seminar Nasional</span>
+                            <!-- Card 4: Training Public Speaking -->
+                            <div class="cert-flow-slide" data-index="3" data-id="public-speaking">
+                                <div class="cert-flow-card">
+                                    <div class="cert-card-media">
+                                        <img src="assets/images/certs/sertifikat-public-speaking.jpg" alt="Training Public Speaking" class="cert-card-img" draggable="false" loading="lazy">
+                                        <div class="cert-card-badge-tag badge-tag-green">⭐ TINGKAT NASIONAL</div>
+                                        <div class="cert-hover-pill"><span>🔍 Klik untuk Perbesar</span></div>
                                     </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Lokasi</span>
-                                        <span class="tag-v">DOME UMM, Malang</span>
-                                    </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Tanggal</span>
-                                        <span class="tag-v">23 Februari 2025</span>
+                                    <div class="cert-flow-card-info">
+                                        <span class="cert-flow-card-num">04</span>
+                                        <div class="cert-flow-card-text">
+                                            <h4 class="cert-flow-card-name">Training Public Speaking — GROW Project</h4>
+                                            <p class="cert-flow-card-sub">GROW Project × BEM FEB UMM</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <button class="im-btn btn-sm btn-subtle cert-modal-trigger"
-                                    data-cert-img="assets/images/certs/sertifikat-future-entrepreneur-summit.jpg"
-                                    data-cert-label="SEMINAR NASIONAL · FUTURE ENTREPRENEUR SUMMIT 2025"
-                                    data-cert-title="Future Entrepreneur Summit 2025"
-                                    data-cert-desc="Peserta dalam Acara Future Entrepreneur Summit 2025 oleh FeST Management berkolaborasi dengan BEM Fakultas Ekonomi dan Bisnis Universitas Muhammadiyah Malang di DOME UMM, 23 Februari 2025."
-                                    data-cert-download="Sertifikat-Future-Entrepreneur-Summit-Aryaputra.jpg">
-                                    Lihat Sertifikat ↗
-                                </button>
                             </div>
-                        </div>
 
-                        <!-- Card 6: WEBINAR SELF-DEVELOPMENT (WARDAH X FEST) -->
-                        <div class="cert-card-item">
-                            <div class="corner-cross top-left">+</div>
-                            <div class="corner-cross top-right">+</div>
-                            <div class="cert-card-top">
-                                <span class="cert-pill-badge badge-webinar">💡 WEBINAR NASIONAL</span>
-                                <span class="cert-card-no">9SOYDEUBJ5/XXIII/II/2025</span>
-                            </div>
-                            <div class="cert-card-thumb-wrap cert-modal-trigger"
-                                data-cert-img="assets/images/certs/sertifikat-webinar-softskill.jpg"
-                                data-cert-label="WEBINAR NASIONAL · SOFT SKILL DEVELOPMENT"
-                                data-cert-title="Webinar Self-Development: Meningkatkan Skill di Era Digitalisasi"
-                                data-cert-desc="Peserta Webinar Skill-Development Program: Meningkatkan Skill untuk Sukses Mencapai Prestasi Akademik maupun Dunia Kerja di Era Digitalisasi (Wardah x FeST Management, 23 November 2024)."
-                                data-cert-download="Sertifikat-Webinar-Softskill-Wardah-Aryaputra.jpg"
-                                title="Perbesar Sertifikat">
-                                <img src="assets/images/certs/sertifikat-webinar-softskill.jpg"
-                                    alt="Webinar Soft Skill Development Wardah x FeST - Aryaputra Ferdiananta"
-                                    class="cert-card-thumb" loading="lazy">
-                                <div class="cert-zoom-overlay">
-                                    <span class="zoom-text">🔍 Perbesar Resolusi Penuh</span>
-                                </div>
-                            </div>
-                            <div class="cert-card-body">
-                                <h4 class="cert-card-title">Webinar Soft Skill: Prestasi & Karier Era Digitalisasi</h4>
-                                <p class="cert-card-issuer">Wardah &times; FeST Management Indonesia</p>
-                                <div class="cert-card-meta-list">
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Kategori</span>
-                                        <span class="tag-v">Pengembangan Keterampilan (Skill)</span>
+                            <!-- Card 5: Pelatihan Entrepreneurship -->
+                            <div class="cert-flow-slide" data-index="4" data-id="entrepreneurship">
+                                <div class="cert-flow-card">
+                                    <div class="cert-card-media">
+                                        <img src="assets/images/certs/sertifikat-pelatihan-entrepreneurship.jpg" alt="Pelatihan Entrepreneurship" class="cert-card-img" draggable="false" loading="lazy">
+                                        <div class="cert-card-badge-tag badge-tag-green">⭐ TINGKAT NASIONAL</div>
+                                        <div class="cert-hover-pill"><span>🔍 Klik untuk Perbesar</span></div>
                                     </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Partner</span>
-                                        <span class="tag-v">Wardah Cosmetics</span>
-                                    </div>
-                                    <div class="cert-meta-tag">
-                                        <span class="tag-k">Tanggal</span>
-                                        <span class="tag-v">23 November 2024</span>
+                                    <div class="cert-flow-card-info">
+                                        <span class="cert-flow-card-num">05</span>
+                                        <div class="cert-flow-card-text">
+                                            <h4 class="cert-flow-card-name">Pelatihan Entrepreneurship — GROW × FeST</h4>
+                                            <p class="cert-flow-card-sub">FeST Management × BEM FEB UMM</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <button class="im-btn btn-sm btn-subtle cert-modal-trigger"
-                                    data-cert-img="assets/images/certs/sertifikat-webinar-softskill.jpg"
-                                    data-cert-label="WEBINAR NASIONAL · SOFT SKILL DEVELOPMENT"
-                                    data-cert-title="Webinar Self-Development: Meningkatkan Skill di Era Digitalisasi"
-                                    data-cert-desc="Peserta Webinar Skill-Development Program: Meningkatkan Skill untuk Sukses Mencapai Prestasi Akademik maupun Dunia Kerja di Era Digitalisasi (Wardah x FeST Management, 23 November 2024)."
-                                    data-cert-download="Sertifikat-Webinar-Softskill-Wardah-Aryaputra.jpg">
-                                    Lihat Sertifikat ↗
-                                </button>
+                            </div>
+
+                            <!-- Card 6: Future Entrepreneur Summit -->
+                            <div class="cert-flow-slide" data-index="5" data-id="future-summit">
+                                <div class="cert-flow-card">
+                                    <div class="cert-card-media">
+                                        <img src="assets/images/certs/sertifikat-future-entrepreneur-summit.jpg" alt="Future Entrepreneur Summit" class="cert-card-img" draggable="false" loading="lazy">
+                                        <div class="cert-card-badge-tag badge-tag-purple">🎙️ SEMINAR NASIONAL</div>
+                                        <div class="cert-hover-pill"><span>🔍 Klik untuk Perbesar</span></div>
+                                    </div>
+                                    <div class="cert-flow-card-info">
+                                        <span class="cert-flow-card-num">06</span>
+                                        <div class="cert-flow-card-text">
+                                            <h4 class="cert-flow-card-name">Future Entrepreneur Summit 2025</h4>
+                                            <p class="cert-flow-card-sub">FeST Management × BEM FEB UMM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 7: Webinar Soft Skill -->
+                            <div class="cert-flow-slide" data-index="6" data-id="webinar-softskill">
+                                <div class="cert-flow-card">
+                                    <div class="cert-card-media">
+                                        <img src="assets/images/certs/sertifikat-webinar-softskill.jpg" alt="Webinar Soft Skill Era Digital" class="cert-card-img" draggable="false" loading="lazy">
+                                        <div class="cert-card-badge-tag badge-tag-pink">💡 WEBINAR NASIONAL</div>
+                                        <div class="cert-hover-pill"><span>🔍 Klik untuk Perbesar</span></div>
+                                    </div>
+                                    <div class="cert-flow-card-info">
+                                        <span class="cert-flow-card-num">07</span>
+                                        <div class="cert-flow-card-text">
+                                            <h4 class="cert-flow-card-name">Webinar Soft Skill: Prestasi &amp; Karier Era Digital</h4>
+                                            <p class="cert-flow-card-sub">Wardah Cosmetics × FeST Management</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Bottom Indicator (Image 1 reference: "Drag, scroll or use ← →") -->
+                    <div class="cert-flow-footer">
+                        <p class="cert-flow-hint">Drag, scroll or use ← →</p>
+                        <div class="cert-flow-dots" id="cert-flow-dots" aria-label="Pilih sertifikat"></div>
                     </div>
                 </div>
             </div>
@@ -825,7 +679,7 @@
                             arsitektur basis data yang terstruktur.
                         </p>
                         <div class="about-actions">
-                            <button class="im-btn btn-dark" id="btn-cv-modal">Lihat Kredensial / CV</button>
+                            <button class="im-btn btn-dark open-cv-btn" id="btn-cv-modal">Lihat &amp; Cetak CV (Resume) 📄</button>
                             <span class="avail-text">Menerima proyek baru mulai November</span>
                         </div>
                     </div>
@@ -1012,29 +866,57 @@
         </div>
     </footer>
 
-    <!-- CERTIFICATE EXPANDED MODAL -->
-    <div class="im-modal" id="cert-modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-backdrop" id="cert-backdrop"></div>
-        <div class="modal-window cert-window">
-            <div class="modal-top">
-                <span class="modal-label" id="cert-modal-label">SERTIFIKAT RESMI · MAHATIVE STUDIO</span>
-                <button class="modal-close-btn" id="cert-close-btn" aria-label="Tutup Dialog">✕</button>
+    <!-- CERTIFICATE EXPANDED MODAL (IMAGE 2 LIGHTBOX DESIGN) -->
+    <div class="cert-lightbox-modal" id="cert-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="cert-lightbox-backdrop" id="cert-backdrop"></div>
+        <div class="cert-lightbox-card" id="cert-lightbox-card">
+            <!-- Top Certificate Preview Container -->
+            <div class="cert-lightbox-media">
+                <img src="assets/images/sertifikat-mahative.png" alt="Sertifikat Terverifikasi" class="cert-lightbox-img" id="cert-modal-img">
+                <!-- Circular Close Button in Top-Right Corner (Image 2 style) -->
+                <button class="cert-lightbox-close" id="cert-close-btn" aria-label="Tutup sertifikat">✕</button>
             </div>
-            <div class="modal-scroll-area">
-                <div class="cert-modal-body">
-                    <img src="assets/images/sertifikat-mahative.png" alt="Sertifikat Resmi" class="cert-modal-img"
-                        id="cert-modal-img">
-                    <div class="cert-modal-footer">
-                        <div class="cert-modal-meta">
-                            <strong id="cert-modal-meta-title">Diberikan Kepada: Aryaputra Ferdiananta (NIM:
-                                244107020127)</strong>
-                            <span id="cert-modal-meta-desc">Praktik Kerja Lapangan di Mahative Studio — Hasil "Sangat
-                                Baik"</span>
-                        </div>
-                        <a href="assets/images/sertifikat-mahative.png"
-                            download="Sertifikat-PKL-Aryaputra-Ferdiananta.png" class="im-btn btn-sm btn-dark"
-                            id="cert-modal-download">Unduh Gambar Sertifikat</a>
-                    </div>
+
+            <!-- Bottom Content Container (Image 2 style) -->
+            <div class="cert-lightbox-content">
+                <h3 class="cert-lightbox-title" id="cert-modal-meta-title">Praktik Kerja Lapangan · Mahative Studio</h3>
+                
+                <div class="cert-lightbox-issuer-row">
+                    <span class="cert-lightbox-green-dash" aria-hidden="true"></span>
+                    <span class="cert-lightbox-issuer-text" id="cert-modal-issuer">Mahative Studio · Industri Terverifikasi</span>
+                </div>
+
+                <p class="cert-lightbox-desc" id="cert-modal-meta-desc">
+                    Diberikan kepada Aryaputra Ferdiananta (NIM: 244107020127) atas pelaksanaan Praktik Kerja Lapangan di Mahative Studio dengan hasil evaluasi "Sangat Baik".
+                </p>
+
+                <div class="cert-lightbox-meta-chips" id="cert-modal-chips">
+                    <span class="meta-chip chip-pill" id="chip-id">No: PKL/MAHATIVE/2026/021</span>
+                    <span class="meta-chip chip-pill" id="chip-date">07 Jan – 21 Feb 2026</span>
+                    <span class="meta-chip chip-pill highlight-chip" id="chip-badge">Hasil: Sangat Baik</span>
+                </div>
+
+                <!-- Enriched Certificate Contents Explanation -->
+                <div class="cert-lightbox-explanation" id="cert-modal-explanation"></div>
+
+                <div class="cert-lightbox-actions">
+                    <a href="assets/images/sertifikat-mahative.png" target="_blank" class="cert-lightbox-verify-btn" id="cert-modal-verify-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        <span>Verify Credential</span>
+                    </a>
+
+                    <a href="assets/images/sertifikat-mahative.png" download="Sertifikat-PKL-Mahative-Aryaputra.png" class="cert-lightbox-download-btn" id="cert-modal-download">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>Unduh Gambar</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1054,71 +936,275 @@
         </div>
     </div>
 
-    <!-- CV MODAL -->
+    <!-- CV / RESUME MODAL (EXECUTIVE PRINT-READY RESUME) -->
     <div class="im-modal" id="cv-modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="modal-backdrop" id="cv-backdrop"></div>
-        <div class="modal-window cv-window">
-            <div class="modal-top">
-                <span class="modal-label">DAFTAR RIWAYAT HIDUP (CV)</span>
-                <button class="modal-close-btn" id="cv-close-btn" aria-label="Tutup CV">✕</button>
+        <div class="modal-window cv-window" id="cv-printable-document">
+            <!-- Modal Header (Controls & Print Button) -->
+            <div class="modal-top cv-modal-top">
+                <div class="cv-modal-top-left">
+                    <span class="modal-label">DAFTAR RIWAYAT HIDUP · RESUME</span>
+                    <span class="cv-print-hint">Format Standar A4 · Siap Cetak &amp; Simpan PDF</span>
+                </div>
+                <div class="cv-top-actions">
+                    <button class="im-btn btn-sm btn-dark btn-print-cta" id="btn-print-cv" title="Cetak atau simpan sebagai PDF">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        <span>Cetak / Simpan PDF</span>
+                    </button>
+                    <button class="modal-close-btn" id="cv-close-btn" aria-label="Tutup CV">✕</button>
+                </div>
             </div>
-            <div class="modal-scroll-area">
-                <div class="cv-intro">
-                    <h2 class="cv-name">Aryaputra Ferdiananta</h2>
-                    <p class="cv-role-sub">Fullstack Web Developer &amp; UI/UX Designer · Mahative Studio</p>
-                    <p class="cv-bio">
-                        Mahasiswa Teknik Informatika di Politeknik Negeri Malang (POLINEMA) dengan NIM 244107020127 dan
-                        alumni MAN 2 Kota Malang. Menguasai frontend &amp; backend web development secara mendalam
-                        (React, Node.js, PHP, REST APIs), arsitektur web modern, dan UI/UX interaktif.
-                    </p>
-                    <button class="im-btn btn-sm btn-dark" id="btn-print-cv">Cetak / Simpan PDF</button>
-                </div>
 
-                <div class="cv-content-grid">
-                    <div class="cv-section">
-                        <h3 class="cv-sec-title">Pendidikan &amp; Latar Belakang Akademik</h3>
-                        <div class="cv-item">
-                            <span class="cv-dates">2024 – Sekarang</span>
-                            <h4 class="cv-job">Politeknik Negeri Malang (POLINEMA)</h4>
-                            <p class="cv-desc">Jurusan Teknologi Informasi — Program Studi Teknik Informatika (NIM:
-                                244107020127).</p>
+            <!-- Scrollable & Printable Resume Sheet -->
+            <div class="modal-scroll-area cv-scroll-area">
+                <article class="cv-sheet">
+                    <!-- CV Header with Profile Photo -->
+                    <header class="cv-header">
+                        <div class="cv-header-portrait">
+                            <img src="assets/images/me.jpeg" alt="Foto Profil Aryaputra Ferdiananta" class="cv-photo-img" width="120" height="120">
+                            <div class="cv-photo-badge">TERVERIFIKASI</div>
                         </div>
-                        <div class="cv-item">
-                            <span class="cv-dates">Alumni</span>
-                            <h4 class="cv-job">MAN 2 Kota Malang</h4>
-                            <p class="cv-desc">Madrasah Aliyah Negeri 2 Kota Malang (Sekolah berprestasi akademik dan
-                                sains tingkat nasional).</p>
-                        </div>
-                        <div class="cv-item">
-                            <span class="cv-dates">Teknologi Utama</span>
-                            <h4 class="cv-job">Jago Frontend &amp; Backend Development</h4>
-                            <p class="cv-desc">Frontend (React, JavaScript ES6+, Tailwind CSS, Framer) &amp; Backend
-                                (Node.js, Express, PHP/Laravel, PostgreSQL, MySQL, REST APIs).</p>
-                        </div>
-                    </div>
 
-                    <div class="cv-section">
-                        <h3 class="cv-sec-title">Pengalaman &amp; Sertifikasi</h3>
-                        <div class="cv-item">
-                            <span class="cv-dates">2026 · PKL</span>
-                            <h4 class="cv-job">Web Developer &amp; Designer · Mahative Studio</h4>
-                            <p class="cv-desc">Praktik Kerja Lapangan dengan evaluasi "Sangat Baik" dalam perancangan
-                                web dan sistem digital.</p>
-                        </div>
-                        <div class="cv-item">
-                            <span class="cv-dates">2025 · Internasional</span>
-                            <h4 class="cv-job">FEST GoWorld Asia Futurepreneur Program</h4>
-                            <p class="cv-desc">Asia Futurepreneur Selection Program 2025 · BEM FEB UMM & FEST GoWorld.
+                        <div class="cv-header-main">
+                            <div class="cv-title-group">
+                                <h1 class="cv-fullname">Aryaputra Ferdiananta</h1>
+                                <p class="cv-professional-title">Fullstack Web Developer &amp; UI/UX Designer</p>
+                            </div>
+
+                            <p class="cv-summary-lead">
+                                Mahasiswa Teknik Informatika di <strong>Politeknik Negeri Malang (POLINEMA)</strong> dengan keahlian mendalam pada pengembangan web <strong>Frontend &amp; Backend</strong> (React, JavaScript modern, Node.js, PHP, RESTful APIs, Database Design) dan perancangan antarmuka digital interaktif berstandar industri di <strong>Mahative Studio</strong>.
                             </p>
+
+                            <div class="cv-contact-row">
+                                <div class="cv-contact-item">
+                                    <span class="c-icon">📍</span>
+                                    <span>Kota Malang, Jawa Timur</span>
+                                </div>
+                                <div class="cv-contact-item">
+                                    <span class="c-icon">✉️</span>
+                                    <a href="mailto:aryaputra.ferdiananta@gmail.com">aryaputra.ferdiananta@gmail.com</a>
+                                </div>
+                                <div class="cv-contact-item">
+                                    <span class="c-icon">🎓</span>
+                                    <span>POLINEMA (NIM: 244107020127)</span>
+                                </div>
+                                <div class="cv-contact-item">
+                                    <span class="c-icon">🏢</span>
+                                    <span>Mahative Studio</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cv-item">
-                            <span class="cv-dates">2024 · Nasional</span>
-                            <h4 class="cv-job">Startup Founder Clash — Kompetisi Ide Bisnis</h4>
-                            <p class="cv-desc">Peserta Kompetisi Ide Bisnis Tingkat Nasional oleh Future Entrepreneur
-                                Summit.</p>
+                    </header>
+
+                    <!-- CV Body Grid -->
+                    <div class="cv-body-layout">
+                        <!-- Left Main Column (Pengalaman, Pendidikan, Portofolio) -->
+                        <div class="cv-column-main">
+                            <!-- Section: Pengalaman Kerja -->
+                            <section class="cv-block">
+                                <h2 class="cv-block-title">
+                                    <span class="cv-title-bullet">■</span> Pengalaman Kerja &amp; Praktik Industri
+                                </h2>
+
+                                <div class="cv-timeline-card">
+                                    <div class="cv-card-top">
+                                        <div class="cv-card-head">
+                                            <h3 class="cv-card-role">Fullstack Web Developer &amp; UI/UX Designer</h3>
+                                            <span class="cv-card-company">Mahative Studio · Kota Malang</span>
+                                        </div>
+                                        <span class="cv-card-period">Januari 2026 – Februari 2026</span>
+                                    </div>
+                                    <div class="cv-badge-row">
+                                        <span class="cv-tag tag-green">Hasil Evaluasi: Sangat Baik (A)</span>
+                                        <span class="cv-tag">No: PKL/MAHATIVE/2026/021</span>
+                                    </div>
+                                    <ul class="cv-bullet-list">
+                                        <li>Merancang dan mengimplementasikan sistem website interaktif responsif tinggi dengan standar arsitektur web modern.</li>
+                                        <li>Membangun dan mengintegrasikan modul frontend (React &amp; Vanilla JS) dengan RESTful backend API untuk konsumsi data dinamis.</li>
+                                        <li>Melakukan optimasi performa digital, asset caching, SEO terstruktur, dan penerapan sistem kontrol versi Git dalam alur kerja tim.</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <!-- Section: Pendidikan Formal -->
+                            <section class="cv-block">
+                                <h2 class="cv-block-title">
+                                    <span class="cv-title-bullet">■</span> Pendidikan Formal
+                                </h2>
+
+                                <div class="cv-timeline-card">
+                                    <div class="cv-card-top">
+                                        <div class="cv-card-head">
+                                            <h3 class="cv-card-role">Politeknik Negeri Malang (POLINEMA)</h3>
+                                            <span class="cv-card-company">Jurusan Teknologi Informasi — Program Studi Teknik Informatika</span>
+                                        </div>
+                                        <span class="cv-card-period">2024 – Sekarang</span>
+                                    </div>
+                                    <p class="cv-card-note">NIM: <strong>244107020127</strong> · Fokus pada Rekayasa Perangkat Lunak, Struktur Data &amp; Algoritma, Pemrograman Web Lanjut, dan Arsitektur Basis Data.</p>
+                                </div>
+
+                                <div class="cv-timeline-card">
+                                    <div class="cv-card-top">
+                                        <div class="cv-card-head">
+                                            <h3 class="cv-card-role">MAN 2 Kota Malang</h3>
+                                            <span class="cv-card-company">Madrasah Aliyah Negeri Unggulan Nasional</span>
+                                        </div>
+                                        <span class="cv-card-period">Alumni Terakreditasi</span>
+                                    </div>
+                                    <p class="cv-card-note">Madrasah Aliyah Negeri berprestasi akademik dan sains tingkat nasional dan internasional.</p>
+                                </div>
+                            </section>
+
+                            <!-- Section: Proyek Pilihan -->
+                            <section class="cv-block">
+                                <h2 class="cv-block-title">
+                                    <span class="cv-title-bullet">■</span> Portofolio &amp; Proyek Pilihan
+                                </h2>
+
+                                <div class="cv-project-compact">
+                                    <div class="cv-proj-head">
+                                        <strong>Active SaaS Platform</strong>
+                                        <span class="cv-proj-type">Situs Live Framer</span>
+                                    </div>
+                                    <p class="cv-proj-desc">Perancangan platform SaaS modern dengan fokus konversi tinggi, animasi mikro dinamis, dan tata letak responsif.</p>
+                                </div>
+
+                                <div class="cv-project-compact">
+                                    <div class="cv-proj-head">
+                                        <strong>CallWave Website</strong>
+                                        <span class="cv-proj-type">Platform Web Interaktif</span>
+                                    </div>
+                                    <p class="cv-proj-desc">Website landing page telekomunikasi AI dengan integrasi Canvas interaktif dan visualisasi performa.</p>
+                                </div>
+
+                                <div class="cv-project-compact">
+                                    <div class="cv-proj-head">
+                                        <strong>Novapay Gateway</strong>
+                                        <span class="cv-proj-type">Fintech UI/UX</span>
+                                    </div>
+                                    <p class="cv-proj-desc">Desain antarmuka pembayaran digital dengan proteksi keamanan visual dan navigasi transaksi tanpa hambatan.</p>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Right Sidebar Column (Keahlian, Sertifikasi, Bahasa) -->
+                        <div class="cv-column-side">
+                            <!-- Section: Keahlian Teknis -->
+                            <section class="cv-side-block">
+                                <h2 class="cv-block-title">
+                                    <span class="cv-title-bullet">■</span> Keahlian Teknis
+                                </h2>
+
+                                <div class="cv-skill-group">
+                                    <span class="cv-group-name">Frontend Web</span>
+                                    <div class="cv-skill-tags">
+                                        <span class="cv-tag">React.js</span>
+                                        <span class="cv-tag">JavaScript (ES6+)</span>
+                                        <span class="cv-tag">Tailwind CSS</span>
+                                        <span class="cv-tag">HTML5 &amp; CSS3</span>
+                                        <span class="cv-tag">Framer</span>
+                                        <span class="cv-tag">Canvas API</span>
+                                    </div>
+                                </div>
+
+                                <div class="cv-skill-group">
+                                    <span class="cv-group-name">Backend &amp; Basis Data</span>
+                                    <div class="cv-skill-tags">
+                                        <span class="cv-tag">Node.js</span>
+                                        <span class="cv-tag">Express.js</span>
+                                        <span class="cv-tag">PHP / Laravel</span>
+                                        <span class="cv-tag">RESTful APIs</span>
+                                        <span class="cv-tag">MySQL</span>
+                                        <span class="cv-tag">PostgreSQL</span>
+                                    </div>
+                                </div>
+
+                                <div class="cv-skill-group">
+                                    <span class="cv-group-name">Tools &amp; Workflow</span>
+                                    <div class="cv-skill-tags">
+                                        <span class="cv-tag">Git &amp; GitHub</span>
+                                        <span class="cv-tag">Figma UI/UX</span>
+                                        <span class="cv-tag">VS Code</span>
+                                        <span class="cv-tag">REST API Testing</span>
+                                        <span class="cv-tag">Responsive Design</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Section: Sertifikasi & Prestasi -->
+                            <section class="cv-side-block">
+                                <h2 class="cv-block-title">
+                                    <span class="cv-title-bullet">■</span> Sertifikasi Resmi
+                                </h2>
+
+                                <div class="cv-cert-item">
+                                    <div class="cv-cert-head">
+                                        <strong>Praktik Kerja Lapangan</strong>
+                                        <span class="cv-cert-badge-sm">Sangat Baik</span>
+                                    </div>
+                                    <span class="cv-cert-inst">Mahative Studio · 2026</span>
+                                </div>
+
+                                <div class="cv-cert-item">
+                                    <div class="cv-cert-head">
+                                        <strong>FEST GoWorld Futurepreneur</strong>
+                                        <span class="cv-cert-badge-sm">Internasional</span>
+                                    </div>
+                                    <span class="cv-cert-inst">FEST GoWorld × BEM FEB UMM · 2025</span>
+                                </div>
+
+                                <div class="cv-cert-item">
+                                    <div class="cv-cert-head">
+                                        <strong>Startup Founder Clash</strong>
+                                        <span class="cv-cert-badge-sm">Nasional</span>
+                                    </div>
+                                    <span class="cv-cert-inst">Future Entrepreneur Summit · 2024</span>
+                                </div>
+
+                                <div class="cv-cert-item">
+                                    <div class="cv-cert-head">
+                                        <strong>Training Public Speaking</strong>
+                                        <span class="cv-cert-badge-sm">Terakreditasi</span>
+                                    </div>
+                                    <span class="cv-cert-inst">GROW Project × BEM FEB UMM · 2025</span>
+                                </div>
+
+                                <div class="cv-cert-item">
+                                    <div class="cv-cert-head">
+                                        <strong>Pelatihan Entrepreneurship</strong>
+                                        <span class="cv-cert-badge-sm">Nasional</span>
+                                    </div>
+                                    <span class="cv-cert-inst">FeST Management × BEM FEB UMM · 2025</span>
+                                </div>
+                            </section>
+
+                            <!-- Section: Soft Skills & Bahasa -->
+                            <section class="cv-side-block">
+                                <h2 class="cv-block-title">
+                                    <span class="cv-title-bullet">■</span> Bahasa &amp; Karakter
+                                </h2>
+                                <div class="cv-lang-row">
+                                    <span>Bahasa Indonesia</span>
+                                    <strong>Penutur Asli (Native)</strong>
+                                </div>
+                                <div class="cv-lang-row">
+                                    <span>Bahasa Inggris</span>
+                                    <strong>Kerja Profesional</strong>
+                                </div>
+                                <div class="cv-skill-tags" style="margin-top: 0.75rem;">
+                                    <span class="cv-tag">Problem Solving</span>
+                                    <span class="cv-tag">Team Leadership</span>
+                                    <span class="cv-tag">Public Speaking</span>
+                                    <span class="cv-tag">Fast Learner</span>
+                                </div>
+                            </section>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </div>

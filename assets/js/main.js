@@ -719,32 +719,328 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalBackdrop) modalBackdrop.addEventListener('click', closeCaseStudy);
 
     /* --------------------------------------------------------------------------
-       04. CERTIFICATE MODAL (DYNAMIC HANDLER FOR ALL CERTIFICATES)
+       04. CERTIFICATE DATA & COVERFLOW ENGINE (IMAGE 1 & IMAGE 2)
        -------------------------------------------------------------------------- */
+    const CERTIFICATES_DATA = [
+        {
+            id: "pkl-mahative",
+            number: "01",
+            title: "Praktik Kerja Lapangan · Mahative Studio",
+            issuer: "Mahative Studio · Industri Terverifikasi",
+            category: "Praktik Kerja Lapangan (PKL)",
+            badge: "HASIL: SANGAT BAIK",
+            image: "assets/images/sertifikat-mahative.png",
+            credId: "PKL/MAHATIVE/2026/021",
+            date: "07 Jan – 21 Feb 2026",
+            recipient: "Aryaputra Ferdiananta (NIM: 244107020127)",
+            desc: "Diberikan kepada Aryaputra Ferdiananta atas pelaksanaan Praktik Kerja Lapangan di Mahative Studio dengan evaluasi predikat 'Sangat Baik'. Kontribusi mencakup perancangan antarmuka web modern, arsitektur RESTful API, integrasi frontend-backend, dan optimasi performa digital.",
+            skills: [
+                "Fullstack Web Development",
+                "React.js & Vanilla JavaScript",
+                "RESTful API & Database Integration",
+                "UI/UX Design & Interactive Prototyping",
+                "Performance & SEO Optimization",
+                "Git & Professional Workflow"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "PKL/MAHATIVE/2026/021" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta (NIM: 244107020127)" },
+                { label: "Institusi Asal", val: "Politeknik Negeri Malang (POLINEMA)" },
+                { label: "Instansi Penyelenggara", val: "Mahative Studio, Kota Malang" },
+                { label: "Periode PKL", val: "07 Januari 2026 – 21 Februari 2026" },
+                { label: "Evaluasi Akhir", val: "Predikat: Sangat Baik (A)", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/sertifikat-mahative.png",
+            downloadName: "Sertifikat-PKL-Mahative-Aryaputra-Ferdiananta.png"
+        },
+        {
+            id: "fest-goworld",
+            number: "02",
+            title: "FEST GoWorld Asia Futurepreneur 2025",
+            issuer: "FEST GoWorld × BEM FEB Universitas Muhammadiyah Malang",
+            category: "Program Seleksi Internasional",
+            badge: "🌍 INTERNASIONAL",
+            image: "assets/images/certs/sertifikat-fest-goworld.jpg",
+            credId: "TPSPOVIEBA/XXIII/II/2025",
+            date: "23 Februari 2025",
+            recipient: "Aryaputra Ferdiananta",
+            desc: "Sertifikat keikutsertaan seleksi tingkat internasional dalam FEST GoWorld Asia Futurepreneur Selection Program 2025. Menguji kapabilitas perumusan inovasi bisnis lintas negara, strategi penetrasi pasar regional Asia, dan kemampuan presentasi ide rintisan di hadapan panelis global.",
+            skills: [
+                "Global Entrepreneurship & Strategy",
+                "International Venture Pitching",
+                "Market Validation & Expansion",
+                "Cross-Border Business Communication",
+                "Scalable Tech Innovation"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "TPSPOVIEBA/XXIII/II/2025" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta" },
+                { label: "Penyelenggara", val: "FEST GoWorld × BEM FEB UMM" },
+                { label: "Lokasi Program", val: "DOME UMM, Kota Malang" },
+                { label: "Tanggal Pelaksanaan", val: "23 Februari 2025" },
+                { label: "Status Partisipasi", val: "Delegasi Peserta Resmi Terdaftar", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-fest-goworld.jpg",
+            downloadName: "Sertifikat-FEST-GoWorld-Asia-Futurepreneur-Aryaputra.jpg"
+        },
+        {
+            id: "startup-founder-clash",
+            number: "03",
+            title: "Startup Founder Clash — Kompetisi Ide Bisnis",
+            issuer: "Future Entrepreneur Summit Indonesia",
+            category: "Kompetisi Tingkat Nasional",
+            badge: "🏆 TINGKAT NASIONAL",
+            image: "assets/images/certs/sertifikat-startup-founder-clash.jpg",
+            credId: "ZKVZ95XI1D/XXIII/II/2025",
+            date: "1 Okt – 20 Des 2024",
+            recipient: "Aryaputra Ferdiananta",
+            desc: "Sertifikat penghargaan atas partisipasi aktif dalam kompetisi ide bisnis startup skala nasional 'Startup Founder Clash'. Menguji kematangan perumusan Business Model Canvas (BMC), purwarupa produk digital (MVP), strategi go-to-market, dan proyeksi keuangan usaha rintisan.",
+            skills: [
+                "Business Model Canvas (BMC)",
+                "MVP Prototyping & Testing",
+                "Go-to-Market Strategy",
+                "Venture Capital Pitch Deck",
+                "Product-Market Fit Validation"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "ZKVZ95XI1D/XXIII/II/2025" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta" },
+                { label: "Penyelenggara", val: "Future Entrepreneur Summit (FeST)" },
+                { label: "Periode Kompetisi", val: "01 Oktober – 20 Desember 2024" },
+                { label: "Tingkat Kompetisi", val: "Nasional (Seluruh Indonesia)", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-startup-founder-clash.jpg",
+            downloadName: "Sertifikat-Startup-Founder-Clash-Aryaputra.jpg"
+        },
+        {
+            id: "public-speaking",
+            number: "04",
+            title: "Training Public Speaking — GROW Project",
+            issuer: "GROW Project × BEM FEB Universitas Muhammadiyah Malang",
+            category: "Komunikasi Publik & Pitching",
+            badge: "⭐ TINGKAT NASIONAL",
+            image: "assets/images/certs/sertifikat-public-speaking.jpg",
+            credId: "GNE4ISCCZG/XXIII/II/2025",
+            date: "23 Februari 2025",
+            recipient: "Aryaputra Ferdiananta",
+            desc: "Sertifikat kelulusan pelatihan intensif public speaking dan retorika panggung profesional. Pelatihan berfokus pada penguasaan panggung, modulasi vokal, teknik storytelling dalam presentasi produk teknologi, serta seni persuasi untuk negosiasi proyek dan pendanaan.",
+            skills: [
+                "Persuasive Storytelling & Rhetoric",
+                "Stage Presence & Body Language",
+                "Executive Product Pitching",
+                "Voice Modulation & Articulation",
+                "Audience Engagement & Influence"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "GNE4ISCCZG/XXIII/II/2025" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta" },
+                { label: "Penyelenggara", val: "GROW Project × BEM FEB UMM" },
+                { label: "Lokasi Pelatihan", val: "DOME UMM, Kota Malang" },
+                { label: "Tanggal", val: "23 Februari 2025" },
+                { label: "Predikat Kelulusan", val: "Lulus Pelatihan Komprehensif", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-public-speaking.jpg",
+            downloadName: "Sertifikat-Training-Public-Speaking-Aryaputra.jpg"
+        },
+        {
+            id: "entrepreneurship",
+            number: "05",
+            title: "Pelatihan Entrepreneurship — GROW × FeST",
+            issuer: "GROW Project × FeST Management × BEM FEB UMM",
+            category: "Kewirausahaan Bisnis",
+            badge: "⭐ TINGKAT NASIONAL",
+            image: "assets/images/certs/sertifikat-pelatihan-entrepreneurship.jpg",
+            credId: "KRFTPEF7IA/XXIII/II/2025",
+            date: "23 Februari 2025",
+            recipient: "Aryaputra Ferdiananta",
+            desc: "Sertifikat pelatihan komprehensif kewirausahaan digital dan manajemen usaha. Membahas fundamental validasi ide bisnis, pembentukan unit ekonomi positif, manajemen operasional tim, strategi branding digital, dan mitigasi risiko bagi tech entrepreneur muda.",
+            skills: [
+                "Digital Business Strategy & Setup",
+                "Unit Economics & Cashflow Basics",
+                "Brand Positioning & Marketing",
+                "Operational Team Management",
+                "Risk Management & Scaling"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "KRFTPEF7IA/XXIII/II/2025" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta" },
+                { label: "Penyelenggara", val: "FeST Management & BEM FEB UMM" },
+                { label: "Lokasi", val: "DOME UMM, Kota Malang" },
+                { label: "Tanggal", val: "23 Februari 2025" },
+                { label: "Status", val: "Lulus Terakreditasi", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-pelatihan-entrepreneurship.jpg",
+            downloadName: "Sertifikat-Pelatihan-Entrepreneurship-Aryaputra.jpg"
+        },
+        {
+            id: "future-summit",
+            number: "06",
+            title: "Future Entrepreneur Summit 2025",
+            issuer: "FeST Management × BEM FEB Universitas Muhammadiyah Malang",
+            category: "Seminar Nasional",
+            badge: "🎙️ SEMINAR NASIONAL",
+            image: "assets/images/certs/sertifikat-future-entrepreneur-summit.jpg",
+            credId: "30IAUTLYOR/XXIII/II/2025",
+            date: "23 Februari 2025",
+            recipient: "Aryaputra Ferdiananta",
+            desc: "Sertifikat delegasi seminar akbar Future Entrepreneur Summit 2025. Menghadirkan panelis founder startup dan pakar industri nasional untuk membedah arah transformasi ekonomi digital, peluang AI dalam produktivitas bisnis, serta kesiapan generasi muda menghadapi era automasi.",
+            skills: [
+                "AI & Automation in Modern Business",
+                "Digital Economy & Tech Trends",
+                "Startup Ecosystem Understanding",
+                "Professional Networking",
+                "Strategic Opportunity Mapping"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "30IAUTLYOR/XXIII/II/2025" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta" },
+                { label: "Penyelenggara", val: "FeST Management × BEM FEB UMM" },
+                { label: "Tempat", val: "DOME UMM, Kota Malang" },
+                { label: "Tanggal", val: "23 Februari 2025" },
+                { label: "Status Delegasi", val: "Peserta Resmi Terverifikasi", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-future-entrepreneur-summit.jpg",
+            downloadName: "Sertifikat-Future-Entrepreneur-Summit-Aryaputra.jpg"
+        },
+        {
+            id: "webinar-softskill",
+            number: "07",
+            title: "Webinar Soft Skill: Prestasi & Karier Era Digital",
+            issuer: "Wardah Cosmetics × FeST Management Indonesia",
+            category: "Pengembangan Soft Skill",
+            badge: "💡 WEBINAR NASIONAL",
+            image: "assets/images/certs/sertifikat-webinar-softskill.jpg",
+            credId: "9SOYDEUBJ5/XXIII/II/2025",
+            date: "23 November 2024",
+            recipient: "Aryaputra Ferdiananta",
+            desc: "Sertifikat pelatihan pengembangan kompetensi personal dan profesional hasil kolaborasi Wardah Cosmetics dan FeST Management. Menekankan ketahanan mental, personal branding bagi talenta digital, etika komunikasi profesional, dan kesiapan berkarier di ekosistem kerja teknologi.",
+            skills: [
+                "Personal Branding for Developers",
+                "Professional Workplace Communication",
+                "Growth Mindset & Career Agility",
+                "Time & Priority Management",
+                "Emotional Intelligence (EQ)"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "9SOYDEUBJ5/XXIII/II/2025" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta" },
+                { label: "Penyelenggara", val: "Wardah Cosmetics × FeST Management" },
+                { label: "Format Program", val: "Webinar Nasional Daring" },
+                { label: "Tanggal", val: "23 November 2024" },
+                { label: "Status", val: "Peserta Terdaftar Resmi", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-webinar-softskill.jpg",
+            downloadName: "Sertifikat-Webinar-Softskill-Wardah-Aryaputra.jpg"
+        }
+    ];
+
+    /* --- LIGHTBOX MODAL CONTROLLER (IMAGE 2 DESIGN REFERENCE) --- */
     const certModal = document.getElementById('cert-modal');
     const certCloseBtn = document.getElementById('cert-close-btn');
     const certBackdrop = document.getElementById('cert-backdrop');
-    const certModalLabel = document.getElementById('cert-modal-label');
     const certModalImg = document.getElementById('cert-modal-img');
     const certModalMetaTitle = document.getElementById('cert-modal-meta-title');
+    const certModalIssuer = document.getElementById('cert-modal-issuer');
     const certModalMetaDesc = document.getElementById('cert-modal-meta-desc');
+    const certModalChips = document.getElementById('cert-modal-chips');
+    const certModalExplanation = document.getElementById('cert-modal-explanation');
+    const certModalVerifyBtn = document.getElementById('cert-modal-verify-btn');
     const certModalDownload = document.getElementById('cert-modal-download');
 
     function openCert(certData) {
         if (!certModal) return;
+
+        // If certData is an ID string, find corresponding object
+        if (typeof certData === 'string') {
+            certData = CERTIFICATES_DATA.find(c => c.id === certData) || {
+                title: certData,
+                image: "assets/images/sertifikat-mahative.png"
+            };
+        }
+
         if (certData) {
-            if (certModalLabel && certData.label) certModalLabel.textContent = certData.label;
-            if (certModalImg && certData.img) {
-                certModalImg.src = certData.img;
-                certModalImg.alt = certData.title || "Sertifikat Resmi";
+            const title = certData.title || "Sertifikat Resmi";
+            const img = certData.image || certData.img || "assets/images/sertifikat-mahative.png";
+            const issuer = certData.issuer || "Kredensial Terverifikasi";
+            const desc = certData.desc || certData.description || "Dokumentasi resmi pencapaian dan keahlian terverifikasi.";
+            const credId = certData.credId || certData.credentialId || certData.id || "VERIFIED-2026";
+            const date = certData.date || "2025 - 2026";
+            const badge = certData.badge || "TERVERIFIKASI";
+            const recipient = certData.recipient || "Aryaputra Ferdiananta";
+            const download = certData.downloadName || certData.download || "Sertifikat-Aryaputra-Ferdiananta.jpg";
+            const verifyUrl = certData.verifyUrl || img;
+            const skills = certData.skills || [];
+            const details = certData.details || [
+                { label: "Nomor Sertifikat", val: credId },
+                { label: "Nama Penerima", val: recipient },
+                { label: "Penerbit", val: issuer },
+                { label: "Tanggal", val: date },
+                { label: "Hasil / Status", val: badge, isHighlight: true }
+            ];
+
+            if (certModalImg) {
+                certModalImg.src = img;
+                certModalImg.alt = title;
             }
-            if (certModalMetaTitle && certData.title) certModalMetaTitle.textContent = certData.title;
-            if (certModalMetaDesc && certData.desc) certModalMetaDesc.textContent = certData.desc;
+            if (certModalMetaTitle) {
+                certModalMetaTitle.textContent = title;
+            }
+            if (certModalIssuer) {
+                certModalIssuer.textContent = issuer;
+            }
+            if (certModalMetaDesc) {
+                certModalMetaDesc.textContent = desc;
+            }
+            if (certModalChips) {
+                certModalChips.innerHTML = `
+                    <span class="meta-chip chip-pill">ID: ${credId}</span>
+                    <span class="meta-chip chip-pill">${date}</span>
+                    <span class="meta-chip chip-pill highlight-chip">${badge}</span>
+                `;
+            }
+
+            // Populate Enriched Certificate Contents Explanation
+            if (certModalExplanation) {
+                certModalExplanation.innerHTML = `
+                    <div class="cert-explain-section">
+                        <div class="cert-explain-heading">Materi &amp; Ringkasan Sertifikasi</div>
+                        <p class="cert-explain-p">${desc}</p>
+                    </div>
+
+                    ${skills && skills.length ? `
+                    <div class="cert-explain-section">
+                        <div class="cert-explain-heading">Keahlian &amp; Kompetensi yang Teruji</div>
+                        <div class="cert-skills-cloud">
+                            ${skills.map(s => `<span class="cert-skill-tag">${s}</span>`).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <div class="cert-explain-section">
+                        <div class="cert-explain-heading">Rincian Kredensial Resmi</div>
+                        <table class="cert-explain-table">
+                            <tbody>
+                                ${details.map(d => `
+                                    <tr>
+                                        <td class="cert-explain-label">${d.label}</td>
+                                        <td class="cert-explain-val ${d.isHighlight ? 'val-highlight' : ''}">${d.label.includes('Nomor') ? `<code>${d.val}</code>` : d.val}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+
+            if (certModalVerifyBtn) {
+                certModalVerifyBtn.href = verifyUrl;
+            }
             if (certModalDownload) {
-                certModalDownload.href = certData.img || "assets/images/sertifikat-mahative.png";
-                certModalDownload.download = certData.download || "Sertifikat-Aryaputra-Ferdiananta.jpg";
+                certModalDownload.href = img;
+                certModalDownload.download = download;
             }
         }
+
         certModal.classList.add('open');
         certModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -757,22 +1053,390 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
+    if (certCloseBtn) certCloseBtn.addEventListener('click', closeCert);
+    if (certBackdrop) certBackdrop.addEventListener('click', closeCert);
+
+    // Support external modal triggers (e.g. from the top PKL details box)
     document.querySelectorAll('.cert-modal-trigger').forEach(trigger => {
         trigger.addEventListener('click', (e) => {
             e.stopPropagation();
-            const certData = {
+            const certId = trigger.getAttribute('data-cert-id');
+            const certObj = certId ? CERTIFICATES_DATA.find(c => c.id === certId) : null;
+            const certData = certObj || {
                 img: trigger.getAttribute('data-cert-img'),
-                label: trigger.getAttribute('data-cert-label'),
+                image: trigger.getAttribute('data-cert-img'),
                 title: trigger.getAttribute('data-cert-title'),
+                issuer: trigger.getAttribute('data-cert-issuer') || trigger.getAttribute('data-cert-label'),
                 desc: trigger.getAttribute('data-cert-desc'),
+                badge: trigger.getAttribute('data-cert-badge'),
                 download: trigger.getAttribute('data-cert-download')
             };
             openCert(certData);
         });
     });
 
-    if (certCloseBtn) certCloseBtn.addEventListener('click', closeCert);
-    if (certBackdrop) certBackdrop.addEventListener('click', closeCert);
+    /* --- COVERFLOW SHOWCASE ENGINE (IMAGE 1 REFERENCE) --- */
+    function initCertificateCoverflow() {
+        const viewport = document.getElementById('cert-flow-viewport');
+        const track = document.getElementById('cert-flow-track');
+        const prevBtn = document.getElementById('cert-flow-prev');
+        const nextBtn = document.getElementById('cert-flow-next');
+        const floatPrevBtn = document.getElementById('cert-flow-floating-prev');
+        const floatNextBtn = document.getElementById('cert-flow-floating-next');
+        const counterEl = document.getElementById('cert-flow-counter');
+        const activeBadge = document.getElementById('cert-flow-active-badge');
+        const dotsContainer = document.getElementById('cert-flow-dots');
+
+        if (!viewport || !track) return;
+
+        const slides = Array.from(track.querySelectorAll('.cert-flow-slide'));
+        if (slides.length === 0) return;
+
+        let activeIndex = 0;
+        let isPointerDown = false;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let startTranslateX = 0;
+        let currentTranslateX = 0;
+        let targetTranslateX = 0;
+        let totalDeltaX = 0;
+        let startTime = 0;
+        let animationFrameId = null;
+
+        // Prevent native HTML5 image drag on viewport and track
+        viewport.addEventListener('dragstart', (e) => e.preventDefault());
+        track.addEventListener('dragstart', (e) => e.preventDefault());
+
+        // Render dot indicators
+        if (dotsContainer) {
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `cert-flow-dot ${idx === 0 ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Lihat sertifikat ${idx + 1}`);
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    goToIndex(idx);
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        // Get card metrics
+        function getSlideWidth() {
+            const firstSlide = slides[0];
+            return firstSlide ? firstSlide.offsetWidth : 320;
+        }
+
+        function getGap() {
+            const style = window.getComputedStyle(track);
+            const gap = parseFloat(style.gap) || 32;
+            return gap;
+        }
+
+        // Calculate translation needed to center slide at index
+        function getCenterTranslate(index) {
+            const slide = slides[index];
+            if (!slide) return 0;
+            const viewportCenter = viewport.offsetWidth / 2;
+            const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+            return viewportCenter - slideCenter;
+        }
+
+        // Update active metadata badge and counter
+        function updateMetadata(index) {
+            activeIndex = index;
+            const cert = CERTIFICATES_DATA[index] || {
+                number: String(index + 1).padStart(2, '0'),
+                title: slides[index]?.querySelector('.cert-flow-card-name')?.textContent || "Sertifikat"
+            };
+
+            if (counterEl) {
+                counterEl.textContent = `${index + 1} / ${slides.length}`;
+            }
+
+            if (activeBadge) {
+                const badgeIndex = activeBadge.querySelector('.badge-index');
+                const badgeTitle = activeBadge.querySelector('.badge-title');
+                if (badgeIndex) badgeIndex.textContent = cert.number || String(index + 1).padStart(2, '0');
+                if (badgeTitle) badgeTitle.textContent = cert.title;
+            }
+
+            // Update dots
+            if (dotsContainer) {
+                const dots = dotsContainer.querySelectorAll('.cert-flow-dot');
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === index);
+                });
+            }
+        }
+
+        // Apply continuous transforms based on distance from center (Image 1 Focal Perspective)
+        function renderTransforms() {
+            const viewportCenter = viewport.offsetWidth / 2;
+            const step = getSlideWidth() + getGap();
+
+            let closestIndex = 0;
+            let minDistance = Infinity;
+
+            slides.forEach((slide, idx) => {
+                const slideCenter = currentTranslateX + slide.offsetLeft + slide.offsetWidth / 2;
+                const distance = slideCenter - viewportCenter;
+                const absDist = Math.abs(distance);
+                const normDist = absDist / (step || 350);
+
+                if (absDist < minDistance) {
+                    minDistance = absDist;
+                    closestIndex = idx;
+                }
+
+                // Dynamic scaling: Center is largest (1.18x), adjacent drops smoothly
+                const scale = Math.max(0.48, 1.18 - (normDist * 0.28));
+                // Center is full color (0% grayscale), sides become monochrome grayscale (Image 1)
+                const grayscale = Math.min(100, normDist * 85);
+                // Opacity falls off gracefully
+                const opacity = Math.max(0.32, 1 - (normDist * 0.25));
+                // Center gets highest z-index
+                const zIndex = Math.round(25 - Math.min(22, normDist * 6));
+
+                slide.style.transform = `scale(${scale.toFixed(3)})`;
+                slide.style.filter = `grayscale(${grayscale.toFixed(1)}%) contrast(${(100 - normDist * 10).toFixed(1)}%)`;
+                slide.style.opacity = opacity.toFixed(3);
+                slide.style.zIndex = zIndex;
+
+                slide.classList.toggle('is-active', normDist < 0.35);
+            });
+
+            track.style.transform = `translate3d(${currentTranslateX.toFixed(2)}px, -50%, 0)`;
+
+            return closestIndex;
+        }
+
+        // Animation loop with smooth damping
+        function animate() {
+            const diff = targetTranslateX - currentTranslateX;
+            if (Math.abs(diff) > 0.3) {
+                currentTranslateX += diff * 0.16;
+                const closest = renderTransforms();
+                if (closest !== activeIndex && !isPointerDown) {
+                    updateMetadata(closest);
+                }
+                animationFrameId = requestAnimationFrame(animate);
+            } else {
+                currentTranslateX = targetTranslateX;
+                const closest = renderTransforms();
+                updateMetadata(closest);
+                animationFrameId = null;
+            }
+        }
+
+        function triggerAnimation() {
+            if (!animationFrameId) {
+                animationFrameId = requestAnimationFrame(animate);
+            }
+        }
+
+        function goToIndex(index) {
+            index = Math.max(0, Math.min(slides.length - 1, index));
+            targetTranslateX = getCenterTranslate(index);
+            triggerAnimation();
+        }
+
+        // Initial setup
+        setTimeout(() => {
+            targetTranslateX = getCenterTranslate(0);
+            currentTranslateX = targetTranslateX;
+            renderTransforms();
+            updateMetadata(0);
+        }, 80);
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            targetTranslateX = getCenterTranslate(activeIndex);
+            currentTranslateX = targetTranslateX;
+            renderTransforms();
+        });
+
+        // Top Navigation buttons
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToIndex(activeIndex - 1);
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToIndex(activeIndex + 1);
+            });
+        }
+
+        // Floating Left/Right Navigation arrows on viewport
+        if (floatPrevBtn) {
+            floatPrevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToIndex(activeIndex - 1);
+            });
+        }
+        if (floatNextBtn) {
+            floatNextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToIndex(activeIndex + 1);
+            });
+        }
+
+        // Keyboard arrow support on viewport focus
+        viewport.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                goToIndex(activeIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                goToIndex(activeIndex + 1);
+            }
+        });
+
+        // Horizontal mouse wheel / trackpad swipe
+        let wheelTimeout = null;
+        viewport.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) {
+                e.preventDefault();
+                const delta = e.deltaX || e.deltaY;
+                targetTranslateX -= delta * 0.9;
+                triggerAnimation();
+
+                clearTimeout(wheelTimeout);
+                wheelTimeout = setTimeout(() => {
+                    const closest = renderTransforms();
+                    goToIndex(closest);
+                }, 140);
+            }
+        }, { passive: false });
+
+        // Robust Pointer Drag Events (Mouse + Touch Unified)
+        viewport.addEventListener('pointerdown', (e) => {
+            if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+            isPointerDown = true;
+            isDragging = false;
+            startX = e.clientX;
+            startY = e.clientY;
+            startTranslateX = currentTranslateX;
+            totalDeltaX = 0;
+            startTime = Date.now();
+
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        });
+
+        viewport.addEventListener('pointermove', (e) => {
+            if (!isPointerDown) return;
+
+            totalDeltaX = e.clientX - startX;
+            const deltaY = e.clientY - startY;
+
+            // Detect drag threshold (6px)
+            if (!isDragging && Math.abs(totalDeltaX) > 6 && Math.abs(totalDeltaX) > Math.abs(deltaY)) {
+                isDragging = true;
+                try {
+                    viewport.setPointerCapture(e.pointerId);
+                } catch (err) {}
+            }
+
+            if (isDragging) {
+                e.preventDefault();
+                let nextTranslate = startTranslateX + totalDeltaX;
+
+                // Soft elastic boundary resistance
+                const minTranslate = getCenterTranslate(slides.length - 1);
+                const maxTranslate = getCenterTranslate(0);
+
+                if (nextTranslate > maxTranslate) {
+                    nextTranslate = maxTranslate + (nextTranslate - maxTranslate) * 0.25;
+                } else if (nextTranslate < minTranslate) {
+                    nextTranslate = minTranslate + (nextTranslate - minTranslate) * 0.25;
+                }
+
+                currentTranslateX = nextTranslate;
+                targetTranslateX = currentTranslateX;
+                renderTransforms();
+            }
+        });
+
+        function handlePointerUp(e) {
+            if (!isPointerDown) return;
+            isPointerDown = false;
+
+            try {
+                viewport.releasePointerCapture(e.pointerId);
+            } catch (err) {}
+
+            if (isDragging) {
+                const elapsed = Math.max(1, Date.now() - startTime);
+                const velocity = totalDeltaX / elapsed; // px per millisecond
+                let estimatedIndex = activeIndex;
+
+                if (totalDeltaX < -45 || velocity < -0.35) {
+                    // Dragged or flicked LEFT -> go to NEXT card
+                    estimatedIndex = Math.min(slides.length - 1, activeIndex + 1);
+                } else if (totalDeltaX > 45 || velocity > 0.35) {
+                    // Dragged or flicked RIGHT -> go to PREVIOUS card
+                    estimatedIndex = Math.max(0, activeIndex - 1);
+                } else {
+                    estimatedIndex = renderTransforms();
+                }
+
+                goToIndex(estimatedIndex);
+            }
+        }
+
+        viewport.addEventListener('pointerup', handlePointerUp);
+        viewport.addEventListener('pointercancel', (e) => {
+            if (!isPointerDown) return;
+            isPointerDown = false;
+            try {
+                viewport.releasePointerCapture(e.pointerId);
+            } catch (err) {}
+            goToIndex(activeIndex);
+        });
+
+        // Click / Enlarge on individual slide:
+        slides.forEach((slide, idx) => {
+            slide.addEventListener('click', (e) => {
+                if (isDragging || Math.abs(totalDeltaX) > 8) {
+                    return; // Ignore clicks if user was actively dragging
+                }
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (idx === activeIndex) {
+                    // Open Image 2 modal with enriched explanation
+                    const certData = CERTIFICATES_DATA[idx];
+                    openCert(certData);
+                } else {
+                    // Bring clicked card to center
+                    goToIndex(idx);
+                }
+            });
+
+            // Make hover pill directly open modal when clicked
+            const hoverPill = slide.querySelector('.cert-hover-pill');
+            if (hoverPill) {
+                hoverPill.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const certData = CERTIFICATES_DATA[idx];
+                    openCert(certData);
+                });
+            }
+        });
+    }
+
+    // Initialize Coverflow Showcase
+    initCertificateCoverflow();
 
     /* --------------------------------------------------------------------------
        05. CV / RESUME MODAL & PRINT HANDLER
@@ -797,15 +1461,35 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
+    // Attach openCv to all CV buttons (.open-cv-btn)
+    document.querySelectorAll('.open-cv-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // If inside mobile drawer, close drawer first
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const mobileToggle = document.getElementById('mobile-toggle');
+            if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+                mobileDrawer.classList.remove('open');
+                if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+            }
+            openCv();
+        });
+    });
+
     if (btnCvModal) btnCvModal.addEventListener('click', openCv);
     if (cvCloseBtn) cvCloseBtn.addEventListener('click', closeCv);
     if (cvBackdrop) cvBackdrop.addEventListener('click', closeCv);
 
     if (btnPrintCv) {
-        btnPrintCv.addEventListener('click', () => {
+        btnPrintCv.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Open print dialog immediately
             window.print();
         });
     }
+
+    // Expose openCv globally for external convenience
+    window.openCv = openCv;
 
     // Esc key closes all modals
     window.addEventListener('keydown', (e) => {
