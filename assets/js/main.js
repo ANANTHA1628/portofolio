@@ -962,6 +962,70 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             verifyUrl: "assets/images/certs/sertifikat-mentoring-aryaputra.jpg",
             downloadName: "Sertifikat-Mentoring-MENYALA-Aryaputra-Ferdiananta.jpg"
+        },
+        {
+            id: "ldk-pkbn-polinema",
+            number: "09",
+            title: "Latihan Dasar Kedisiplinan & Bela Negara (PKBN)",
+            issuer: "Dodikjur Rindam V/Brawijaya × Politeknik Negeri Malang",
+            category: "Kedisiplinan & Bela Negara",
+            badge: "🎖️ KODAM V / BRAWIJAYA",
+            image: "assets/images/certs/sertifikat-ldk-pkbn-polinema.jpg",
+            credId: "ST-3 / 1551 / VII / 2024",
+            date: "09 – 12 Juli 2024",
+            recipient: "Aryaputra Ferdiananta (NIM: 244107020127)",
+            desc: "Sertifikat resmi kelulusan Latihan Dasar Kedisiplinan (LDK) dan Pembinaan Kesadaran Bela Negara (PKBN) Gelombang III bagi Mahasiswa Baru Politeknik Negeri Malang Tahun Akademik 2024 di Dodikjur Rindam V/Brawijaya. Menempa kedisiplinan tinggi, ketahanan mental, kepemimpinan lapangan, dan komitmen kebangsaan.",
+            skills: [
+                "Disiplin Mental & Ketahanan Fisik",
+                "Wawasan Kebangsaan & Bela Negara",
+                "Leadership & Teamwork Under Pressure",
+                "Manajemen Waktu & Integritas",
+                "Karakter Tangguh & Loyalitas"
+            ],
+            details: [
+                { label: "Nomor Sertifikat", val: "ST-3 / 1551 / VII / 2024" },
+                { label: "Nama Penerima", val: "ARYAPUTRA FERDIANANTA" },
+                { label: "NIM / Program Studi", val: "244107020127 · D-IV TI Informatika" },
+                { label: "Institusi Pendidikan", val: "Politeknik Negeri Malang (POLINEMA)" },
+                { label: "Instansi Militer Pelaksana", val: "Depo Pendidikan Kejuruan Rindam V/Brawijaya" },
+                { label: "Komandan Dodikjur", val: "Letkol Arm Soegeng Boediharto (NRP 11940029190470)" },
+                { label: "Waktu & Tempat", val: "09–12 Juli 2024 · Dodikjur Rindam V/Brawijaya, Malang" },
+                { label: "Status Kelulusan", val: "Lulus Resmi Pelatihan Kedisiplinan & PKBN", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-ldk-pkbn-polinema.jpg",
+            downloadName: "Sertifikat-LDK-PKBN-Polinema-Aryaputra-Ferdiananta.jpg"
+        },
+        {
+            id: "kkr-man2-malang",
+            number: "10",
+            title: "Kader Kesehatan Remaja (KKR) — Bidang Lingkungan Sehat",
+            issuer: "MAN 2 Kota Malang · Kementerian Agama RI",
+            category: "Organisasi & Kontribusi Sosial Pelajar",
+            badge: "🌿 MAN 2 KOTA MALANG",
+            image: "assets/images/certs/sertifikat-kkr-man2-malang.jpg",
+            credId: "MAN2-MLG/KKR/2024/06",
+            date: "11 Juni 2024",
+            recipient: "Aryaputra Ferdiananta (Kelas: XII MIPA 5)",
+            desc: "Sertifikat resmi atas dedikasi dan kontribusi aktif sebagai Anggota Bidang 3: Lingkungan Sekolah Sehat Kader Kesehatan Remaja (KKR) periode 2022/2023 di Madrasah Aliyah Negeri 2 Kota Malang. Mengemban amanah advokasi sanitasi lingkungan sekolah, edukasi pola hidup bersih dan sehat (PHBS), serta koordinasi program kesehatan lingkungan madrasah.",
+            skills: [
+                "School Environmental Health Management",
+                "Youth Health Advocacy & Social Outreach",
+                "Program Coordination & Organization",
+                "Sanitasi & Pola Hidup Bersih Sehat (PHBS)",
+                "Kerja Sama Tim & Kepedulian Sosial"
+            ],
+            details: [
+                { label: "Kredensial Resmi", val: "Sertifikat Anggota KKR MAN 2 Kota Malang" },
+                { label: "Nama Penerima", val: "Aryaputra Ferdiananta" },
+                { label: "Kelas / Asal Sekolah", val: "Kelas XII MIPA 5 · MAN 2 Kota Malang" },
+                { label: "Lembaga Naungan", val: "Kementerian Agama Republik Indonesia" },
+                { label: "Amanah Kepengurusan", val: "Anggota Bidang 3 : Lingkungan Sekolah Sehat KKR 2022/2023" },
+                { label: "Kepala Madrasah", val: "Dr. H. Samsudin, M.Pd (NIP. 196704231994031002)" },
+                { label: "Tanggal Diterbitkan", val: "Malang, 11 Juni 2024" },
+                { label: "Status Kredensial", val: "Pengurus Aktif Terverifikasi", isHighlight: true }
+            ],
+            verifyUrl: "assets/images/certs/sertifikat-kkr-man2-malang.jpg",
+            downloadName: "Sertifikat-KKR-MAN2-Kota-Malang-Aryaputra-Ferdiananta.jpg"
         }
     ];
 
