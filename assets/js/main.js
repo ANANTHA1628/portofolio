@@ -1586,10 +1586,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnPrintCv) {
         btnPrintCv.addEventListener('click', (e) => {
             e.preventDefault();
-            // Open print dialog immediately
-            window.print();
+            // Unlock body overflow so print engines (Blink/Gecko) paginate the entire multi-page document cleanly
+            document.body.style.overflow = 'visible';
+            setTimeout(() => {
+                window.print();
+            }, 60);
         });
     }
+
+    // Synchronize print events to prevent viewport clipping
+    window.addEventListener('beforeprint', () => {
+        document.body.style.overflow = 'visible';
+    });
+
+    window.addEventListener('afterprint', () => {
+        if (cvModal && cvModal.classList.contains('open')) {
+            document.body.style.overflow = 'hidden';
+        }
+    });
 
     // Expose openCv globally for external convenience
     window.openCv = openCv;
@@ -1610,7 +1624,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactModal = document.getElementById('contact-modal');
     const contactCloseBtn = document.getElementById('contact-close-btn');
     const contactBackdrop = document.getElementById('contact-backdrop');
-    const openContactBtns = document.querySelectorAll('.open-contact-btn, a[href^="mailto:"]');
+    const openContactBtns = document.querySelectorAll('.open-contact-btn');
     const btnCopyEmail = document.getElementById('btn-copy-email');
 
     function openContactModal() {
