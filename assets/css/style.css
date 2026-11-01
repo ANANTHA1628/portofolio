@@ -756,8 +756,8 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 3200px;
-    height: 1800px;
+    width: 1400px;
+    height: 800px;
     transform-origin: 0 0;
     will-change: transform;
     pointer-events: auto;
@@ -2058,248 +2058,324 @@ img {
     background: #f1f5f9;
 }
 
-/* Printable Standard Resume Sheet */
-.cv-sheet.cv-standard-paper {
+/* ==========================================================================
+   CANVA-STYLE 2-COLUMN ELEGANT CV TEMPLATE
+   Warm Peach / Cream Sidebar + Crisp White Main + Mocha Brown Accents
+   ========================================================================== */
+.cv-sheet.cv-canva-template {
+    display: flex;
+    flex-direction: row;
+    max-width: 860px;
+    margin: 0 auto;
     background: #ffffff;
     border-radius: 12px;
-    padding: 3rem 3.25rem;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
     border: 1px solid #e2e8f0;
-    color: #111827;
     font-family: var(--font-sans);
     line-height: 1.5;
-    max-width: 820px;
-    margin: 0 auto;
+    color: #2b2b2b;
 }
 
-/* Header: Foto Profil, Nama & Kontak */
-.cv-paper-header {
-    display: flex;
-    align-items: center;
-    gap: 1.75rem;
-    margin-bottom: 1.25rem;
-}
-
-.cv-paper-photo-wrap {
+/* LEFT SIDEBAR: Warm Peach / Soft Cream */
+.cv-canva-sidebar {
+    width: 35%;
     flex-shrink: 0;
+    background-color: #faeee6;
+    padding: 2.75rem 1.85rem;
+    border-right: 1px solid #ebd9cc;
 }
 
-.cv-paper-photo {
-    width: 105px;
-    height: 130px;
-    border-radius: 8px;
+.cv-canva-avatar-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.cv-canva-avatar {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
     object-fit: cover;
     object-position: top center;
-    border: 2px solid #e2e8f0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 4px solid #ffffff;
+    box-shadow: 0 6px 18px rgba(132, 82, 51, 0.16);
     display: block;
 }
 
-.cv-paper-header-info {
-    flex-grow: 1;
+.cv-canva-side-sec {
+    margin-bottom: 1.85rem;
 }
 
-.cv-paper-name {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #0f172a;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    line-height: 1.15;
-    margin-bottom: 0.35rem;
+.cv-canva-side-sec:last-child {
+    margin-bottom: 0;
 }
 
-.cv-paper-tagline {
+.cv-canva-side-title {
     font-size: 0.95rem;
-    font-weight: 600;
-    color: #475569;
-    margin-bottom: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #845233;
+    border-bottom: 1.5px solid #845233;
+    padding-bottom: 0.35rem;
+    margin-bottom: 1rem;
 }
 
-.cv-paper-contact {
+/* Contact List with Brown Icon Badges */
+.cv-canva-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem 0.65rem;
-    font-size: 0.82rem;
-    color: #334155;
-    font-family: var(--font-sans);
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.cv-paper-contact a {
-    color: #0f172a;
+.cv-canva-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #2e2825;
+    word-break: break-word;
+}
+
+.cv-canva-icon-badge {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #845233;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.cv-canva-icon-badge svg {
+    width: 13px;
+    height: 13px;
+    stroke: #ffffff;
+    stroke-width: 2.2;
+}
+
+.cv-canva-contact-item a {
+    color: #2e2825;
     text-decoration: none;
-    font-weight: 500;
     transition: color 0.2s ease;
 }
 
-.cv-paper-contact a:hover {
-    color: var(--accent-purple);
+.cv-canva-contact-item a:hover {
+    color: #845233;
     text-decoration: underline;
 }
 
-.cv-sep {
-    color: #94a3b8;
-    font-weight: 300;
-    user-select: none;
+/* Sidebar Education Entries */
+.cv-canva-side-entry {
+    margin-bottom: 1.15rem;
 }
 
-.cv-paper-divider {
-    border: none;
-    border-top: 2px solid #0f172a;
-    margin: 1.1rem 0 1.5rem 0;
-}
-
-/* Standard Sections */
-.cv-paper-section {
-    margin-bottom: 1.45rem;
-}
-
-.cv-paper-section:last-child {
+.cv-canva-side-entry:last-child {
     margin-bottom: 0;
 }
 
-.cv-paper-sec-title {
-    font-size: 0.92rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #0f172a;
-    border-bottom: 1.5px solid #0f172a;
-    padding-bottom: 0.3rem;
-    margin-bottom: 0.85rem;
-}
-
-.cv-paper-text {
-    font-size: 0.86rem;
-    line-height: 1.65;
-    color: #334155;
-    margin: 0;
-    text-align: justify;
-}
-
-/* Linear Entries */
-.cv-paper-entry {
-    margin-bottom: 1.05rem;
-}
-
-.cv-paper-entry:last-child {
-    margin-bottom: 0;
-}
-
-.cv-entry-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 0.2rem;
-}
-
-.cv-entry-main {
+.cv-canva-side-entry-bold {
     font-size: 0.88rem;
-    color: #0f172a;
-}
-
-.cv-entry-main strong {
     font-weight: 700;
-    color: #0f172a;
+    color: #1f1b18;
+    line-height: 1.35;
+    margin-bottom: 0.15rem;
 }
 
-.cv-entry-right {
-    font-size: 0.8rem;
-    color: #64748b;
-    font-weight: 500;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.cv-entry-sub {
+.cv-canva-side-inst {
     font-size: 0.82rem;
-    color: #64748b;
-    font-style: italic;
+    color: #4a4039;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 0.15rem;
+}
+
+.cv-canva-side-date {
+    font-size: 0.78rem;
+    color: #786b62;
     margin-bottom: 0.35rem;
 }
 
-.cv-entry-desc {
-    font-size: 0.84rem;
-    color: #334155;
-    line-height: 1.55;
-    margin: 0.25rem 0 0 0;
-}
-
-/* Bullets */
-.cv-paper-bullets {
-    margin: 0.35rem 0 0 1.25rem;
+.cv-canva-side-bullets {
+    margin: 0.25rem 0 0 1.1rem;
     padding: 0;
     list-style-type: disc;
 }
 
-.cv-paper-bullets li {
-    font-size: 0.84rem;
-    line-height: 1.55;
-    color: #334155;
-    margin-bottom: 0.35rem;
+.cv-canva-side-bullets li {
+    font-size: 0.79rem;
+    line-height: 1.45;
+    color: #3b322c;
+    margin-bottom: 0.3rem;
 }
 
-.cv-paper-bullets li strong {
-    color: #0f172a;
-    font-weight: 600;
+/* RIGHT MAIN COLUMN: Crisp White */
+.cv-canva-main {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 2.75rem 2.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Skills text list */
-.cv-skills-text-list p {
-    font-size: 0.84rem;
-    line-height: 1.65;
-    color: #334155;
+.cv-canva-header {
+    margin-bottom: 1.85rem;
+}
+
+.cv-canva-name {
+    font-size: 2.35rem;
+    font-weight: 800;
+    color: #845233;
+    letter-spacing: 0.04em;
+    line-height: 1.12;
+    text-transform: uppercase;
     margin: 0 0 0.5rem 0;
 }
 
-.cv-skills-text-list p:last-child {
+.cv-canva-role {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #1f1f1f;
+    text-transform: uppercase;
+    margin: 0 0 0.85rem 0;
+}
+
+.cv-canva-summary {
+    font-size: 0.86rem;
+    line-height: 1.65;
+    color: #3d3d3d;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Main Sections */
+.cv-canva-section {
+    margin-bottom: 1.65rem;
+}
+
+.cv-canva-section:last-child {
     margin-bottom: 0;
 }
 
-.cv-skills-text-list p strong {
-    color: #0f172a;
+.cv-canva-sec-title {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #845233;
+    border-bottom: 1.5px solid #845233;
+    padding-bottom: 0.35rem;
+    margin-bottom: 1.05rem;
+}
+
+.cv-canva-entry {
+    margin-bottom: 1.15rem;
+}
+
+.cv-canva-entry:last-child {
+    margin-bottom: 0;
+}
+
+.cv-canva-entry-role {
+    font-size: 0.92rem;
     font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.35;
+}
+
+.cv-canva-entry-company {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+
+.cv-canva-entry-company a {
+    color: #845233;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cv-canva-entry-company a:hover {
+    text-decoration: underline;
+}
+
+.cv-canva-entry-date {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-bottom: 0.4rem;
+}
+
+.cv-canva-bullets {
+    margin: 0.35rem 0 0 1.15rem;
+    padding: 0;
+    list-style-type: disc;
+}
+
+.cv-canva-bullets li {
+    font-size: 0.83rem;
+    line-height: 1.55;
+    color: #374151;
+    margin-bottom: 0.35rem;
+}
+
+.cv-canva-bullets li strong {
+    color: #111827;
+}
+
+/* Certifications with clean mocha accents */
+.cv-canva-cert-item {
+    margin-bottom: 0.85rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid #845233;
+}
+
+.cv-canva-cert-item:last-child {
+    margin-bottom: 0;
+}
+
+.cv-canva-cert-title {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.35;
+}
+
+.cv-canva-cert-meta {
+    font-size: 0.78rem;
+    color: #555555;
+    margin-top: 0.15rem;
 }
 
 @media (max-width: 768px) {
-    .cv-sheet.cv-standard-paper {
-        padding: 1.75rem 1.25rem;
-    }
-
-    .cv-paper-header {
+    .cv-sheet.cv-canva-template {
         flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 1rem;
     }
 
-    .cv-paper-photo {
-        width: 95px;
-        height: 120px;
+    .cv-canva-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ebd9cc;
+        padding: 2rem 1.25rem;
     }
 
-    .cv-paper-header-info {
-        text-align: center;
+    .cv-canva-main {
+        padding: 2rem 1.25rem;
     }
 
-    .cv-paper-name {
-        font-size: 1.5rem;
-    }
-
-    .cv-paper-contact {
-        justify-content: center;
-    }
-
-    .cv-entry-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.15rem;
-    }
-
-    .cv-entry-right {
-        font-size: 0.78rem;
+    .cv-canva-name {
+        font-size: 1.85rem;
     }
 }
 
@@ -2601,186 +2677,281 @@ img {
         overflow: visible !important;
         padding: 0 !important;
         margin: 0 !important;
-        background: #ffffff !important;
+        background: transparent !important;
     }
 
-    /* Standard Paper Sheet layout on paper */
+    /* 2-Column Canva Template Layout on Paper */
     .cv-sheet,
-    .cv-standard-paper {
-        display: block !important;
+    .cv-sheet.cv-canva-template {
+        display: flex !important;
+        flex-direction: row !important;
         width: 100% !important;
         max-width: 100% !important;
+        min-height: 297mm !important;
         margin: 0 !important;
         padding: 0 !important;
         box-shadow: none !important;
         border: none !important;
         border-radius: 0 !important;
         background: #ffffff !important;
-        color: #000000 !important;
+        color: #2b2b2b !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
-    /* Header in Print */
-    .cv-paper-header {
-        display: flex !important;
-        align-items: center !important;
-        gap: 14pt !important;
-        text-align: left !important;
-        margin-bottom: 8pt !important;
-    }
-
-    .cv-paper-photo-wrap {
+    /* Left Sidebar in Print */
+    .cv-canva-sidebar {
+        width: 34% !important;
         flex-shrink: 0 !important;
+        background-color: #faeee6 !important;
+        border-right: 1pt solid #ebd9cc !important;
+        padding: 24pt 16pt !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
-    .cv-paper-photo {
-        width: 72pt !important;
-        height: 90pt !important;
-        border-radius: 4pt !important;
-        border: 1pt solid #cbd5e1 !important;
+    .cv-canva-avatar-wrap {
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 16pt !important;
+    }
+
+    .cv-canva-avatar {
+        width: 95pt !important;
+        height: 95pt !important;
+        border-radius: 50% !important;
+        border: 3pt solid #ffffff !important;
         object-fit: cover !important;
         object-position: top center !important;
         display: block !important;
         box-shadow: none !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
-    .cv-paper-header-info {
-        flex-grow: 1 !important;
-        text-align: left !important;
+    .cv-canva-side-sec {
+        margin-bottom: 14pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
-    .cv-paper-name {
-        font-size: 17pt !important;
-        font-weight: 800 !important;
-        color: #000000 !important;
-        margin-bottom: 2pt !important;
-        letter-spacing: 0.03em !important;
-        line-height: 1.15 !important;
-    }
-
-    .cv-paper-tagline {
+    .cv-canva-side-title {
         font-size: 9.5pt !important;
-        font-weight: 600 !important;
-        color: #374151 !important;
-        margin-bottom: 4pt !important;
+        font-weight: 800 !important;
+        color: #845233 !important;
+        border-bottom: 1.2pt solid #845233 !important;
+        padding-bottom: 2pt !important;
+        margin-bottom: 6pt !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
-    .cv-paper-contact {
-        font-size: 8.5pt !important;
-        color: #111827 !important;
-        gap: 0 4pt !important;
-        justify-content: flex-start !important;
+    .cv-canva-contact-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 5pt !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
     }
 
-    .cv-paper-contact a {
-        color: #000000 !important;
+    .cv-canva-contact-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 5pt !important;
+        font-size: 7.8pt !important;
+        line-height: 1.35 !important;
+        color: #1f1b18 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .cv-canva-contact-item a {
+        color: #1f1b18 !important;
         text-decoration: none !important;
     }
 
-    .cv-sep {
-        color: #6b7280 !important;
+    .cv-canva-icon-badge {
+        width: 17pt !important;
+        height: 17pt !important;
+        border-radius: 50% !important;
+        background-color: #845233 !important;
+        color: #ffffff !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
-    .cv-paper-divider {
-        border-top: 1.5pt solid #000000 !important;
-        margin: 6pt 0 10pt 0 !important;
+    .cv-canva-icon-badge svg {
+        width: 9pt !important;
+        height: 9pt !important;
+        stroke: #ffffff !important;
+        stroke-width: 2.2 !important;
     }
 
-    /* Sections in Print */
-    .cv-paper-section {
-        margin-bottom: 10pt !important;
+    .cv-canva-side-entry {
+        margin-bottom: 8pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
-    .cv-paper-sec-title {
-        font-size: 10pt !important;
-        font-weight: 800 !important;
-        color: #000000 !important;
-        border-bottom: 1.2pt solid #000000 !important;
-        padding-bottom: 2pt !important;
-        margin-bottom: 5pt !important;
-        page-break-after: avoid !important;
-        break-after: avoid !important;
-    }
-
-    .cv-paper-text {
-        font-size: 9pt !important;
-        line-height: 1.45 !important;
+    .cv-canva-side-entry-bold {
+        font-size: 8.5pt !important;
+        font-weight: 700 !important;
         color: #111827 !important;
-        margin: 0 !important;
+        line-height: 1.3 !important;
+    }
+
+    .cv-canva-side-inst {
+        font-size: 7.8pt !important;
+        color: #374151 !important;
+        line-height: 1.3 !important;
+    }
+
+    .cv-canva-side-date {
+        font-size: 7.2pt !important;
+        color: #6b7280 !important;
+        margin-bottom: 2pt !important;
+    }
+
+    .cv-canva-side-bullets {
+        margin: 2pt 0 0 10pt !important;
+        padding: 0 !important;
+    }
+
+    .cv-canva-side-bullets li {
+        font-size: 7.6pt !important;
+        line-height: 1.35 !important;
+        color: #1f2937 !important;
+        margin-bottom: 2pt !important;
+    }
+
+    /* Right Main Column in Print */
+    .cv-canva-main {
+        width: 66% !important;
+        flex-grow: 1 !important;
+        background-color: #ffffff !important;
+        padding: 24pt 20pt !important;
+        display: flex !important;
+        flex-direction: column !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .cv-canva-header {
+        margin-bottom: 14pt !important;
+    }
+
+    .cv-canva-name {
+        font-size: 19pt !important;
+        font-weight: 800 !important;
+        color: #845233 !important;
+        line-height: 1.1 !important;
+        margin-bottom: 3pt !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .cv-canva-role {
+        font-size: 8.5pt !important;
+        font-weight: 800 !important;
+        color: #111827 !important;
+        margin-bottom: 5pt !important;
+    }
+
+    .cv-canva-summary {
+        font-size: 8pt !important;
+        line-height: 1.45 !important;
+        color: #374151 !important;
         text-align: justify !important;
     }
 
-    /* Entries in Print */
-    .cv-paper-entry {
+    .cv-canva-section {
+        margin-bottom: 11pt !important;
+    }
+
+    .cv-canva-sec-title {
+        font-size: 9.5pt !important;
+        font-weight: 800 !important;
+        color: #845233 !important;
+        border-bottom: 1.2pt solid #845233 !important;
+        padding-bottom: 2pt !important;
+        margin-bottom: 6pt !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .cv-canva-entry {
         margin-bottom: 7pt !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
 
-    .cv-entry-row {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: baseline !important;
+    .cv-canva-entry-role {
+        font-size: 8.8pt !important;
+        font-weight: 700 !important;
+        color: #111827 !important;
+    }
+
+    .cv-canva-entry-company {
+        font-size: 8pt !important;
+        color: #4b5563 !important;
         margin-bottom: 1pt !important;
     }
 
-    .cv-entry-main {
-        font-size: 9.5pt !important;
-        color: #000000 !important;
+    .cv-canva-entry-company a {
+        color: #845233 !important;
+        text-decoration: none !important;
     }
 
-    .cv-entry-main strong {
-        font-weight: 700 !important;
-        color: #000000 !important;
-    }
-
-    .cv-entry-right {
-        font-size: 8.5pt !important;
-        color: #374151 !important;
-        font-weight: 500 !important;
-    }
-
-    .cv-entry-sub {
-        font-size: 8.5pt !important;
-        font-style: italic !important;
-        color: #374151 !important;
+    .cv-canva-entry-date {
+        font-size: 7.5pt !important;
+        color: #6b7280 !important;
         margin-bottom: 2pt !important;
     }
 
-    .cv-entry-desc {
-        font-size: 8.5pt !important;
-        color: #111827 !important;
-        line-height: 1.4 !important;
-        margin: 2pt 0 0 0 !important;
-    }
-
-    /* Bullets in Print */
-    .cv-paper-bullets {
-        margin: 2pt 0 0 14pt !important;
+    .cv-canva-bullets {
+        margin: 2pt 0 0 10pt !important;
         padding: 0 !important;
-        list-style-type: disc !important;
     }
 
-    .cv-paper-bullets li {
-        font-size: 8.5pt !important;
-        line-height: 1.4 !important;
-        color: #111827 !important;
+    .cv-canva-bullets li {
+        font-size: 7.8pt !important;
+        line-height: 1.35 !important;
+        color: #1f2937 !important;
         margin-bottom: 2pt !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
     }
 
-    .cv-skills-text-list p {
-        font-size: 8.5pt !important;
-        line-height: 1.45 !important;
+    .cv-canva-bullets li strong {
         color: #111827 !important;
-        margin: 0 0 3pt 0 !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
     }
 
-    .cv-skills-text-list p strong {
+    .cv-canva-cert-item {
+        margin-bottom: 5pt !important;
+        padding-left: 5pt !important;
+        border-left: 1.5pt solid #845233 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .cv-canva-cert-title {
+        font-size: 8.2pt !important;
         font-weight: 700 !important;
-        color: #000000 !important;
+        color: #111827 !important;
+    }
+
+    .cv-canva-cert-meta {
+        font-size: 7.2pt !important;
+        color: #4b5563 !important;
     }
 
     /* Print color fidelity */

@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Situs Live Framer",
             image: "assets/images/project-active-saas.png",
             liveUrl: "https://bright-operations-110011.framer.app/",
-            x: 140,
-            y: 100,
-            width: 620,
+            x: 360,
+            y: 80,
+            width: 680,
             hasAvatarPin: true,
             pinPos: { top: "38%", right: "24%" },
             desc: "Dirancang dan dibangun untuk pertumbuhan bisnis yang pesat dengan integrasi CRM cerdas dan alur kerja otomatis.",
@@ -87,188 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Landing page fitur CRM konversi tinggi dengan desain mobile responsif",
                 "Komponen harga dan testimoni interaktif dinamis",
                 "Token sistem desain, ikonografi kustom, dan mikro-interaksi"
-            ]
-        },
-        {
-            id: "callwave",
-            title: "CallWave",
-            category: "Situs Web",
-            image: "assets/images/project-callwave.jpg",
-            liveUrl: "",
-            x: 840,
-            y: 100,
-            width: 620,
-            hasAvatarPin: true,
-            pinPos: { top: "52%", right: "20%" },
-            desc: "Memberi kesempatan audiens mendengarkan kualitas suara AI sebelum meminta mereka mendaftar.",
-            tag: "PLATFORM VOICE AI // SITUS SAAS",
-            scope: {
-                client: "CallWave Communications",
-                role: "Desain Web, UI Audio, Pengembangan Framer",
-                timeline: "8 minggu · Diluncurkan Jun 2026"
-            },
-            challenge: "CallWave ingin membuktikan latensi suara real-time dan artikulasi alami mereka tanpa memaksa calon klien mengisi formulir pendaftaran panjang terlebih dahulu.",
-            solution: "Menempatkan pemutar audio dan perbandingan latensi langsung di layar utama (hero). Pengunjung dapat mendengarkan rekaman suara asli hanya dalam 3 klik, membuktikan kualitas produk seketika.",
-            deliverables: [
-                "Visualisasi waveform interaktif dan pemutar audio",
-                "Integrasi paket harga dan halaman dokumentasi",
-                "Pratinjau antarmuka kontras tinggi mode gelap & terang",
-                "Situs Framer yang dioptimalkan untuk pengujian A/B landing page secara cepat"
-            ]
-        },
-        {
-            id: "firstcheck",
-            title: "FirstCheck",
-            category: "Situs Web",
-            image: "assets/images/project-firstcheck.jpg",
-            liveUrl: "",
-            x: 140,
-            y: 720,
-            width: 620,
-            hasAvatarPin: false,
-            desc: "Situs modal ventura yang membantu pendiri startup menilai kesesuaian pendanaan secara transparan.",
-            tag: "MODAL VENTURA // BRAND & WEB",
-            scope: {
-                client: "FirstCheck Capital",
-                role: "Desain Web & Arsitektur Informasi",
-                timeline: "6 minggu · Diluncurkan Sep 2026"
-            },
-            challenge: "Para pendiri startup tahap awal sering membuang waktu meneliti profil investor dan kriteria seleksi. FirstCheck membutuhkan kehadiran digital yang jujur dan lugas untuk menjawab pertanyaan kunci pendiri sebelum email pertama dikirim.",
-            solution: "Menyusun struktur situs berdasarkan alur keputusan founder: fokus sektor investasi partner yang jelas, direktori portofolio terbuka, dan daftar kriteria yang transparan untuk pendanaan putaran awal (seed round).",
-            deliverables: [
-                "Situs web responsif yang dirancang dan dikembangkan di Framer",
-                "Direktori portofolio dengan pencarian dinamis dan filter kategori sektor",
-                "Arahan fotografi editorial dan sistem tipografi profesional",
-                "Pengalaman mobile cepat dan aksesibel dengan waktu muat di bawah satu detik"
-            ]
-        },
-        {
-            id: "nonlinear",
-            title: "Nonlinear",
-            category: "Situs Web",
-            image: "assets/images/project-nonlinear.jpg",
-            liveUrl: "",
-            x: 840,
-            y: 680,
-            width: 620,
-            hasAvatarPin: false,
-            desc: "Menunjukkan bagaimana kalender tim dapat menjadi ruang kerja kolaboratif utama.",
-            tag: "PRODUK & SITUS PELUNCURAN // FRAMER",
-            scope: {
-                client: "Nonlinear Software Labs",
-                role: "Desain Web & Brand, Framer Build",
-                timeline: "8 minggu · Diluncurkan Okt 2026"
-            },
-            challenge: "Nonlinear adalah platform produktivitas berbasis kalender, tetapi landing page awal mereka tampak seperti tabel manajemen proyek biasa. Pengguna kesulitan memahami bagaimana perangkat lunak ini merombak jadwal kerja mingguan mereka.",
-            solution: "Menyusun alur cerita berdasarkan alur kerja nyata mingguan tim. Membangun pratinjau antarmuka interaktif langsung di situs Framer, memperjelas peran setiap fitur dalam memangkas beban rapat yang berlebihan.",
-            deliverables: [
-                "Situs web Framer lengkap dengan integrasi CMS untuk pembaruan fitur (changelog)",
-                "Komponen pratinjau jadwal interaktif kustom",
-                "Token desain dan adaptasi identitas merek",
-                "Panduan video serah terima untuk tim pemasaran internal"
-            ]
-        },
-        {
-            id: "waymark",
-            title: "Waymark",
-            category: "Situs Web",
-            image: "assets/images/project-waymark.jpg",
-            liveUrl: "",
-            x: 1540,
-            y: 100,
-            width: 620,
-            hasAvatarPin: true,
-            pinPos: { top: "45%", right: "26%" },
-            desc: "Membuat visualisasi program coaching kepemimpinan 6 bulan menjadi mudah dipahami.",
-            tag: "COACHING KEPEMIMPINAN // IDENTITAS BRAND",
-            scope: {
-                client: "Waymark Executive Coaching",
-                role: "Identitas Brand, Arsitektur Konten, Web Framer",
-                timeline: "5 minggu · Diluncurkan Jul 2026"
-            },
-            challenge: "Layanan executive coaching sering menggunakan istilah abstrak, sehingga sulit bagi pendiri perusahaan membayangkan apa yang sebenarnya didapat selama 6 bulan pendampingan.",
-            solution: "Merancang 'pemilih peran' dan peta jalan (journey roadmap) yang dimulai dari tantangan spesifik sang founder, memetakan fokus tiap bulan dari perekrutan eksekutif hingga manajemen dewan.",
-            deliverables: [
-                "Logo brand, palet warna, dan tipografi editorial eksklusif",
-                "Peta jalan interaktif program 6 bulan",
-                "Alur pemesanan konsultasi klien terintegrasi",
-                "Katalog mobile dan kartu testimoni klien"
-            ]
-        },
-        {
-            id: "noted",
-            title: "Noted",
-            category: "Situs Web & Aplikasi",
-            image: "assets/images/project-noted.jpg",
-            liveUrl: "",
-            x: 1540,
-            y: 680,
-            width: 620,
-            hasAvatarPin: false,
-            desc: "Memperjelas batas kerja antara resepsionis AI dan tim medis klinik.",
-            tag: "TEKNOLOGI KESEHATAN // SITUS PRODUK",
-            scope: {
-                client: "Noted Health Technologies",
-                role: "Situs Produk & Demo Interaktif",
-                timeline: "7 minggu · Diluncurkan Agu 2026"
-            },
-            challenge: "Klinik medis ragu mengadopsi asisten telepon AI karena khawatir miskomunikasi dengan pasien. Situs harus memperlihatkan secara transparan di mana AI bertindak dan kapan staf manusia mengambil alih.",
-            solution: "Membuat cuplikan simulasi panggilan audio nyata, alur triase resepsionis klinik, dan diagram alur pemesanan jadwal pasien. Menempatkan AI sebagai asisten pendukung yang andal, bukan pengganti manusia.",
-            deliverables: [
-                "Pemutar simulasi skenario audio interaktif di halaman utama",
-                "Tur produk dan bagian kepatuhan standar keamanan data medis",
-                "Pustaka komponen antarmuka komprehensif untuk halaman pemasaran",
-                "Alur penjadwalan demo produk dengan konversi optimal"
-            ]
-        },
-        {
-            id: "auraai",
-            title: "Aura AI",
-            category: "Situs Web",
-            image: "assets/images/project-aura-ai.jpg",
-            liveUrl: "",
-            x: 2240,
-            y: 100,
-            width: 620,
-            hasAvatarPin: false,
-            desc: "Platform kecerdasan generatif generasi terbaru untuk tim pengembang produk digital.",
-            tag: "PLATFORM AI // SITUS PRODUK",
-            scope: {
-                client: "Aura Intelligence Inc",
-                role: "Identitas Visual & Situs Framer",
-                timeline: "6 minggu · Diluncurkan Mei 2026"
-            },
-            challenge: "Memvisualisasikan kemampuan model AI tingkat lanjut tanpa membuat tampilan visual landing page terasa terlalu padat atau melelahkan mata pengunjung.",
-            solution: "Merancang kartu antarmuka minimalis bernuansa kontras tinggi dengan efek pencahayaan interaktif dan animasi halus yang menampilkan latensi respons dari prompt ke hasil.",
-            deliverables: [
-                "Situs web Framer lengkap dengan estetika mode gelap yang elegan",
-                "Komponen arena uji coba (playground) model AI interaktif kustom",
-                "Sistem tipografi dan panduan standar identitas merek"
-            ]
-        },
-        {
-            id: "pulse",
-            title: "Pulse",
-            category: "Situs Analitik",
-            image: "assets/images/project-pulse.jpg",
-            liveUrl: "",
-            x: 2240,
-            y: 680,
-            width: 620,
-            hasAvatarPin: false,
-            desc: "Pelacakan interaksi pengguna secara real-time dengan performa yang sangat ringan.",
-            tag: "ALAT PENGEMBANG // SITUS PEMASARAN",
-            scope: {
-                client: "Pulse Metrics",
-                role: "Desain Web & Arsitektur Informasi",
-                timeline: "5 minggu · Diluncurkan Apr 2026"
-            },
-            challenge: "Alat analitik untuk developer seringkali memiliki tampilan yang kaku dan utilitarian. Pulse membutuhkan situs web yang terlihat sangat teknis sekaligus berkelas dan modern.",
-            solution: "Memanfaatkan blok kode live, perbandingan latensi performa, dan arsitektur privasi transparan untuk menarik minat para software engineer dan pimpinan teknologi.",
-            deliverables: [
-                "Situs web berkinerja sangat tinggi dengan waktu muat di bawah 500ms",
-                "Pratinjau dokumentasi interaktif",
-                "Komponen pemilih kode instalasi SDK multi-bahasa"
             ]
         }
     ];
@@ -291,13 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const listViewContainer = document.getElementById('canvas-list-view');
     const listCardsGrid = document.getElementById('list-cards-grid');
 
-    // Canvas board space coordinates
-    const BOARD_WIDTH = 3200;
-    const BOARD_HEIGHT = 1800;
+    // Canvas board space coordinates (optimized for centered featured showcase)
+    const BOARD_WIDTH = 1400;
+    const BOARD_HEIGHT = 800;
 
-    let panX = -20;
-    let panY = -25;
-    let scale = 0.85;
+    let panX = 0;
+    let panY = 0;
+    let scale = 0.95;
     let isDragging = false;
     let dragStartX = 0;
     let dragStartY = 0;
@@ -320,13 +138,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function clampPan() {
         if (!canvasWrap) return;
         const rect = canvasWrap.getBoundingClientRect();
-        const minPanX = rect.width - BOARD_WIDTH * scale - 200;
-        const maxPanX = 200;
-        const minPanY = rect.height - BOARD_HEIGHT * scale - 200;
-        const maxPanY = 200;
+        const minPanX = rect.width - BOARD_WIDTH * scale - 150;
+        const maxPanX = 150;
+        const minPanY = rect.height - BOARD_HEIGHT * scale - 150;
+        const maxPanY = 150;
 
         panX = Math.min(Math.max(panX, minPanX), maxPanX);
         panY = Math.min(Math.max(panY, minPanY), maxPanY);
+    }
+
+    function centerCanvas() {
+        if (!canvasWrap) return;
+        const rect = canvasWrap.getBoundingClientRect();
+        panX = (rect.width - BOARD_WIDTH * scale) / 2;
+        panY = (rect.height - BOARD_HEIGHT * scale) / 2;
+        clampPan();
+        updateCanvasTransform();
     }
 
     // Initialize Minimap Rectangles
@@ -555,11 +382,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnZoomReset) {
         btnZoomReset.addEventListener('click', () => {
-            scale = 0.85;
-            panX = -20;
-            panY = -25;
-            clampPan();
-            updateCanvasTransform();
+            scale = 0.95;
+            centerCanvas();
             showToast('Zoom dan posisi kanvas direset');
         });
     }
@@ -629,10 +453,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial setup on DOM ready
     initMinimap();
-    updateCanvasTransform();
+    renderListView();
+    centerCanvas();
     window.addEventListener('resize', () => {
         initMinimap();
-        updateCanvasTransform();
+        centerCanvas();
     });
 
     /* --------------------------------------------------------------------------
