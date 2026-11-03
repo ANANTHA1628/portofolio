@@ -1517,13 +1517,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    const CV_GDRIVE_URL = 'https://drive.google.com/file/d/1SazpnQW0-Q8edFj8oqz8s_X_zOWncYs7/view?usp=sharing';
-
-    // Attach Google Drive opening to any remaining CV buttons (.open-cv-btn)
+    // Attach openCv to all CV buttons (.open-cv-btn)
     document.querySelectorAll('.open-cv-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            // If it's an anchor with valid href, allow normal browser navigation
-            if (btn.tagName === 'A' && btn.getAttribute('href')) return;
             e.preventDefault();
             // If inside mobile drawer, close drawer first
             const mobileDrawer = document.getElementById('mobile-drawer');
@@ -1532,9 +1528,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileDrawer.classList.remove('open');
                 if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
             }
-            window.open(CV_GDRIVE_URL, '_blank', 'noopener,noreferrer');
+            openCv();
         });
     });
+
+    if (btnCvModal) btnCvModal.addEventListener('click', openCv);
     if (cvCloseBtn) cvCloseBtn.addEventListener('click', closeCv);
     if (cvBackdrop) cvBackdrop.addEventListener('click', closeCv);
 
