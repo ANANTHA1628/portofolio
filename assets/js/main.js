@@ -116,6 +116,87 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Fitur Tutup Kasir (Shift Closing) lengkap dengan cetak struk thermal 58mm/80mm",
                 "Otorisasi PIN Admin untuk aksi sensitif dan generator laporan harian WhatsApp"
             ]
+        },
+        {
+            id: "bisindo",
+            title: "BISINDO",
+            category: "Mobile App · Web Flask · Machine Learning",
+            image: "assets/images/project-bisindo-card.png",
+            rawImage: "assets/images/project-bisindo.jpeg",
+            liveUrl: "https://github.com/hafisc/bisindo",
+            isCollab: true,
+            x: 100,
+            y: 600,
+            width: 660,
+            hasAvatarPin: true,
+            pinPos: { top: "38%", right: "22%" },
+            desc: "Projek bersama tim untuk membangun platform penerjemah dan pembelajaran Bahasa Isyarat Indonesia (BISINDO) terpadu berbasis Mobile App, Backend Web Flask, dan Machine Learning TensorFlow Lite.",
+            tag: "PROJEK BERSAMA // MOBILE, FLASK & ML // GITHUB",
+            scope: {
+                client: "Projek Bersama (Kolaborasi Tim)",
+                role: "Mobile App, Web Flask & ML Deployment",
+                timeline: "Open Source · Repositori GitHub"
+            },
+            challenge: "Masyarakat dan komunitas Tuli membutuhkan sarana pembelajaran dan penerjemah Bahasa Isyarat Indonesia (BISINDO) yang praktis, cepat, dan dapat diakses di mana saja bahkan tanpa sambungan internet, didukung oleh model pengenalan gestur yang ringan untuk perangkat smartphone.",
+            solution: "Berkolaborasi dalam tim mengembangkan ekosistem BISINDO lengkap. Fokus kontribusi saya mencakup implementasi fitur Kamus BISINDO pada aplikasi Mobile yang beroperasi offline, penyediaan endpoint RESTful API berbasis Python Flask, serta konversi dan validasi model Machine Learning ke format TensorFlow Lite yang dioptimasi untuk seluler.",
+            tasks: [
+                {
+                    domain: "Mobile",
+                    desc: "Mengerjakan halaman Kamus BISINDO. Isinya daftar 26 huruf alfabet beserta foto atau ilustrasi cara memperagakannya. Ada juga halaman detail untuk tiap huruf. Halaman ini bisa dibuka tanpa koneksi internet."
+                },
+                {
+                    domain: "Web Flask",
+                    desc: "Membuat endpoint untuk data kamus:<ul><li><code>GET /api/dictionary</code> untuk mengambil seluruh daftar huruf</li><li><code>GET /api/dictionary/&lt;huruf&gt;</code> untuk mengambil detail satu huruf tertentu</li></ul>"
+                },
+                {
+                    domain: "ML (Machine Learning)",
+                    desc: "Mengurus konversi model yang sudah selesai dilatih ke format TFLite. Setelah dikonversi, diuji dulu apakah hasil prediksinya masih sama dengan model aslinya."
+                }
+            ],
+            deliverables: [
+                "Halaman Kamus BISINDO Mobile dengan katalog 26 alfabet + ilustrasi gerak tangan & mode offline",
+                "Backend Web Flask: Endpoint GET /api/dictionary & GET /api/dictionary/<huruf>",
+                "Pipeline konversi & pengujian akurasi komparatif model ke format TFLite (TensorFlow Lite)",
+                "Repositori Kolaborasi Tim GitHub: github.com/hafisc/bisindo"
+            ]
+        },
+        {
+            id: "webarstek",
+            title: "PBL Web Arsitek",
+            category: "Web Application & Dashboard Admin",
+            image: "assets/images/project-webarstek.png",
+            liveUrl: "https://github.com/baynobu/PBL-WebArsitek",
+            isCollab: true,
+            x: 840,
+            y: 600,
+            width: 660,
+            hasAvatarPin: true,
+            pinPos: { top: "38%", right: "22%" },
+            desc: "Platform web kolaboratif Project-Based Learning (PBL) untuk layanan konsultasi arsitektur dan showcase portofolio desain, dilengkapi panel arsitek mandiri dan dashboard komprehensif admin.",
+            tag: "PROJEK BERSAMA // WEB APP & DASHBOARD // GITHUB",
+            scope: {
+                client: "Project-Based Learning (PBL Tim)",
+                role: "Fullstack Web Developer (Fitur Architect & Admin)",
+                timeline: "Open Source · Repositori GitHub"
+            },
+            challenge: "Klien arsitektur memerlukan platform terpadu untuk mengeksplorasi portofolio desain berkualitas, sementara arsitek memerlukan portal mandiri untuk memperbarui karya dan proyek mereka. Di sisi operasional, administrator membutuhkan kontrol penuh atas manajemen data pengguna, verifikasi portofolio arsitek, serta pemantauan aktivitas sistem.",
+            solution: "Mengembangkan arsitektur aplikasi web berbasis multi-peran (multi-role). Bertanggung jawab penuh dalam perancangan dan implementasi fitur-fitur portal Arsitek (Architect) untuk showcase karya & penawaran proyek, serta modul Administrator (Admin) untuk kontrol data, verifikasi akun, dan pemeliharaan platform.",
+            tasks: [
+                {
+                    domain: "Fitur Architect (Arsitek)",
+                    desc: "Membangun fitur portal arsitek: manajemen portofolio karya arsitektur, unggah dokumentasi proyek & spesifikasi desain, pengaturan profil keahlian profesional, serta interaksi penanganan penawaran proyek dari calon klien."
+                },
+                {
+                    domain: "Fitur Admin (Administrator)",
+                    desc: "Mengembangkan dashboard panel admin terpusat: manajemen data pengguna (klien dan arsitek), sistem verifikasi dan kurasi karya portofolio arsitek, monitoring transaksi/konsultasi, serta pengaturan hak akses keamanan sistem."
+                }
+            ],
+            deliverables: [
+                "Modul & Panel Arsitek (Manajemen portofolio, spesifikasi karya, dan penawaran proyek)",
+                "Dashboard Manajemen Admin (Kontrol pengguna, verifikasi portofolio, dan monitoring sistem)",
+                "Integrasi Autentikasi Berbasis Peran (Role-Based Access Control)",
+                "Repositori Kolaborasi GitHub: github.com/baynobu/PBL-WebArsitek"
+            ]
         }
     ];
 
@@ -139,11 +220,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Canvas board space coordinates (optimized for centered featured showcase)
     const BOARD_WIDTH = 1600;
-    const BOARD_HEIGHT = 800;
+    const BOARD_HEIGHT = 1180;
 
     let panX = 0;
     let panY = 0;
-    let scale = 0.85;
+    let scale = 0.72;
     let isDragging = false;
     let dragStartX = 0;
     let dragStartY = 0;
@@ -410,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnZoomReset) {
         btnZoomReset.addEventListener('click', () => {
-            scale = 0.85;
+            scale = 0.72;
             centerCanvas();
             showToast('Zoom dan posisi kanvas direset');
         });
@@ -422,18 +503,18 @@ document.addEventListener('DOMContentLoaded', () => {
         listCardsGrid.innerHTML = PORTFOLIO_WEBSITES.map(item => `
             <article class="list-card-item" data-project="${item.id}">
                 <div class="list-card-thumb" onclick="window.openCaseStudy && window.openCaseStudy('${item.id}')">
-                    <img src="${item.image}" alt="${item.title} Website" loading="lazy">
+                    <img src="${item.image}" alt="${item.title}" loading="lazy">
                 </div>
                 <div class="list-card-body">
                     <div class="list-card-top-meta">
                         <span class="list-card-tag">${item.category}</span>
-                        ${item.liveUrl ? `<span class="list-card-badge">Demo Langsung</span>` : ''}
+                        ${item.isCollab ? `<span class="list-card-badge" style="background:#2563eb; color:#fff;">Projek Bersama</span>` : (item.liveUrl ? `<span class="list-card-badge">Demo Langsung</span>` : '')}
                     </div>
                     <h3 class="list-card-title">${item.title}</h3>
                     <p class="list-card-desc">${item.desc}</p>
                     <div class="list-card-actions">
                         <button class="list-btn-details" onclick="window.openCaseStudy && window.openCaseStudy('${item.id}')">Lihat Studi Kasus ↗</button>
-                        ${item.liveUrl ? `<a href="${item.liveUrl}" target="_blank" rel="noopener noreferrer" class="list-btn-live">Kunjungi Situs ↗</a>` : ''}
+                        ${item.liveUrl ? `<a href="${item.liveUrl}" target="_blank" rel="noopener noreferrer" class="list-btn-live">${item.liveUrl.includes('github.com') ? 'Repositori GitHub ↗' : 'Kunjungi Situs ↗'}</a>` : ''}
                     </div>
                 </div>
             </article>
@@ -507,33 +588,52 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2 class="modal-title">${data.title} &middot; ${data.category}</h2>
             <p class="modal-desc-lead">${data.desc}</p>
 
+            ${data.isCollab ? `
+            <div class="modal-collab-banner">
+                🤝 <strong>Projek Bersama (Kolaborasi Tim)</strong> — Aplikasi ini dikembangkan secara kolaboratif bersama tim di GitHub (<a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" style="color:#1d4ed8; font-weight:600; text-decoration:underline;">${data.liveUrl.replace('https://github.com/', '')} ↗</a>).
+            </div>` : ''}
+
             ${data.liveUrl ? `
             <div style="margin: 1.25rem 0 0.5rem 0; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
                 <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="im-btn btn-dark" style="display:inline-flex; align-items:center; gap:0.4rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">
-                    Buka Live Demo ↗
+                    ${data.liveUrl.includes('github.com') ? 'Lihat Repositori GitHub ↗' : 'Buka Live Demo ↗'}
                 </a>
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); word-break: break-all;">${data.liveUrl}</span>
             </div>` : ''}
 
             <div class="modal-spec-grid">
                 <div class="spec-item">
-                    <span>KLIEN</span>
+                    <span>${data.isCollab ? 'JENIS PROJEK' : 'KLIEN'}</span>
                     <strong>${data.scope?.client || 'Proyek Independen'}</strong>
                 </div>
                 <div class="spec-item">
-                    <span>PERAN</span>
+                    <span>PERAN SAYA</span>
                     <strong>${data.scope?.role || 'Desainer Web & Pengembang'}</strong>
                 </div>
                 <div class="spec-item">
-                    <span>WAKTU PENGERJAAN</span>
+                    <span>STATUS &amp; WAKTU</span>
                     <strong>${data.scope?.timeline || 'Diluncurkan 2026'}</strong>
                 </div>
             </div>
 
+            ${data.tasks && data.tasks.length ? `
+            <h3 class="modal-section-h">Tugas &amp; Tanggung Jawab Saya</h3>
+            <p class="modal-p" style="margin-bottom: 0.75rem;">Dalam projek ini, saya memegang tanggung jawab spesifik pada aspek berikut:</p>
+            <div class="modal-task-group">
+                ${data.tasks.map(t => `
+                    <div class="modal-task-card">
+                        <span class="modal-task-badge">${t.domain}</span>
+                        <div class="modal-task-content">
+                            ${t.desc.includes('<ul>') ? t.desc : `<p>${t.desc}</p>`}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>` : ''}
+
             <h3 class="modal-section-h">Tantangan Proyek</h3>
             <p class="modal-p">${data.challenge || 'Merancang platform digital responsif dan konversi tinggi untuk tim visioner.'}</p>
 
-            <h3 class="modal-section-h">Pendekatan Desain & Solusi</h3>
+            <h3 class="modal-section-h">Pendekatan Desain &amp; Solusi</h3>
             <p class="modal-p">${data.solution || 'Menerapkan prinsip desain modern, tipografi dinamis, dan mikro-interaksi yang rapi.'}</p>
 
             ${data.deliverables && data.deliverables.length ? `

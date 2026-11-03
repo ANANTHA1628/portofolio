@@ -757,7 +757,7 @@ img {
     top: 0;
     left: 0;
     width: 1600px;
-    height: 800px;
+    height: 1180px;
     transform-origin: 0 0;
     will-change: transform;
     pointer-events: auto;
@@ -1987,6 +1987,85 @@ img {
 .modal-list li::before {
     content: '— ';
     color: var(--accent-purple);
+}
+
+/* Collaborative Project Banner & Task Breakdown Cards */
+.modal-collab-banner {
+    margin: 1rem 0 1.5rem 0;
+    padding: 0.85rem 1.15rem;
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    border-left: 4px solid #2563eb;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.55;
+}
+
+.modal-task-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin: 1rem 0 1.75rem 0;
+}
+
+.modal-task-card {
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    transition: border-color 0.2s ease;
+}
+
+.modal-task-card:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.modal-task-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #1e40af;
+    background: #dbeafe;
+    border: 1px solid #bfdbfe;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.modal-task-content {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
+.modal-task-content p {
+    margin: 0 0 0.4rem 0;
+}
+
+.modal-task-content p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-task-content ul {
+    margin: 0.35rem 0 0 0;
+    padding-left: 1.25rem;
+}
+
+.modal-task-content li {
+    margin-bottom: 0.25rem;
+}
+
+.modal-task-content code {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    background: rgba(0, 0, 0, 0.06);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    color: #0f172a;
 }
 
 /* --------------------------------------------------------------------------

@@ -267,13 +267,63 @@
                         </article>
                     </div>
 
+                    <!-- Card 3: BISINDO (Projek Bersama: Mobile, Web Flask & ML) -->
+                    <div class="canvas-card-wrapper featured-highlight-card" data-project="bisindo"
+                        style="left: 100px; top: 600px; width: 660px;">
+                        <div class="canvas-card-header">
+                            <span class="canvas-mono-label">BISINDO &middot; Projek Bersama (Mobile &amp; ML)</span>
+                            <a href="https://github.com/hafisc/bisindo" target="_blank"
+                                rel="noopener noreferrer" class="canvas-live-btn"
+                                onclick="event.stopPropagation();">Repositori GitHub ↗</a>
+                        </div>
+                        <article class="canvas-card">
+                            <div class="canvas-card-img-wrap">
+                                <img src="assets/images/project-bisindo-card.png" alt="BISINDO - Aplikasi Kamus &amp; Penerjemah Bahasa Isyarat"
+                                    class="canvas-card-img" loading="lazy">
+                                <div class="canvas-card-overlay">
+                                    <span class="canvas-view-badge">Buka Detail Studi Kasus ↗</span>
+                                </div>
+                            </div>
+                            <div class="canvas-avatar-pin" style="top: 38%; right: 22%;"
+                                title="Aryaputra Ferdiananta · Mobile, Flask &amp; ML">
+                                <img src="assets/images/me.jpeg" alt="Aryaputra" class="pin-avatar-img">
+                                <span class="pin-check">✓</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 4: PBL Web Arsitek (Projek Bersama: Architect & Admin) -->
+                    <div class="canvas-card-wrapper featured-highlight-card" data-project="webarstek"
+                        style="left: 840px; top: 600px; width: 660px;">
+                        <div class="canvas-card-header">
+                            <span class="canvas-mono-label">PBL Web Arsitek &middot; Projek Bersama (Architect &amp; Admin)</span>
+                            <a href="https://github.com/baynobu/PBL-WebArsitek" target="_blank"
+                                rel="noopener noreferrer" class="canvas-live-btn"
+                                onclick="event.stopPropagation();">Repositori GitHub ↗</a>
+                        </div>
+                        <article class="canvas-card">
+                            <div class="canvas-card-img-wrap">
+                                <img src="assets/images/project-webarstek.png" alt="PBL Web Arsitek - Dashboard Admin &amp; Portal Arsitek"
+                                    class="canvas-card-img" loading="lazy">
+                                <div class="canvas-card-overlay">
+                                    <span class="canvas-view-badge">Buka Detail Studi Kasus ↗</span>
+                                </div>
+                            </div>
+                            <div class="canvas-avatar-pin" style="top: 38%; right: 22%;"
+                                title="Aryaputra Ferdiananta · Fitur Architect &amp; Admin">
+                                <img src="assets/images/me.jpeg" alt="Aryaputra" class="pin-avatar-img">
+                                <span class="pin-check">✓</span>
+                            </div>
+                        </article>
+                    </div>
+
                 </div>
             </div>
 
             <!-- ALTERNATIVE LIST VIEW (SHOWN IN LIST MODE) -->
             <div class="canvas-list-container container" id="canvas-list-view" style="display: none;">
                 <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                    <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Menampilkan 2 Proyek Pilihan (Mode Daftar)</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Menampilkan 4 Proyek Pilihan (Mode Daftar)</span>
                     <button class="im-btn btn-sm btn-subtle" onclick="document.getElementById('btn-view-canvas')?.click()" style="display: inline-flex; align-items: center; gap: 0.4rem;">
                         <span>☷</span><span>Kembali ke Tampilan Kanvas</span>
                     </button>
@@ -313,6 +363,44 @@
                             <div class="list-card-actions">
                                 <button class="list-btn-details" onclick="window.openCaseStudy && window.openCaseStudy('posa')">Lihat Studi Kasus ↗</button>
                                 <a href="https://anantha1628.github.io/projek_bisnis/" target="_blank" rel="noopener noreferrer" class="list-btn-live">Kunjungi Situs ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: BISINDO -->
+                    <article class="list-card-item" data-project="bisindo">
+                        <div class="list-card-thumb" onclick="window.openCaseStudy && window.openCaseStudy('bisindo')">
+                            <img src="assets/images/project-bisindo-card.png" alt="BISINDO Mobile App" loading="lazy">
+                        </div>
+                        <div class="list-card-body">
+                            <div class="list-card-top-meta">
+                                <span class="list-card-tag">Mobile App · Web Flask · ML</span>
+                                <span class="list-card-badge" style="background: #2563eb; color: #fff;">Projek Bersama</span>
+                            </div>
+                            <h3 class="list-card-title">BISINDO (Bahasa Isyarat Indonesia)</h3>
+                            <p class="list-card-desc">Projek bersama pengembangan aplikasi pembelajaran &amp; penerjemah BISINDO. Tugas saya: Pengembangan modul Mobile Kamus BISINDO offline (26 alfabet), Backend REST API Flask (endpoint kamus), dan konversi &amp; validasi model TFLite.</p>
+                            <div class="list-card-actions">
+                                <button class="list-btn-details" onclick="window.openCaseStudy && window.openCaseStudy('bisindo')">Lihat Studi Kasus ↗</button>
+                                <a href="https://github.com/hafisc/bisindo" target="_blank" rel="noopener noreferrer" class="list-btn-live">Repositori GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4: PBL Web Arsitek -->
+                    <article class="list-card-item" data-project="webarstek">
+                        <div class="list-card-thumb" onclick="window.openCaseStudy && window.openCaseStudy('webarstek')">
+                            <img src="assets/images/project-webarstek.png" alt="PBL Web Arsitek Dashboard" loading="lazy">
+                        </div>
+                        <div class="list-card-body">
+                            <div class="list-card-top-meta">
+                                <span class="list-card-tag">Web App &amp; Dashboard Admin</span>
+                                <span class="list-card-badge" style="background: #2563eb; color: #fff;">Projek Bersama</span>
+                            </div>
+                            <h3 class="list-card-title">PBL Web Arsitek</h3>
+                            <p class="list-card-desc">Projek bersama sistem portal jasa dan portofolio arsitektur. Tugas saya: Pengembangan fitur portal arsitek (manajemen portofolio &amp; tawaran proyek) dan dashboard admin (manajemen pengguna &amp; verifikasi portofolio).</p>
+                            <div class="list-card-actions">
+                                <button class="list-btn-details" onclick="window.openCaseStudy && window.openCaseStudy('webarstek')">Lihat Studi Kasus ↗</button>
+                                <a href="https://github.com/baynobu/PBL-WebArsitek" target="_blank" rel="noopener noreferrer" class="list-btn-live">Repositori GitHub ↗</a>
                             </div>
                         </div>
                     </article>
