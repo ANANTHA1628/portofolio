@@ -272,8 +272,50 @@
 
             <!-- ALTERNATIVE LIST VIEW (SHOWN IN LIST MODE) -->
             <div class="canvas-list-container container" id="canvas-list-view" style="display: none;">
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Menampilkan 2 Proyek Pilihan (Mode Daftar)</span>
+                    <button class="im-btn btn-sm btn-subtle" onclick="document.getElementById('btn-view-canvas')?.click()" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                        <span>☷</span><span>Kembali ke Tampilan Kanvas</span>
+                    </button>
+                </div>
                 <div class="list-cards-grid" id="list-cards-grid">
-                    <!-- Rendered dynamically by main.js -->
+                    <!-- Card 1: Active SaaS -->
+                    <article class="list-card-item" data-project="activesaas">
+                        <div class="list-card-thumb" onclick="window.openCaseStudy && window.openCaseStudy('activesaas')">
+                            <img src="assets/images/project-active-saas.png" alt="Active SaaS Website" loading="lazy">
+                        </div>
+                        <div class="list-card-body">
+                            <div class="list-card-top-meta">
+                                <span class="list-card-tag">Situs Live Framer</span>
+                                <span class="list-card-badge">Demo Langsung</span>
+                            </div>
+                            <h3 class="list-card-title">Active SaaS</h3>
+                            <p class="list-card-desc">Dirancang dan dibangun untuk pertumbuhan bisnis yang pesat dengan integrasi CRM cerdas dan alur kerja otomatis.</p>
+                            <div class="list-card-actions">
+                                <button class="list-btn-details" onclick="window.openCaseStudy && window.openCaseStudy('activesaas')">Lihat Studi Kasus ↗</button>
+                                <a href="https://bright-operations-110011.framer.app/" target="_blank" rel="noopener noreferrer" class="list-btn-live">Kunjungi Situs ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: posa -->
+                    <article class="list-card-item" data-project="posa">
+                        <div class="list-card-thumb" onclick="window.openCaseStudy && window.openCaseStudy('posa')">
+                            <img src="assets/images/posa projek.png" alt="posa Website" loading="lazy">
+                        </div>
+                        <div class="list-card-body">
+                            <div class="list-card-top-meta">
+                                <span class="list-card-tag">Web App &amp; Kasir Bisnis</span>
+                                <span class="list-card-badge">Demo Langsung</span>
+                            </div>
+                            <h3 class="list-card-title">posa</h3>
+                            <p class="list-card-desc">Sistem kasir (Point of Sale) modern &amp; manajemen bisnis terpadu dengan pelacakan inventaris real-time (Moving Average HPP), shift closing kasir, otorisasi PIN admin, dan integrasi laporan WhatsApp.</p>
+                            <div class="list-card-actions">
+                                <button class="list-btn-details" onclick="window.openCaseStudy && window.openCaseStudy('posa')">Lihat Studi Kasus ↗</button>
+                                <a href="https://anantha1628.github.io/projek_bisnis/" target="_blank" rel="noopener noreferrer" class="list-btn-live">Kunjungi Situs ↗</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
 
@@ -959,6 +1001,16 @@
                     <span class="cv-print-hint">Format Standar A4 · Siap Cetak &amp; Simpan PDF</span>
                 </div>
                 <div class="cv-top-actions">
+                    <a class="im-btn btn-sm btn-subtle btn-download-cv" href="CV%20Aryaputra%20Ferdiananta.pdf" download="CV Aryaputra Ferdiananta.pdf" target="_blank"
+                        title="Unduh file PDF asli">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>Unduh PDF</span>
+                    </a>
                     <button class="im-btn btn-sm btn-dark btn-print-cta" id="btn-print-cv"
                         title="Cetak atau simpan sebagai PDF">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
@@ -983,9 +1035,9 @@
                             <img src="assets/images/me.jpeg" alt="Aryaputra Ferdiananta" class="cv-canva-avatar">
                         </div>
 
-                        <!-- SECTION: CONTACT -->
+                        <!-- SECTION: KONTAK -->
                         <section class="cv-canva-side-sec">
-                            <h3 class="cv-canva-side-title">CONTACT</h3>
+                            <h3 class="cv-canva-side-title">KONTAK</h3>
                             <ul class="cv-canva-contact-list">
                                 <li class="cv-canva-contact-item">
                                     <span class="cv-canva-icon-badge">
@@ -1016,62 +1068,54 @@
                                 <li class="cv-canva-contact-item">
                                     <span class="cv-canva-icon-badge">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                        </svg>
-                                    </span>
-                                    <a href="https://github.com/ANANTHA1628" target="_blank" rel="noopener noreferrer">github.com/ANANTHA1628</a>
-                                </li>
-                                <li class="cv-canva-contact-item">
-                                    <span class="cv-canva-icon-badge">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                                             <rect x="2" y="9" width="4" height="12"></rect>
                                             <circle cx="4" cy="4" r="2"></circle>
                                         </svg>
                                     </span>
-                                    <a href="https://www.linkedin.com/in/aryaputra-f-a75771322/" target="_blank" rel="noopener noreferrer">linkedin.com/in/aryaputra-f</a>
+                                    <a href="https://linkedin.com/in/aryaputra-f" target="_blank" rel="noopener noreferrer">linkedin.com/in/aryaputra-f</a>
+                                </li>
+                                <li class="cv-canva-contact-item">
+                                    <span class="cv-canva-icon-badge">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                        </svg>
+                                    </span>
+                                    <a href="https://github.com/ANANTHA1628" target="_blank" rel="noopener noreferrer">github.com/ANANTHA1628</a>
                                 </li>
                             </ul>
                         </section>
 
-                        <!-- SECTION: EDUCATION -->
+                        <!-- SECTION: PENDIDIKAN FORMAL -->
                         <section class="cv-canva-side-sec">
-                            <h3 class="cv-canva-side-title">EDUCATION</h3>
+                            <h3 class="cv-canva-side-title">PENDIDIKAN FORMAL</h3>
 
                             <div class="cv-canva-side-entry">
                                 <div class="cv-canva-side-entry-bold">D-IV Teknik Informatika</div>
                                 <div class="cv-canva-side-inst">Politeknik Negeri Malang (POLINEMA)</div>
                                 <div class="cv-canva-side-date">2024 – Sekarang</div>
-                                <ul class="cv-canva-side-bullets">
-                                    <li>Spesialisasi: Rekayasa Perangkat Lunak, Struktur Data &amp; Pemrograman Web.</li>
-                                    <li>NIM: 244107020127 (Jurusan TI).</li>
-                                </ul>
+                                <p class="cv-canva-side-desc" style="font-size: 0.76rem; color: #4a4038; margin: 0.25rem 0 0 0; line-height: 1.35;">Spesialisasi: Rekayasa Perangkat Lunak, Struktur Data &amp; Pemrograman Web. (NIM: 244107020127)</p>
                             </div>
 
-                            <div class="cv-canva-side-entry">
+                            <div class="cv-canva-side-entry" style="margin-top: 0.85rem;">
                                 <div class="cv-canva-side-entry-bold">MAN 2 Kota Malang</div>
-                                <div class="cv-canva-side-inst">Madrasah Aliyah Negeri Unggulan</div>
+                                <div class="cv-canva-side-inst">Jurusan MIPA (Akreditasi A)</div>
                                 <div class="cv-canva-side-date">2021 – 2024</div>
-                                <ul class="cv-canva-side-bullets">
-                                    <li>Jurusan MIPA (Akreditasi A).</li>
-                                    <li>Kader Kesehatan Remaja (KKR).</li>
-                                </ul>
                             </div>
                         </section>
 
-                        <!-- SECTION: SKILLS -->
+                        <!-- SECTION: KEAHLIAN & KOMPETENSI -->
                         <section class="cv-canva-side-sec">
-                            <h3 class="cv-canva-side-title">SKILLS</h3>
+                            <h3 class="cv-canva-side-title">KEAHLIAN &amp; KOMPETENSI</h3>
                             <ul class="cv-canva-side-bullets">
                                 <li>Desain UI/UX (Figma)</li>
                                 <li>Desain Web Responsif</li>
                                 <li>HTML5, CSS3, JavaScript</li>
-                                <li>PHP &amp; MySQL Database</li>
-                                <li>RESTful API &amp; Git / GitHub</li>
-                                <li>Customer Service (Hospitality)</li>
+                                <li>PHP &amp; MySQL</li>
+                                <li>RESTful API</li>
+                                <li>Git / GitHub</li>
                                 <li>Manajemen Kasir &amp; POS</li>
-                                <li>Bahasa Indonesia (Native)</li>
-                                <li>Bahasa Inggris (Kerja Profesional)</li>
+                                <li>Customer Service</li>
                             </ul>
                         </section>
                     </aside>
@@ -1081,96 +1125,77 @@
                         <!-- Main Header -->
                         <header class="cv-canva-header">
                             <h1 class="cv-canva-name">ARYAPUTRA<br>FERDIANANTA</h1>
-                            <h2 class="cv-canva-role">MAHASISWA TEKNIK INFORMATIKA · WEB DESIGNER &amp; DEVELOPER</h2>
-                            <p class="cv-canva-summary">
-                                Mahasiswa aktif Jurusan Teknologi Informasi di Politeknik Negeri Malang (POLINEMA) dengan pengalaman Praktik Kerja Lapangan di Mahative Studio, pelayanan pelanggan profesional di bidang hospitality, serta aktif berorganisasi. Memiliki minat dan keahlian teruji dalam perancangan antarmuka web responsif dan ramah pengguna, kedisiplinan kerja tinggi, ketelitian, serta kemampuan komunikasi interpersonal yang adaptif.
-                            </p>
+                            <h2 class="cv-canva-role">Fullstack Web Developer &amp; UI/UX</h2>
                         </header>
 
-                        <!-- SECTION: WORK EXPERIENCE -->
+                        <!-- SECTION: PROFIL -->
                         <section class="cv-canva-section">
-                            <h3 class="cv-canva-sec-title">WORK EXPERIENCE</h3>
+                            <h3 class="cv-canva-sec-title">PROFIL</h3>
+                            <p class="cv-canva-summary" style="margin-top: 0.35rem;">
+                                Saya adalah mahasiswa Teknik Informatika di Politeknik Negeri Malang (POLINEMA) yang sangat tertarik dengan dunia desain UI/UX dan web development. Lewat pengalaman magang sebagai Web Designer di Mahative Studio dan pengalaman kerja di industri hospitality sebagai barista, saya belajar memadukan keahlian merancang produk digital yang fungsional dengan komunikasi yang luwes kepada pengguna. Saya terbiasa bekerja secara teliti, adaptif, dan selalu antusias menciptakan solusi antarmuka yang nyaman serta tepat guna.
+                            </p>
+                        </section>
+
+                        <!-- SECTION: PENGALAMAN KERJA -->
+                        <section class="cv-canva-section">
+                            <h3 class="cv-canva-sec-title">PENGALAMAN KERJA</h3>
 
                             <div class="cv-canva-entry">
                                 <div class="cv-canva-entry-role">Barista &amp; Customer Experience</div>
-                                <div class="cv-canva-entry-company">STOSE_2026 · Specialty Coffee &amp; Space · Kota Malang</div>
-                                <div class="cv-canva-entry-date">September 2026 – Sekarang</div>
+                                <div class="cv-canva-entry-company">STOSE_2026 Specialty Coffee &amp; Space, Kota Malang</div>
+                                <div class="cv-canva-entry-date">Sep 2026 – Sekarang</div>
                                 <ul class="cv-canva-bullets">
-                                    <li>Meracik berbagai varian minuman kopi berbasis espresso dan metode manual brew dengan kalibrasi ekstraksi rasa yang presisi dan standar kualitas tinggi.</li>
-                                    <li>Memberikan pelayanan pelanggan prima (<em>hospitality</em>), mengelola transaksi sistem kasir (POS), dan membangun komunikasi yang ramah serta solutif.</li>
-                                    <li>Mengelola inventaris bahan baku harian, menjaga standar higienitas alat seduh, serta berkoordinasi secara tangkas dalam alur operasional tim.</li>
+                                    <li>Meracik sajian kopi khusus metode manual brew dengan kalibrasi ekstraksi rasa yang presisi.</li>
+                                    <li>Memberikan pelayanan pelanggan prima, mengelola transaksi sistem kasir (POS), dan membangun komunikasi yang ramah serta solutif.</li>
+                                    <li>Mengelola inventaris bahan baku harian, menjaga standar higienitas, serta berkoordinasi secara tangkas dalam tim operasional.</li>
                                 </ul>
                             </div>
 
                             <div class="cv-canva-entry">
                                 <div class="cv-canva-entry-role">Web Designer &amp; Developer (Praktik Kerja Lapangan)</div>
-                                <div class="cv-canva-entry-company">Mahative Studio · Kota Malang · Predikat Sangat Baik (A)</div>
-                                <div class="cv-canva-entry-date">Januari 2026 – Februari 2026</div>
+                                <div class="cv-canva-entry-company">Mahative Studio, Kota Malang</div>
+                                <div class="cv-canva-entry-date">Jan 2026 – Feb 2026</div>
                                 <ul class="cv-canva-bullets">
                                     <li>Merancang dan mengimplementasikan antarmuka website responsif yang ramah pengguna sesuai kebutuhan industri digital.</li>
                                     <li>Berkolaborasi aktif bersama tim untuk integrasi data dinamis, pengujian fungsionalitas fitur web, dan penyempurnaan alur pengguna.</li>
-                                    <li>Menerapkan optimasi performa digital, struktur informasi konten yang teratur, dan dokumentasi kerja proyek.</li>
+                                    <li>Menerapkan optimasi performa digital, struktur informasi konten yang teratur, dan dokumentasi kerja proyek dengan hasil akhir Predikat Sangat Baik (A).</li>
                                 </ul>
                             </div>
                         </section>
 
-                        <!-- SECTION: ORGANIZATIONAL EXPERIENCE -->
+                        <!-- SECTION: PROYEK PILIHAN -->
                         <section class="cv-canva-section">
-                            <h3 class="cv-canva-sec-title">ORGANIZATIONAL EXPERIENCE</h3>
+                            <h3 class="cv-canva-sec-title">PROYEK PILIHAN</h3>
 
                             <div class="cv-canva-entry">
-                                <div class="cv-canva-entry-role">Anggota Bidang 3: Lingkungan Sekolah Sehat</div>
-                                <div class="cv-canva-entry-company">Kader Kesehatan Remaja (KKR) · MAN 2 Kota Malang</div>
-                                <div class="cv-canva-entry-date">2022 – 2023</div>
-                                <ul class="cv-canva-bullets">
-                                    <li>Mengkoordinasikan program sanitasi lingkungan sekolah, edukasi pola hidup bersih sehat (PHBS), dan kegiatan kesehatan lingkungan madrasah terpadu.</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <!-- SECTION: FEATURED PROJECT -->
-                        <section class="cv-canva-section">
-                            <h3 class="cv-canva-sec-title">FEATURED PROJECT</h3>
-
-                            <div class="cv-canva-entry">
-                                <div class="cv-canva-entry-role">posa — Sistem Kasir &amp; Manajemen Bisnis Modern (Web App)</div>
+                                <div class="cv-canva-entry-role">POSA - Sistem Kasir &amp; Manajemen Bisnis Modern (Web App)</div>
                                 <div class="cv-canva-entry-company"><a href="https://anantha1628.github.io/projek_bisnis/" target="_blank" rel="noopener noreferrer">anantha1628.github.io/projek_bisnis ↗</a></div>
-                                <ul class="cv-canva-bullets">
-                                    <li>Pengembangan aplikasi kasir POS modern terintegrasi manajemen stok bahan baku (Moving Average HPP), shift closing kasir, otorisasi PIN admin, dan laporan otomatis WhatsApp.</li>
-                                </ul>
+                                <p class="cv-canva-entry-desc">
+                                    Pengembangan aplikasi kasir POS modern terintegrasi manajemen stok bahan baku (Moving Average HPP), shift closing kasir, otorisasi PIN admin, dan laporan otomatis WhatsApp.
+                                </p>
                             </div>
 
-                            <div class="cv-canva-entry" style="margin-top: 0.75rem;">
-                                <div class="cv-canva-entry-role">Active SaaS Platform — Desain Platform Web Modern (Framer)</div>
+                            <div class="cv-canva-entry" style="margin-top: 0.85rem;">
+                                <div class="cv-canva-entry-role">Active SaaS Platform - Desain Platform Web Modern (Framer)</div>
                                 <div class="cv-canva-entry-company"><a href="https://bright-operations-110011.framer.app/" target="_blank" rel="noopener noreferrer">bright-operations-110011.framer.app ↗</a></div>
-                                <ul class="cv-canva-bullets">
-                                    <li>Perancangan dan pembangunan antarmuka platform digital dengan integrasi prospek otomatis, sistem komponen dinamis, estetika visual bersih, dan tata letak responsif performa tinggi.</li>
-                                </ul>
+                                <p class="cv-canva-entry-desc">
+                                    Perancangan dan pembangunan antarmuka platform digital dengan integrasi prospek otomatis, sistem komponen dinamis, estetika visual bersih, dan tata letak responsif performa tinggi.
+                                </p>
                             </div>
                         </section>
 
-                        <!-- SECTION: CERTIFICATIONS -->
+                        <!-- SECTION: SERTIFIKASI & PENGALAMAN ORGANISASI -->
                         <section class="cv-canva-section">
-                            <h3 class="cv-canva-sec-title">CERTIFICATIONS</h3>
+                            <h3 class="cv-canva-sec-title">SERTIFIKASI &amp; PENGALAMAN ORGANISASI</h3>
 
                             <div class="cv-canva-cert-item">
-                                <div class="cv-canva-cert-title">Praktik Kerja Lapangan (PKL) · Predikat Sangat Baik (A)</div>
-                                <div class="cv-canva-cert-meta">Mahative Studio · No: PKL/MAHATIVE/2026/021 (2026)</div>
-                            </div>
-
-                            <div class="cv-canva-cert-item">
-                                <div class="cv-canva-cert-title">Latihan Dasar Kedisiplinan &amp; Bela Negara (PKBN)</div>
-                                <div class="cv-canva-cert-meta">Depo Pendidikan Kejuruan Rindam V/Brawijaya &amp; POLINEMA · No: ST-3/1551/VII/2024</div>
+                                <div class="cv-canva-cert-title">Praktik Kerja Lapangan (PKL) Predikat Sangat Baik (A)</div>
+                                <div class="cv-canva-cert-meta">Mahative Studio (2026)</div>
                             </div>
 
                             <div class="cv-canva-cert-item">
                                 <div class="cv-canva-cert-title">FEST GoWorld Asia Futurepreneur Selection Program</div>
-                                <div class="cv-canva-cert-meta">Delegasi Tingkat Internasional · No: TPSPOVIEBA/XXIII/II/2025 (2025)</div>
-                            </div>
-
-                            <div class="cv-canva-cert-item">
-                                <div class="cv-canva-cert-title">Startup Founder Clash (Kompetisi Ide Bisnis Nasional)</div>
-                                <div class="cv-canva-cert-meta">Future Entrepreneur Summit (2024)</div>
+                                <div class="cv-canva-cert-meta">Delegasi Tingkat Internasional (2025)</div>
                             </div>
 
                             <div class="cv-canva-cert-item">
@@ -1179,8 +1204,23 @@
                             </div>
 
                             <div class="cv-canva-cert-item">
+                                <div class="cv-canva-cert-title">Latihan Dasar Kedisiplinan &amp; Bela Negara (PKBN)</div>
+                                <div class="cv-canva-cert-meta">Depo Pendidikan Kejuruan Rindam V/Brawijaya &amp; POLINEMA (2024)</div>
+                            </div>
+
+                            <div class="cv-canva-cert-item">
+                                <div class="cv-canva-cert-title">Startup Founder Clash (Kompetisi Ide Bisnis Nasional)</div>
+                                <div class="cv-canva-cert-meta">Future Entrepreneur Summit (2024)</div>
+                            </div>
+
+                            <div class="cv-canva-cert-item">
                                 <div class="cv-canva-cert-title">Mentoring Keagamaan: MENYALA Jilid-1</div>
                                 <div class="cv-canva-cert-meta">UKM Kerohanian Islam (RISPOL) Politeknik Negeri Malang (2024)</div>
+                            </div>
+
+                            <div class="cv-canva-cert-item">
+                                <div class="cv-canva-cert-title">Anggota Bidang Lingkungan Sekolah Sehat</div>
+                                <div class="cv-canva-cert-meta">Kader Kesehatan Remaja (KKR) MAN 2 Kota Malang (2022 - 2023)</div>
                             </div>
                         </section>
                     </main>

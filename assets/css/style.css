@@ -2045,6 +2045,29 @@ img {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
+.btn-download-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #f8fafc;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.55rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-download-cv:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0f172a !important;
+    transform: translateY(-1px);
+}
+
 .btn-print-cta:hover {
     background: #1e293b !important;
     transform: translateY(-1px);
@@ -2332,6 +2355,13 @@ img {
 
 .cv-canva-bullets li strong {
     color: #111827;
+}
+
+.cv-canva-entry-desc {
+    font-size: 0.81rem;
+    line-height: 1.5;
+    color: #4a4038;
+    margin: 0.35rem 0 0 0;
 }
 
 /* Certifications with clean mocha accents */
@@ -2931,6 +2961,13 @@ img {
 
     .cv-canva-bullets li strong {
         color: #111827 !important;
+    }
+
+    .cv-canva-entry-desc {
+        font-size: 7.8pt !important;
+        line-height: 1.35 !important;
+        color: #374151 !important;
+        margin: 2pt 0 0 0 !important;
     }
 
     .cv-canva-cert-item {
