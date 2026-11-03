@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Situs Live Framer",
             image: "assets/images/project-active-saas.png",
             liveUrl: "https://bright-operations-110011.framer.app/",
-            x: 360,
+            x: 100,
             y: 80,
-            width: 680,
+            width: 660,
             hasAvatarPin: true,
             pinPos: { top: "38%", right: "24%" },
             desc: "Dirancang dan dibangun untuk pertumbuhan bisnis yang pesat dengan integrasi CRM cerdas dan alur kerja otomatis.",
@@ -87,6 +87,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Landing page fitur CRM konversi tinggi dengan desain mobile responsif",
                 "Komponen harga dan testimoni interaktif dinamis",
                 "Token sistem desain, ikonografi kustom, dan mikro-interaksi"
+            ]
+        },
+        {
+            id: "posa",
+            title: "posa",
+            category: "Web App & Kasir Bisnis",
+            image: "assets/images/posa projek.png",
+            liveUrl: "https://anantha1628.github.io/projek_bisnis/",
+            x: 840,
+            y: 80,
+            width: 660,
+            hasAvatarPin: true,
+            pinPos: { top: "38%", right: "22%" },
+            desc: "Sistem kasir (Point of Sale) modern & manajemen bisnis terpadu dengan pelacakan inventaris real-time (Moving Average HPP), shift closing kasir, otorisasi PIN admin, dan integrasi laporan WhatsApp.",
+            tag: "SISTEM KASIR & BISNIS // LIVE APP",
+            scope: {
+                client: "posa / Projek Bisnis Modern",
+                role: "Fullstack Web Developer & UI/UX Designer",
+                timeline: "Diluncurkan 2026 · Demo Web App Interaktif"
+            },
+            challenge: "Operasional bisnis retail dan F&B modern sering menghadapi kendala transaksi kasir manual yang lambat, kerumitan hitung HPP bahan baku dinamis, selisih uang kas di akhir shift, dan minimnya transparansi pelaporan harian kepada owner.",
+            solution: "Merancang dan membangun aplikasi kasir digital terpadu berbasis antarmuka modern yang cepat dan intuitif. Mendukung alur transaksi fleksibel (Tunai, QRIS, Kartu Debit, Open Bill), kalkulasi HPP Moving Average otomatis saat restock, rekonsiliasi kas saat pergantian shift dengan cetak thermal receipt, proteksi tindakan sensitif dengan PIN admin, serta ringkasan laporan otomatis ke WhatsApp.",
+            deliverables: [
+                "Aplikasi web kasir interaktif live: anantha1628.github.io/projek_bisnis",
+                "Sistem transaksi multi-kanal (Tunai, QRIS scan, EDC Debit, dan Meja/Open Bill)",
+                "Manajemen inventaris bahan baku dengan Moving Average HPP, Stok Opname, & Waste",
+                "Fitur Tutup Kasir (Shift Closing) lengkap dengan cetak struk thermal 58mm/80mm",
+                "Otorisasi PIN Admin untuk aksi sensitif dan generator laporan harian WhatsApp"
             ]
         }
     ];
@@ -110,12 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const listCardsGrid = document.getElementById('list-cards-grid');
 
     // Canvas board space coordinates (optimized for centered featured showcase)
-    const BOARD_WIDTH = 1400;
+    const BOARD_WIDTH = 1600;
     const BOARD_HEIGHT = 800;
 
     let panX = 0;
     let panY = 0;
-    let scale = 0.95;
+    let scale = 0.85;
     let isDragging = false;
     let dragStartX = 0;
     let dragStartY = 0;
@@ -382,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnZoomReset) {
         btnZoomReset.addEventListener('click', () => {
-            scale = 0.95;
+            scale = 0.85;
             centerCanvas();
             showToast('Zoom dan posisi kanvas direset');
         });
@@ -482,7 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${data.liveUrl ? `
             <div style="margin: 1.25rem 0 0.5rem 0; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
                 <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="im-btn btn-dark" style="display:inline-flex; align-items:center; gap:0.4rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">
-                    Buka Live Website Framer ↗
+                    Buka Live Demo ↗
                 </a>
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); word-break: break-all;">${data.liveUrl}</span>
             </div>` : ''}
