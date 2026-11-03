@@ -43,8 +43,6 @@
                     <li><a href="#work" class="im-nav-link" id="nav-work">Portofolio</a></li>
                     <li><a href="#certificate" class="im-nav-link" id="nav-certificate">Sertifikat</a></li>
                     <li><a href="#about" class="im-nav-link" id="nav-about">Tentang</a></li>
-                    <li><button class="im-nav-link nav-cv-link open-cv-btn" id="nav-btn-cv" type="button">📄 CV /
-                            Resume</button></li>
                 </ul>
             </nav>
 
@@ -54,8 +52,6 @@
                     <span class="status-text">Menerima proyek baru</span>
                 </div>
 
-                <button class="im-btn btn-sm btn-subtle nav-cv-btn open-cv-btn" id="header-cv-btn" type="button">📄
-                    CV</button>
                 <a href="mailto:aryaputraferdiananta@gmail.com?subject=Halo%20Aryaputra%20-%20Tawaran%20Proyek" class="im-btn btn-sm btn-subtle nav-email-btn" id="nav-email-btn" title="Kirim email langsung ke aryaputraferdiananta@gmail.com">✉️ Email</a>
                 <a href="https://wa.me/628993356515" target="_blank" rel="noopener noreferrer" class="im-btn btn-sm btn-dark nav-cta" id="nav-contact-btn">Hubungi Saya</a>
 
@@ -75,8 +71,6 @@
                     <li><a href="#work" class="mobile-link" id="m-nav-work">Portofolio</a></li>
                     <li><a href="#certificate" class="mobile-link" id="m-nav-certificate">Sertifikat</a></li>
                     <li><a href="#about" class="mobile-link" id="m-nav-about">Tentang</a></li>
-                    <li><button class="mobile-link mobile-cv-link open-cv-btn" id="m-nav-cv" type="button">📄 Lihat
-                            &amp; Cetak CV</button></li>
                     <li><a href="mailto:aryaputraferdiananta@gmail.com?subject=Halo%20Aryaputra%20-%20Tawaran%20Proyek" class="mobile-link" id="m-nav-email">✉️ Kirim Email (aryaputraferdiananta@gmail.com) ↗</a></li>
                     <li><a href="https://wa.me/628993356515" target="_blank" rel="noopener noreferrer" class="mobile-link" id="m-nav-contact">Hubungi
                             Saya (WhatsApp) ↗</a></li>
@@ -124,9 +118,6 @@
                             <a href="#certificate" class="im-btn btn-subtle" id="btn-cert-link">
                                 Lihat Sertifikat ↗
                             </a>
-                            <button class="im-btn btn-subtle hero-cv-btn open-cv-btn" id="btn-hero-cv" type="button">
-                                📄 Cetak CV
-                            </button>
                         </div>
                     </div>
 
@@ -795,8 +786,7 @@
                             arsitektur basis data yang terstruktur.
                         </p>
                         <div class="about-actions">
-                            <button class="im-btn btn-dark open-cv-btn" id="btn-cv-modal">Lihat &amp; Cetak CV (Resume)
-                                📄</button>
+                            <a href="https://wa.me/628993356515" target="_blank" rel="noopener noreferrer" class="im-btn btn-dark" id="btn-about-whatsapp">💬 Hubungi via WhatsApp</a>
                             <a href="mailto:aryaputraferdiananta@gmail.com?subject=Halo%20Aryaputra%20-%20Diskusi%20Proyek" class="im-btn btn-subtle" id="btn-about-email">✉️ Kirim Email</a>
                             <span class="avail-text">Menerima proyek baru mulai November</span>
                         </div>
@@ -1074,222 +1064,6 @@
             </div>
             <div class="modal-scroll-area" id="modal-content-area">
                 <!-- Dynamically Populated -->
-            </div>
-        </div>
-    </div>
-
-    <!-- CV / RESUME MODAL (EXECUTIVE PRINT-READY RESUME) -->
-    <div class="im-modal" id="cv-modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-backdrop" id="cv-backdrop"></div>
-        <div class="modal-window cv-window" id="cv-printable-document">
-            <!-- Modal Header (Controls & Print Button) -->
-            <div class="modal-top cv-modal-top">
-                <div class="cv-modal-top-left">
-                    <span class="modal-label">DAFTAR RIWAYAT HIDUP · RESUME</span>
-                    <span class="cv-print-hint">Format Standar A4 · Siap Cetak &amp; Simpan PDF</span>
-                </div>
-                <div class="cv-top-actions">
-                    <a class="im-btn btn-sm btn-subtle btn-download-cv" href="CV%20Aryaputra%20Ferdiananta.pdf" download="CV Aryaputra Ferdiananta.pdf" target="_blank"
-                        title="Unduh file PDF asli">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        <span>Unduh PDF</span>
-                    </a>
-                    <button class="im-btn btn-sm btn-dark btn-print-cta" id="btn-print-cv"
-                        title="Cetak atau simpan sebagai PDF">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-                            <rect x="6" y="14" width="12" height="8"></rect>
-                        </svg>
-                        <span>Cetak / Simpan PDF</span>
-                    </button>
-                    <button class="modal-close-btn" id="cv-close-btn" aria-label="Tutup CV">✕</button>
-                </div>
-            </div>
-
-            <!-- Scrollable & Printable Resume Sheet -->
-            <div class="modal-scroll-area cv-scroll-area">
-                <article class="cv-sheet cv-pdf-doc">
-                    <!-- TOP HEADER: Contact & Title (Left) + Circular Photo (Right) -->
-                    <header class="cv-header">
-                        <div class="cv-header-text">
-                            <h1 class="cv-name">ARYAPUTRA FERDIANANTA</h1>
-                            <h2 class="cv-role">Fullstack Web Developer &amp; UI/UX</h2>
-                            <div class="cv-contact-lines">
-                                <div class="cv-contact-row">
-                                    <span>Kota Malang, Jawa Timur</span>
-                                    <span class="cv-dot">•</span>
-                                    <a href="https://wa.me/628993356515" target="_blank" rel="noopener noreferrer">+62 899-3356-515</a>
-                                    <span class="cv-dot">•</span>
-                                    <a href="mailto:aryaputraferdiananta@gmail.com">aryaputraferdiananta@gmail.com</a>
-                                </div>
-                                <div class="cv-contact-row">
-                                    <span class="cv-dot">•</span>
-                                    <a href="https://github.com/ANANTHA1628" target="_blank" rel="noopener noreferrer">github.com/ANANTHA1628</a>
-                                    <span class="cv-dot">•</span>
-                                    <a href="https://linkedin.com/in/aryaputra-f" target="_blank" rel="noopener noreferrer">linkedin.com/in/aryaputra-f</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cv-photo-wrapper">
-                            <img src="assets/images/cv-profile-circle.png" alt="Aryaputra Ferdiananta" class="cv-photo">
-                        </div>
-                    </header>
-
-                    <!-- ACCENT RED LINE -->
-                    <div class="cv-red-rule"></div>
-
-                    <!-- 01. PROFIL -->
-                    <section class="cv-section">
-                        <h3 class="cv-section-title">PROFIL</h3>
-                        <p class="cv-profil-p">
-                            Saya adalah mahasiswa Teknik Informatika di Politeknik Negeri Malang (POLINEMA) yang sangat tertarik dengan dunia desain UI/UX dan web development. Lewat pengalaman magang sebagai Web Designer di Mahative Studio dan pengalaman kerja di industri hospitality sebagai barista, saya belajar memadukan keahlian merancang produk digital yang fungsional dengan komunikasi yang luwes kepada pengguna. Saya terbiasa bekerja secara teliti, adaptif, dan selalu antusias menciptakan solusi antarmuka yang nyaman serta tepat guna.
-                        </p>
-                    </section>
-
-                    <!-- 02. PENGALAMAN KERJA -->
-                    <section class="cv-section">
-                        <h3 class="cv-section-title">PENGALAMAN <span class="cv-red-text">KERJA</span></h3>
-
-                        <div class="cv-item">
-                            <div class="cv-item-head">
-                                <h4 class="cv-item-title">Barista &amp; Customer Experience</h4>
-                                <span class="cv-item-date">Sep 2026 - Sekarang</span>
-                            </div>
-                            <div class="cv-item-sub cv-red-text">STOSE_2026 Specialty Coffee &amp; Space, Kota Malang</div>
-                            <ul class="cv-item-bullets">
-                                <li>Meracik sajian kopi khusus metode manual brew dengan kalibrasi ekstraksi rasa yang presisi.</li>
-                                <li>Memberikan pelayanan pelanggan prima, mengelola transaksi sistem kasir (POS), dan membangun komunikasi yang ramah serta solutif.</li>
-                                <li>Mengelola inventaris bahan baku harian, menjaga standar higienitas, serta berkoordinasi secara tangkas dalam tim operasional.</li>
-                            </ul>
-                        </div>
-
-                        <div class="cv-item">
-                            <div class="cv-item-head">
-                                <h4 class="cv-item-title">Web Designer &amp; Developer (Praktik Kerja Lapangan)</h4>
-                                <span class="cv-item-date">Jan 2026 - Feb 2026</span>
-                            </div>
-                            <div class="cv-item-sub cv-red-text">Mahative Studio, Kota Malang</div>
-                            <ul class="cv-item-bullets">
-                                <li>Merancang dan mengimplementasikan antarmuka website responsif yang ramah pengguna sesuai kebutuhan industri digital.</li>
-                                <li>Berkolaborasi aktif bersama tim untuk integrasi data dinamis, pengujian fungsionalitas fitur web, dan penyempurnaan alur pengguna.</li>
-                                <li>Menerapkan optimasi performa digital, struktur informasi konten yang teratur, dan dokumentasi kerja proyek dengan hasil akhir Predikat Sangat Baik (A).</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <!-- 03. PENDIDIKAN FORMAL -->
-                    <section class="cv-section">
-                        <h3 class="cv-section-title">PENDIDIKAN <span class="cv-red-text">FORMAL</span></h3>
-
-                        <div class="cv-item">
-                            <div class="cv-item-head">
-                                <h4 class="cv-item-title">D-IV Teknik Informatika</h4>
-                                <span class="cv-item-date">2024 - Sekarang</span>
-                            </div>
-                            <div class="cv-item-sub cv-red-text">Politeknik Negeri Malang (POLINEMA)</div>
-                            <p class="cv-item-desc">Spesialisasi: Rekayasa Perangkat Lunak, Struktur Data &amp; Pemrograman Web. (NIM: 244107020127)</p>
-                        </div>
-
-                        <div class="cv-item">
-                            <div class="cv-item-head">
-                                <h4 class="cv-item-title">Jurusan MIPA (Akreditasi A)</h4>
-                                <span class="cv-item-date">2021 - 2024</span>
-                            </div>
-                            <div class="cv-item-sub cv-red-text">MAN 2 Kota Malang</div>
-                        </div>
-                    </section>
-
-                    <!-- 04. KEAHLIAN & KOMPETENSI -->
-                    <section class="cv-section">
-                        <h3 class="cv-section-title">KEAHLIAN <span class="cv-red-text">&amp; KOMPETENSI</span></h3>
-                        <div class="cv-skills-grid">
-                            <span class="cv-skill-tag">Desain UI/UX (Figma)</span>
-                            <span class="cv-skill-tag">Desain Web Responsif</span>
-                            <span class="cv-skill-tag">HTML5, CSS3, JavaScript</span>
-                            <span class="cv-skill-tag">PHP &amp; MySQL</span>
-                            <span class="cv-skill-tag">RESTful API</span>
-                            <span class="cv-skill-tag">Git / GitHub</span>
-                            <span class="cv-skill-tag">Manajemen Kasir &amp; POS</span>
-                            <span class="cv-skill-tag">Customer Service</span>
-                        </div>
-                    </section>
-
-                    <!-- 05. PROYEK PILIHAN -->
-                    <section class="cv-section">
-                        <h3 class="cv-section-title">PROYEK <span class="cv-red-text">PILIHAN</span></h3>
-
-                        <!-- Proyek 1: POSA -->
-                        <div class="cv-project-card">
-                            <div class="cv-project-card-head">
-                                <h4 class="cv-project-name">POSA - Sistem Kasir &amp; Manajemen Bisnis Modern (Web App)</h4>
-                                <a href="https://anantha1628.github.io/projek_bisnis/" target="_blank" rel="noopener noreferrer" class="cv-project-link">anantha1628.github.io/projek_bisnis ↗</a>
-                            </div>
-                            <p class="cv-project-text">
-                                Pengembangan aplikasi kasir POS modern terintegrasi manajemen stok bahan baku (Moving Average HPP), shift closing kasir, otorisasi PIN admin, dan laporan otomatis WhatsApp.
-                            </p>
-                        </div>
-
-                        <!-- Proyek 2: Active SaaS Platform -->
-                        <div class="cv-project-card">
-                            <div class="cv-project-card-head">
-                                <h4 class="cv-project-name">Active SaaS Platform - Desain Platform Web Modern (Framer)</h4>
-                                <a href="https://bright-operations-110011.framer.app/" target="_blank" rel="noopener noreferrer" class="cv-project-link">bright-operations-110011.framer.app ↗</a>
-                            </div>
-                            <p class="cv-project-text">
-                                Perancangan dan pembangunan antarmuka platform digital dengan integrasi prospek otomatis, sistem komponen dinamis, estetika visual bersih, dan tata letak responsif performa tinggi.
-                            </p>
-                        </div>
-
-                        <!-- Proyek 3: BISINDO -->
-                        <div class="cv-project-card">
-                            <div class="cv-project-card-head">
-                                <h4 class="cv-project-name">BISINDO - Aplikasi Kamus &amp; Pembelajaran Bahasa Isyarat (Mobile App, Web Flask &amp; ML)</h4>
-                                <a href="https://github.com/hafisc/bisindo" target="_blank" rel="noopener noreferrer" class="cv-project-link">github.com/hafisc/bisindo ↗</a>
-                            </div>
-                            <p class="cv-project-text">
-                                Projek bersama tim: Pengembangan fitur Kamus BISINDO Mobile offline (katalog 26 alfabet &amp; ilustrasi gestur tangan), penyediaan endpoint RESTful API Web Flask (<code>GET /api/dictionary</code> &amp; <code>GET /api/dictionary/&lt;huruf&gt;</code>), serta konversi dan validasi akurasi model Machine Learning ke format TensorFlow Lite (TFLite) untuk perangkat smartphone.
-                            </p>
-                        </div>
-
-                        <!-- Proyek 4: PBL Web Arsitek -->
-                        <div class="cv-project-card">
-                            <div class="cv-project-card-head">
-                                <h4 class="cv-project-name">PBL Web Arsitek - Platform Konsultasi &amp; Portofolio Arsitektur (Web App &amp; Dashboard)</h4>
-                                <a href="https://github.com/baynobu/PBL-WebArsitek" target="_blank" rel="noopener noreferrer" class="cv-project-link">github.com/baynobu/PBL-WebArsitek ↗</a>
-                            </div>
-                            <p class="cv-project-text">
-                                Projek bersama tim: Perancangan arsitektur aplikasi web multi-peran dengan fokus implementasi fitur portal Arsitek (manajemen showcase karya &amp; penawaran proyek) serta dashboard komprehensif Administrator (kontrol pengguna &amp; verifikasi portofolio arsitek).
-                            </p>
-                        </div>
-                    </section>
-
-                    <!-- 06. SERTIFIKASI & PENGALAMAN ORGANISASI -->
-                    <section class="cv-section">
-                        <h3 class="cv-section-title">SERTIFIKASI <span class="cv-red-text">&amp; PENGALAMAN ORGANISASI</span></h3>
-                        <ul class="cv-square-list">
-                            <li><strong>Praktik Kerja Lapangan (PKL) Predikat Sangat Baik (A)</strong> – Mahative Studio (2026)</li>
-                            <li><strong>FEST GoWorld Asia Futurepreneur Selection Program</strong> – Delegasi Tingkat Internasional (2025)</li>
-                            <li><strong>Training Public Speaking &amp; Pelatihan Entrepreneurship</strong> – GROW Project &amp; FeST Management × BEM FEB Universitas Muhammadiyah Malang (2025)</li>
-                            <li><strong>Latihan Dasar Kedisiplinan &amp; Bela Negara (PKBN)</strong> – Depo Pendidikan Kejuruan Rindam V/Brawijaya &amp; POLINEMA (2024)</li>
-                            <li><strong>Startup Founder Clash (Kompetisi Ide Bisnis Nasional)</strong> – Future Entrepreneur Summit (2024)</li>
-                            <li><strong>Mentoring Keagamaan: MENYALA Jilid-1</strong> – UKM Kerohanian Islam (RISPOL) Politeknik Negeri Malang (2024)</li>
-                            <li><strong>Anggota Bidang Lingkungan Sekolah Sehat</strong> – Kader Kesehatan Remaja (KKR) MAN 2 Kota Malang (2022-2023)</li>
-                        </ul>
-                    </section>
-
-                    <!-- FOOTER -->
-                    <footer class="cv-footer">
-                        <span>CV Aryaputra Ferdiananta</span>
-                        <span>Fullstack Web Developer &amp; UI/UX</span>
-                    </footer>
-                </article>
             </div>
         </div>
     </div>

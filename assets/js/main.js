@@ -1494,79 +1494,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Coverflow Showcase
     initCertificateCoverflow();
 
-    /* --------------------------------------------------------------------------
-       05. CV / RESUME MODAL & PRINT HANDLER
-       -------------------------------------------------------------------------- */
-    const cvModal = document.getElementById('cv-modal');
-    const btnCvModal = document.getElementById('btn-cv-modal');
-    const cvCloseBtn = document.getElementById('cv-close-btn');
-    const cvBackdrop = document.getElementById('cv-backdrop');
-    const btnPrintCv = document.getElementById('btn-print-cv');
-
-    function openCv() {
-        if (!cvModal) return;
-        cvModal.classList.add('open');
-        cvModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeCv() {
-        if (!cvModal) return;
-        cvModal.classList.remove('open');
-        cvModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
-
-    // Attach openCv to all CV buttons (.open-cv-btn)
-    document.querySelectorAll('.open-cv-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            // If inside mobile drawer, close drawer first
-            const mobileDrawer = document.getElementById('mobile-drawer');
-            const mobileToggle = document.getElementById('mobile-toggle');
-            if (mobileDrawer && mobileDrawer.classList.contains('open')) {
-                mobileDrawer.classList.remove('open');
-                if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
-            }
-            openCv();
-        });
-    });
-
-    if (btnCvModal) btnCvModal.addEventListener('click', openCv);
-    if (cvCloseBtn) cvCloseBtn.addEventListener('click', closeCv);
-    if (cvBackdrop) cvBackdrop.addEventListener('click', closeCv);
-
-    if (btnPrintCv) {
-        btnPrintCv.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Unlock body overflow so print engines (Blink/Gecko) paginate the entire multi-page document cleanly
-            document.body.style.overflow = 'visible';
-            setTimeout(() => {
-                window.print();
-            }, 60);
-        });
-    }
-
-    // Synchronize print events to prevent viewport clipping
-    window.addEventListener('beforeprint', () => {
-        document.body.style.overflow = 'visible';
-    });
-
-    window.addEventListener('afterprint', () => {
-        if (cvModal && cvModal.classList.contains('open')) {
-            document.body.style.overflow = 'hidden';
-        }
-    });
-
-    // Expose openCv globally for external convenience
-    window.openCv = openCv;
-
     // Esc key closes all modals
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeCaseStudy();
             closeCert();
-            closeCv();
             closeContactModal();
         }
     });
